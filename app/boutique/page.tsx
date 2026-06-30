@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Search, SlidersHorizontal, X, ArrowLeft } from 'lucide-react'
 import { products, getRaretes, getLangues } from '@/data/products'
 import ProductCard from '@/components/ProductCard'
@@ -165,7 +165,10 @@ function SetTile({ meta, onClick }: { meta: SetMeta; onClick: () => void }) {
 
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function BoutiquePage() {
-  const [selectedKey, setSelectedKey] = useState<string | null>(null)
+  const [selectedKey, setSelectedKey] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') return sessionStorage.getItem('boutique-set') ?? null
+    return null
+  })
 
   const [search, setSearch]                       = useState('')
   const [selectedRarity, setSelectedRarity]       = useState('')
@@ -178,6 +181,15 @@ export default function BoutiquePage() {
   const raretes = getRaretes()
   const langues = getLangues()
   const clearFilters = () => { setSelectedRarity(''); setSelectedCondition(''); setSelectedLang(''); setMaxPrice(500); setSearch('') }
+
+  // Restaure la position de scroll au retour d'une fiche produit
+  useEffect(() => {
+    const saved = sessionStorage.getItem('boutique-scroll')
+    if (saved && selectedKey) {
+      setTimeout(() => window.scrollTo({ top: parseInt(saved), behavior: 'instant' as ScrollBehavior }), 50)
+      sessionStorage.removeItem('boutique-scroll')
+    }
+  }, [])
 
   const showAllJap = selectedKey === '__all_jap__'
   const showAllFr  = selectedKey === '__all_fr__'
@@ -204,8 +216,8 @@ export default function BoutiquePage() {
 
   const activeFilters = [selectedRarity, selectedCondition, selectedLang].filter(Boolean).length
 
-  function handleSelectSet(key: string) { clearFilters(); setSelectedKey(key); window.scrollTo({ top: 0, behavior: 'smooth' }) }
-  function handleBack()                 { setSelectedKey(null); clearFilters(); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  function handleSelectSet(key: string) { clearFilters(); setSelectedKey(key); sessionStorage.setItem('boutique-set', key); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  function handleBack()                 { setSelectedKey(null); clearFilters(); sessionStorage.removeItem('boutique-set'); sessionStorage.removeItem('boutique-scroll'); window.scrollTo({ top: 0, behavior: 'smooth' }) }
 
   // ── VUE SÉLECTION D'ÉDITIONS ─────────────────────────────────────────────────
   if (!selectedKey) {
