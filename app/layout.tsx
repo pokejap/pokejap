@@ -6,16 +6,17 @@ import CartProvider from '@/components/CartProvider'
 import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.pokemon-cartes.fr'),
   title: {
     default: 'PokeJap — Cartes Pokémon Japonaises',
     template: '%s — PokeJap',
   },
   description: 'Boutique spécialisée en singles Pokémon japonais et français. Cartes authentiques importées directement du Japon : AR, SAR, ex, CHR et plus encore.',
-  keywords: ['pokémon', 'cartes japonaises', 'singles pokémon', 'pokémon TCG', 'AR card', 'SAR', 'pokémon japon', 'pokejap'],
+  keywords: ['pokémon', 'cartes pokémon japonaises', 'singles pokémon', 'pokémon TCG japonais', 'AR card pokémon', 'SAR pokémon', 'acheter carte pokémon japon', 'pokejap', 'pokemon-cartes.fr', 'carte pokémon rare', 'CHR pokémon'],
   openGraph: {
     title: 'PokeJap — Cartes Pokémon Japonaises',
     description: 'Singles Pokémon japonais et français importés directement du Japon. AR, SAR, ex, CHR…',
-    url: 'https://pokejap.fr',
+    url: 'https://www.pokemon-cartes.fr',
     siteName: 'PokeJap',
     locale: 'fr_FR',
     type: 'website',

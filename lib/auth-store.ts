@@ -52,6 +52,12 @@ export const useAuthStore = create<AuthStore>()(
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { password: _pw, ...profile } = newUser
         set({ user: profile })
+        // Notification email
+        fetch('/api/notify-register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: data.prenom, nom: data.nom, email: data.email }),
+        }).catch(() => {}) // silencieux si erreur
         return { success: true }
       },
 
