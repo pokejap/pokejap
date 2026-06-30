@@ -3,8 +3,6 @@ import { stripe } from '@/lib/stripe'
 import { stockStore } from '@/lib/stock-store'
 import Stripe from 'stripe'
 
-// Stripe envoie le body en raw — ne pas parser en JSON avant la vérification
-export const config = { api: { bodyParser: false } }
 
 export async function POST(request: NextRequest) {
   const body      = await request.text()
