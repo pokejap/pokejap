@@ -173,7 +173,7 @@ export default function AProposPage() {
                     <div className="w-10 h-10 rounded-xl bg-red-950/40 border border-red-900/30 flex items-center justify-center text-lg">📧</div>
                     <div>
                       <p className="text-white text-sm font-semibold">Email</p>
-                      <a href="mailto:contact@pokejap.fr" className="text-red-400 hover:text-red-300 text-sm transition-colors">contact@pokejap.fr</a>
+                      <a href="mailto:contact@pokemon-cartes.fr" className="text-red-400 hover:text-red-300 text-sm transition-colors">contact@pokemon-cartes.fr</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/[0.04]">
@@ -195,7 +195,7 @@ export default function AProposPage() {
               <div className="bg-gradient-to-br from-red-950/20 to-transparent border border-red-900/20 rounded-2xl p-8 text-center">
                 <h3 className="text-white font-bold text-lg mb-2">Une question sur une carte ?</h3>
                 <p className="text-gray-400 text-sm mb-5">N'hesitez pas a demander des photos supplementaires ou des precisions sur l'etat d'une carte.</p>
-                <a href="mailto:contact@pokejap.fr" className="inline-flex items-center gap-2 px-6 py-3 bg-pokemon-red hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105">
+                <a href="mailto:contact@pokemon-cartes.fr" className="inline-flex items-center gap-2 px-6 py-3 bg-pokemon-red hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105">
                   Envoyer un message
                 </a>
               </div>

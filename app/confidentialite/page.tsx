@@ -68,7 +68,7 @@ export default function ConfidentialitePage() {
           <li>Droit d'opposition</li>
         </ul>
         <p>
-          Pour exercer ces droits, contactez-nous à <strong className="text-white">contact@pokejap.fr</strong>.
+          Pour exercer ces droits, contactez-nous à <strong className="text-white">contact@pokemon-cartes.fr</strong>.
           Nous répondrons dans un délai de 30 jours.
         </p>
       </Section>
@@ -87,7 +87,7 @@ export default function ConfidentialitePage() {
       <Section title="6. Contact">
         <p>
           Pour toute question relative à la protection de vos données personnelles :<br />
-          <strong className="text-white">contact@pokejap.fr</strong>
+          <strong className="text-white">contact@pokemon-cartes.fr</strong>
         </p>
         <p>
           Vous avez également le droit de déposer une réclamation auprès de la{' '}

@@ -22,7 +22,7 @@ export default function MentionsLegalesPage() {
       <Section title="Éditeur du site">
         <p>Le site PokeJap est édité à titre personnel.</p>
         <p><strong className="text-white">Responsable de publication :</strong> Laurent Romano</p>
-        <p><strong className="text-white">Email :</strong> contact@pokejap.fr</p>
+        <p><strong className="text-white">Email :</strong> contact@pokemon-cartes.fr</p>
       </Section>
 
       <Section title="Hébergement">

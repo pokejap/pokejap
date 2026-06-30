@@ -85,7 +85,7 @@ export default function CGVPage() {
           rétractation, sans avoir à justifier de motifs ni à payer de pénalités.
         </p>
         <p>
-          Pour exercer ce droit, contactez-nous à <strong className="text-white">contact@pokejap.fr</strong>.
+          Pour exercer ce droit, contactez-nous à <strong className="text-white">contact@pokemon-cartes.fr</strong>.
           Les frais de retour sont à la charge du client. Le remboursement sera effectué sous 14 jours
           à compter de la réception du retour.
         </p>
@@ -104,7 +104,7 @@ export default function CGVPage() {
 
       <Section title="9. Litiges">
         <p>
-          En cas de litige, nous vous invitons à nous contacter en premier lieu à <strong className="text-white">contact@pokejap.fr</strong>.
+          En cas de litige, nous vous invitons à nous contacter en premier lieu à <strong className="text-white">contact@pokemon-cartes.fr</strong>.
           En l'absence de résolution amiable, les tribunaux français compétents seront saisis.
           Le droit français est applicable.
         </p>
