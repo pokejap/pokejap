@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /compte
+Disallow: /panier
+Disallow: /api/
+
+Sitemap: https://www.pokemon-cartes.fr/sitemap.xml
