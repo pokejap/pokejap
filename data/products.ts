@@ -20,6 +20,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/338/Houndoom.S8B.206.41265.png`,
   },
 
@@ -35,6 +36,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/352/Jynx.S11A.71.44586.png`,
   },
   {
@@ -48,6 +50,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/352/Smeargle.S11A.73.44587.png`,
   },
 
@@ -63,6 +66,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 6.99,
     stock: 3,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/357/Oricorio.S12A.176.45626.png`,
   },
   {
@@ -76,6 +80,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/357/Toxtricity.S12A.181.45943.png`,
   },
   {
@@ -89,6 +94,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/357/Dunsparce.S12A.198.45351.png`,
   },
   {
@@ -102,6 +108,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/357/Miltank.S12A.199.45352.png`,
   },
 
@@ -117,6 +124,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/361/Sandile.SV1S.87.46793.png`,
   },
   {
@@ -130,6 +138,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/361/Klawf.SV1S.88.46813.png`,
   },
 
@@ -145,6 +154,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/362/Tarountula.SV1V.79.46814.png`,
   },
   {
@@ -158,6 +168,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 3,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/362/Toedscool.SV1V.80.46815.png`,
   },
   {
@@ -171,6 +182,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/362/Clauncher.SV1V.83.46817.png`,
   },
   {
@@ -184,6 +196,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 9.99,
     stock: 3,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/362/Greavard.SV1V.87.46182.png`,
   },
   {
@@ -197,6 +210,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/362/Mabosstiff.SV1V.88.46820.png`,
   },
   {
@@ -210,6 +224,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/362/Bombirdier.SV1V.89.46821.png`,
   },
 
@@ -225,6 +240,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/366/Pyroar.SV1A.77.46997.png`,
   },
 
@@ -240,6 +256,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/370/Nacli.SV2D.78.47654.png`,
   },
   {
@@ -253,6 +270,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/370/Grafaiai.SV2D.80.47523.png`,
   },
   {
@@ -266,6 +284,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/370/Flamigo.SV2D.82.47066.png`,
   },
   {
@@ -279,6 +298,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/370/Farigiraf.SV2D.83.47656.png`,
   },
 
@@ -294,6 +314,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/369/Orthworm.SV2P.81.47541.png`,
   },
   {
@@ -307,6 +328,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/369/Dudunsparce.SV2P.83.47037.png`,
   },
 
@@ -322,6 +344,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/368/Bellibolt.SV3.112.48735.png`,
   },
   {
@@ -335,6 +358,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/368/Varoom.SV3.117.48739.png`,
   },
 
@@ -350,6 +374,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/381/Garganacl.SV4K.73.50805.png`,
   },
   {
@@ -363,6 +388,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/381/Slither-Wing.SV4K.74.50806.png`,
   },
   {
@@ -376,6 +402,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/381/Garbodor.SV4K.75.50807.png`,
   },
   {
@@ -389,6 +416,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 12.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/381/Roaring-Moon-ex.SV4K.93.50825.png`,
   },
 
@@ -404,6 +432,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/382/Toxtricity-ex.SV4K.40.50867.png`,
   },
   {
@@ -417,6 +446,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/382/Dottler.SV4K.67.50894.png`,
   },
   {
@@ -430,6 +460,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/382/Toedscruel.SV4K.68.50895.png`,
   },
   {
@@ -443,6 +474,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/382/Iron-Moth.SV4K.69.50896.png`,
   },
   {
@@ -456,6 +488,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 7.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/382/Tulip.SV4K.87.50914.png`,
   },
 
@@ -471,6 +504,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Neo-Superior-Energy.SV5K.71.51663.png`,
   },
   {
@@ -484,6 +518,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Bronzor.SV5K.74.52235.png`,
   },
   {
@@ -497,6 +532,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Flutter-Mane.SV5K.76.51716.png`,
   },
   {
@@ -510,6 +546,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Mudsdale.SV5K.78.51875.png`,
   },
   {
@@ -523,6 +560,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Chatot.SV5K.81.52238.png`,
   },
   {
@@ -536,6 +574,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 9.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Cinccino.SV5K.83.51880.png`,
   },
   {
@@ -549,6 +588,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 5.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/386/Torterra-ex.SV5K.84.52239.png`,
   },
 
@@ -564,6 +604,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/387/Reboot-Pod.SV5M.63.51800.png`,
   },
   {
@@ -577,6 +618,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/387/Shiftry.SV5M.72.51708.png`,
   },
   {
@@ -590,6 +632,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/387/Cutiefly.SV5M.78.52218.png`,
   },
   {
@@ -603,6 +646,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 5.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/387/Metagross.SV5M.80.52220.png`,
   },
   {
@@ -616,6 +660,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 19.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/387/Iron-Leaves-ex.SV5M.93.51711.png`,
   },
 
@@ -631,6 +676,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/391/Torkoal.SV5A.69.52825.png`,
   },
   {
@@ -644,6 +690,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/391/Cramorant.SV5A.72.52753.png`,
   },
 
@@ -659,6 +706,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/393/Legacy-Energy.SV6.101.52877.png`,
   },
   {
@@ -672,6 +720,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/393/Dipplin.SV6.103.52897.png`,
   },
   {
@@ -685,6 +734,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/393/Timburr.SV6.109.52898.png`,
   },
   {
@@ -698,6 +748,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 19.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/393/Chansey.SV6.113.52894.png`,
   },
 
@@ -713,6 +764,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/398/Dangerous-Laser.SV6A.54.53528.png`,
   },
   {
@@ -726,6 +778,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 12.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/398/Persian.SV6A.75.53580.png`,
   },
   {
@@ -739,6 +792,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/398/Munkidori-ex.SV6A.80.53585.png`,
   },
 
@@ -754,6 +808,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Glistening-Crystal.SV7.94.53648.png`,
   },
   {
@@ -767,6 +822,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Deluxe-Bomb.SV7.96.53714.png`,
   },
   {
@@ -780,6 +836,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Ledian.SV7.103.53706.png`,
   },
   {
@@ -793,6 +850,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Raboot.SV7.106.53710.png`,
   },
   {
@@ -806,6 +864,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Crabominable.SV7.107.53707.png`,
   },
   {
@@ -819,6 +878,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Milcery.SV7.110.53770.png`,
   },
   {
@@ -832,6 +892,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Meditite.SV7.111.53771.png`,
   },
   {
@@ -845,6 +906,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Archaludon.SV7.113.53773.png`,
   },
   {
@@ -858,6 +920,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 8.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/401/Terapagos-ex.SV7.133.53789.png`,
   },
 
@@ -873,6 +936,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/403/Cetitan.SV7A.69.54408.png`,
   },
   {
@@ -886,6 +950,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/403/Flapple.SV7A.74.54040.png`,
   },
 
@@ -901,6 +966,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/405/Vivillon.SV8.107.54500.png`,
   },
   {
@@ -914,6 +980,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 3,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/405/Larvesta.SV8.108.54608.png`,
   },
   {
@@ -927,6 +994,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/405/Stunfisk.SV8.113.54610.png`,
   },
   {
@@ -940,6 +1008,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/405/Kecleon.SV8.118.54523.png`,
   },
 
@@ -955,6 +1024,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Maractus.SV9.101.55541.png`,
   },
   {
@@ -968,6 +1038,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 9.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Articuno.SV9.102.55538.png`,
   },
   {
@@ -981,6 +1052,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Swinub.SV9.106.56517.png`,
   },
   {
@@ -994,6 +1066,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Lycanroc.SV9.107.56518.png`,
   },
   {
@@ -1007,6 +1080,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 2,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Noibat.SV9.111.56520.png`,
   },
   {
@@ -1020,6 +1094,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Ruffian.SV9.122.56529.png`,
   },
 
@@ -1035,6 +1110,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/416/Exeggutor.M1L.66.58867.png`,
   },
 
@@ -1050,6 +1126,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/417/Helioptile.M1S.70.58947.png`,
   },
   {
@@ -1063,6 +1140,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/417/Delibird.M1S.74.58951.png`,
   },
 
@@ -1078,6 +1156,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 6.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/414/Duosion.SV11B.124.57844.png`,
   },
   {
@@ -1091,6 +1170,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/414/Escavalier.SV11B.146.57865.png`,
   },
   {
@@ -1104,6 +1184,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 69.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/414/Ns-Plot.SV11B.173.57888.png`,
   },
 
@@ -1119,6 +1200,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Shelmet.SV11W.93.57895.png`,
   },
   {
@@ -1132,6 +1214,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Accelgor.SV11W.94.57896.png`,
   },
   {
@@ -1145,6 +1228,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Pansear.SV11W.99.57898.png`,
   },
   {
@@ -1158,6 +1242,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Heatmor.SV11W.101.57900.png`,
   },
   {
@@ -1171,6 +1256,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 6.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Dewott.SV11W.103.57207.png`,
   },
   {
@@ -1184,6 +1270,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 9.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Samurott.SV11W.104.57208.png`,
   },
   {
@@ -1197,6 +1284,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 7.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Ducklett.SV11W.106.57902.png`,
   },
   {
@@ -1210,6 +1298,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Swanna.SV11W.107.57903.png`,
   },
   {
@@ -1223,6 +1312,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Vanillite.SV11W.108.57904.png`,
   },
   {
@@ -1236,6 +1326,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Blitzle.SV11W.111.57907.png`,
   },
   {
@@ -1249,6 +1340,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Zebstrika.SV11W.112.57908.png`,
   },
   {
@@ -1262,6 +1354,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Galvantula.SV11W.114.57910.png`,
   },
   {
@@ -1275,6 +1368,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 2.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Stunfisk.SV11W.115.57911.png`,
   },
   {
@@ -1288,6 +1382,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Woobat.SV11W.116.57912.png`,
   },
   {
@@ -1301,6 +1396,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Swoobat.SV11W.117.57913.png`,
   },
   {
@@ -1314,6 +1410,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 4.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Sigilyph.SV11W.118.57914.png`,
   },
   {
@@ -1327,6 +1424,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Yamask.SV11W.119.57915.png`,
   },
   {
@@ -1340,6 +1438,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 6.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Gothita.SV11W.121.57917.png`,
   },
   {
@@ -1353,6 +1452,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 16.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Jellicent-ex.SV11W.170.57964.png`,
   },
   {
@@ -1366,6 +1466,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 44.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/415/Hydreigon-ex.SV11W.171.57965.png`,
   },
   // ════════════════════════════════════════════════════════════════
@@ -1384,6 +1485,7 @@ export const products: Product[] = [
     language: 'FR',
     price: 7.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/420/Kyurem-ex.BLK.157.58338.png`,
   },
 
@@ -1399,6 +1501,7 @@ export const products: Product[] = [
     language: 'FR',
     price: 9.99,
     stock: 1,
+    description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/409/Lillies-Ribombee.JTG.164.56826.png`,
   },
 ]
