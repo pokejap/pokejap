@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Stripe from 'stripe'
+import { stripe } from '@/lib/stripe'
 import { products } from '@/data/products'
 import { stockStore } from '@/lib/stock-store'
 
@@ -34,12 +34,6 @@ function isRateLimited(ip: string): boolean {
 
 // ── Handler principal ────────────────────────────────────────────────────────
 export async function POST(request: NextRequest) {
-  const key = process.env.STRIPE_SECRET_KEY
-  console.log('[checkout] STRIPE_SECRET_KEY présent:', !!key, '| début:', key?.substring(0, 12))
-  if (!key) {
-    return NextResponse.json({ error: 'STRIPE_SECRET_KEY manquante sur le serveur' }, { status: 500 })
-  }
-  const stripe = new Stripe(key, { apiVersion: '2024-06-20' })
   // Rate limiting
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
            ?? request.headers.get('x-real-ip')
