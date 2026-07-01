@@ -154,7 +154,14 @@ export default function ProductCard({ product, href }: { product: Product; href?
               </span>
             </div>
 
-            <p className="text-gray-500 text-xs mb-3 truncate">{product.set}</p>
+            <p className="text-gray-500 text-xs mb-2 truncate">{product.set}</p>
+
+            {product.description && (
+              <div className="flex items-center gap-1 mb-2 bg-green-900/30 border border-green-700/40 rounded-lg px-2 py-1">
+                <span className="text-green-400 text-[10px]">✓</span>
+                <span className="text-green-300 text-[10px] font-medium">{product.description}</span>
+              </div>
+            )}
 
             <div className="flex items-center justify-between">
               <span className="text-pokemon-yellow font-black text-lg">
