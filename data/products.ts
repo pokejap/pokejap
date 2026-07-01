@@ -100,7 +100,7 @@ export const products: Product[] = [
     rarity: 'AR',
     condition: 'Neuf',
     language: 'JAP',
-    price: 2.99,
+    price: 4.99,
     stock: 1,
     imageUrl: `${IMG}/357/Miltank.S12A.199.45352.png`,
   },
