@@ -1145,7 +1145,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 3.99,
     stock: 1,
-    imageUrl: `${IMG}/415/Pansear.SV11W.14.57744.png`,
+    imageUrl: `${IMG}/415/Pansear.SV11W.99.57898.png`,
   },
   {
     id: 'sv11w-101',
@@ -1158,7 +1158,7 @@ export const products: Product[] = [
     language: 'JAP',
     price: 1.99,
     stock: 1,
-    imageUrl: `${IMG}/415/Heatmor.SV11W.16.57746.png`,
+    imageUrl: `${IMG}/415/Heatmor.SV11W.101.57900.png`,
   },
   {
     id: 'sv11w-103',
