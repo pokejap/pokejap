@@ -74,7 +74,7 @@ export const products: Product[] = [
     rarity: 'CHR',
     condition: 'Neuf',
     language: 'JAP',
-    price: 9.99,
+    price: 2.99,
     stock: 1,
     imageUrl: `${IMG}/357/Toxtricity.S12A.181.45943.png`,
   },
