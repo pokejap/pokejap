@@ -354,7 +354,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4k-074',
-    name: 'Slither Wing',
+    name: 'Aile Reptante',
     set: 'Rugissement Antique',
     setCode: 'SV4K',
     number: '074/066',
@@ -380,7 +380,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4k-093',
-    name: 'Roaring Moon ex',
+    name: 'Lune Rugissante ex',
     set: 'Rugissement Antique',
     setCode: 'SV4K',
     number: '093/066',
@@ -408,7 +408,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4m-067',
-    name: 'Dottler',
+    name: 'Araqua',
     set: 'Éclair Futur',
     setCode: 'SV4M',
     number: '067/066',
@@ -434,7 +434,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4m-069',
-    name: 'Iron Moth',
+    name: 'Papelame de Fer',
     set: 'Éclair Futur',
     setCode: 'SV4M',
     number: '069/066',
@@ -462,7 +462,7 @@ export const products: Product[] = [
   // ── SV5K – Force Temporelle ───────────────────────────────────────
   {
     id: 'sv5k-071',
-    name: 'Superior Energy',
+    name: 'Énergie Supérieure',
     set: 'Force Temporelle',
     setCode: 'SV5K',
     number: '071/071',
@@ -488,7 +488,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5k-076',
-    name: 'Flutter Mane',
+    name: 'Crinière Flottante',
     set: 'Force Temporelle',
     setCode: 'SV5K',
     number: '076/071',
@@ -555,7 +555,7 @@ export const products: Product[] = [
   // ── SV5M – Cyber Juge ─────────────────────────────────────────────
   {
     id: 'sv5m-063',
-    name: 'Reboot Pod',
+    name: 'Capsule de Redémarrage',
     set: 'Cyber Juge',
     setCode: 'SV5M',
     number: '063/071',
@@ -607,7 +607,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5m-093',
-    name: 'Iron Leaves ex',
+    name: 'Feuilles de Fer ex',
     set: 'Cyber Juge',
     setCode: 'SV5M',
     number: '093/071',
@@ -650,7 +650,7 @@ export const products: Product[] = [
   // ── SV6 – Mascarade Crépusculaire ────────────────────────────────
   {
     id: 'sv6-101',
-    name: 'Legacy Energy',
+    name: 'Énergie Héritage',
     set: 'Mascarade Crépusculaire',
     setCode: 'SV6',
     number: '101/101',
@@ -676,7 +676,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv6-109',
-    name: 'Timburr',
+    name: 'Bébécaille',
     set: 'Mascarade Crépusculaire',
     setCode: 'SV6',
     number: '109/101',
@@ -704,7 +704,7 @@ export const products: Product[] = [
   // ── SV6A – Erreurs Nocturnes ──────────────────────────────────────
   {
     id: 'sv6a-054',
-    name: 'Dangerous Laser',
+    name: 'Laser Dangereux',
     set: 'Erreurs Nocturnes',
     setCode: 'SV6A',
     number: '054/064',
@@ -745,7 +745,7 @@ export const products: Product[] = [
   // ── SV7 – Couronne Stellaire ──────────────────────────────────────
   {
     id: 'sv7-094',
-    name: 'Glistening Crystal',
+    name: 'Cristal Étincelant',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '094/102',
@@ -758,7 +758,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-096',
-    name: 'Deluxe Bomb',
+    name: 'Bombe de Luxe',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '096/102',
@@ -797,7 +797,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-107',
-    name: 'Crabominable',
+    name: 'Crustabri',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '107/102',
@@ -810,7 +810,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-110',
-    name: 'Milcery',
+    name: 'Lait-Flan',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '110/102',
@@ -823,7 +823,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-111',
-    name: 'Meditite',
+    name: 'Méditikka',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '111/102',
@@ -905,7 +905,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv8-108',
-    name: 'Larvesta',
+    name: 'Colarva',
     set: 'Super Briseur Électrique',
     setCode: 'SV8',
     number: '108/106',
@@ -972,7 +972,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv9-106',
-    name: 'Swinub',
+    name: 'Marcacrin',
     set: 'Voyage Ensemble',
     setCode: 'SV9',
     number: '106/100',
@@ -998,7 +998,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv9-111',
-    name: 'Noibat',
+    name: 'Nœlard',
     set: 'Voyage Ensemble',
     setCode: 'SV9',
     number: '111/100',
