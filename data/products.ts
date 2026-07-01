@@ -1398,7 +1398,7 @@ export const products: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 9.99,
-    stock: 0,
+    stock: 1,
     imageUrl: `${IMG}/409/Lillies-Ribombee.JTG.164.56826.png`,
   },
 ]
