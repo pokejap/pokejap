@@ -101,8 +101,29 @@ export default function ProductCard({ product, href }: { product: Product; href?
               </div>
             )}
             {product.stock === 0 && (
-              <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
-                <span className="text-white font-bold text-sm bg-red-900/80 px-4 py-1 rounded-full">Epuise</span>
+              <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-10">
+                <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '100%', pointerEvents: 'none' }}>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '28%',
+                      left: '-30%',
+                      width: '160%',
+                      textAlign: 'center',
+                      transform: 'rotate(-35deg)',
+                      backgroundColor: '#b91c1c',
+                      color: 'white',
+                      fontWeight: '900',
+                      fontSize: '1rem',
+                      letterSpacing: '0.15em',
+                      padding: '6px 0',
+                      boxShadow: '0 3px 10px rgba(0,0,0,0.5)',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Sold Out
+                  </div>
+                </div>
               </div>
             )}
 
