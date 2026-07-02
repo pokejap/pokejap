@@ -47,9 +47,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json()
-    const { items, customer }: {
+    const { items, customer, couponCode }: {
       items: { productId: string; quantity: number }[]
       customer?: CustomerInfo
+      couponCode?: string
     } = body
 
     if (!items || items.length === 0) {
@@ -119,12 +120,22 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // ── Code promo ───────────────────────────────────────────────────────────
+    let discounts: { promotion_code: string }[] | undefined
+    if (couponCode) {
+      const promoCodes = await stripe.promotionCodes.list({ code: couponCode, active: true, limit: 1 })
+      if (promoCodes.data.length > 0) {
+        discounts = [{ promotion_code: promoCodes.data[0].id }]
+      }
+    }
+
     // ── Session Stripe ───────────────────────────────────────────────────────
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items:           lineItems,
       mode:                 'payment',
       customer_email:       customer?.email || undefined,
+      ...(discounts ? { discounts } : { allow_promotion_codes: true }),
       success_url:          `${siteUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url:           `${siteUrl}/panier`,
       locale:               'fr',

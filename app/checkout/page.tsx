@@ -65,6 +65,7 @@ export default function CheckoutPage() {
   const [errors, setErrors] = useState<Partial<CustomerInfo>>({})
   const [loading, setLoading] = useState(false)
   const [apiError, setApiError] = useState<string | null>(null)
+  const [couponCode, setCouponCode] = useState('')
 
   const subtotal = getTotalPrice()
   const shipping = subtotal >= 30 ? 0 : 5.99
@@ -102,7 +103,7 @@ export default function CheckoutPage() {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: safeItems, customer: info }),
+        body: JSON.stringify({ items: safeItems, customer: info, couponCode: couponCode.trim() || undefined }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Une erreur est survenue')
@@ -236,6 +237,21 @@ export default function CheckoutPage() {
                   <span className="text-white">Total</span>
                   <span className="text-pokemon-yellow text-xl">{total.toFixed(2)} €</span>
                 </div>
+              </div>
+
+              {/* Code promo */}
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <p className="text-gray-400 text-xs font-medium mb-2">Code de réduction</p>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={couponCode}
+                    onChange={e => setCouponCode(e.target.value.toUpperCase())}
+                    placeholder="Ex: POKEJAP10"
+                    className="flex-1 bg-white/5 border border-white/10 text-white placeholder-gray-600 px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-pokemon-red transition-colors"
+                  />
+                </div>
+                <p className="text-gray-600 text-xs mt-1">Le code sera appliqué sur la page de paiement</p>
               </div>
             </div>
 
