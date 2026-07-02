@@ -57,7 +57,7 @@ export const products: Product[] = [
   // ── S12A – Zénith Suprême ─────────────────────────────────────────
   {
     id: 's12a-176',
-    name: 'Oricorio',
+    name: 'Plumeline',
     set: 'Zénith Suprême',
     setCode: 'S12A',
     number: '176/172',
@@ -85,7 +85,7 @@ export const products: Product[] = [
   },
   {
     id: 's12a-198',
-    name: 'Serpang',
+    name: 'Insolourdo',
     set: 'Zénith Suprême',
     setCode: 'S12A',
     number: '198/172',
@@ -115,7 +115,7 @@ export const products: Product[] = [
   // ── SV1S – Écarlate ex ────────────────────────────────────────────
   {
     id: 'sv1s-087',
-    name: 'Mâchouilla',
+    name: 'Mascaiman',
     set: 'Écarlate ex',
     setCode: 'SV1S',
     number: '087/078',
@@ -129,7 +129,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv1s-088',
-    name: 'Klawf',
+    name: 'Craparoi',
     set: 'Écarlate ex',
     setCode: 'SV1S',
     number: '088/078',
@@ -145,7 +145,7 @@ export const products: Product[] = [
   // ── SV1V – Violet ex ──────────────────────────────────────────────
   {
     id: 'sv1v-079',
-    name: 'Tarountula',
+    name: 'Tissemboule',
     set: 'Violet ex',
     setCode: 'SV1V',
     number: '079/078',
@@ -159,7 +159,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv1v-080',
-    name: 'Toedscool',
+    name: 'Terracool',
     set: 'Violet ex',
     setCode: 'SV1V',
     number: '080/078',
@@ -173,7 +173,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv1v-083',
-    name: 'Clauncher',
+    name: 'Flingouste',
     set: 'Violet ex',
     setCode: 'SV1V',
     number: '083/078',
@@ -187,7 +187,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv1v-087',
-    name: 'Greavard',
+    name: 'Toutombe',
     set: 'Violet ex',
     setCode: 'SV1V',
     number: '087/078',
@@ -201,7 +201,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv1v-088',
-    name: 'Mabosstiff',
+    name: 'Dogrino',
     set: 'Violet ex',
     setCode: 'SV1V',
     number: '088/078',
@@ -215,7 +215,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv1v-089',
-    name: 'Bombirdier',
+    name: 'Lestombailes',
     set: 'Violet ex',
     setCode: 'SV1V',
     number: '089/078',
@@ -231,7 +231,7 @@ export const products: Product[] = [
   // ── SV1A – Triple Battue ──────────────────────────────────────────
   {
     id: 'sv1a-077',
-    name: 'Némélion',
+    name: 'Némelios',
     set: 'Triple Battue',
     setCode: 'SV1A',
     number: '077/073',
@@ -247,7 +247,7 @@ export const products: Product[] = [
   // ── SV2D – Éruption de Glaise ─────────────────────────────────────
   {
     id: 'sv2d-078',
-    name: 'Nacli',
+    name: 'Selutin',
     set: 'Éruption de Glaise',
     setCode: 'SV2D',
     number: '078/071',
@@ -261,7 +261,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv2d-080',
-    name: 'Grafaiai',
+    name: 'Tag-tag',
     set: 'Éruption de Glaise',
     setCode: 'SV2D',
     number: '080/071',
@@ -275,7 +275,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv2d-082',
-    name: 'Flamigo',
+    name: 'Flamenroule',
     set: 'Éruption de Glaise',
     setCode: 'SV2D',
     number: '082/071',
@@ -305,7 +305,7 @@ export const products: Product[] = [
   // ── SV2P – Risque de Grêle ────────────────────────────────────────
   {
     id: 'sv2p-081',
-    name: 'Orthworm',
+    name: 'Ferdeter',
     set: 'Risque de Grêle',
     setCode: 'SV2P',
     number: '081/069',
@@ -319,7 +319,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv2p-083',
-    name: 'Dudunsparce',
+    name: 'Deusolourdo',
     set: 'Risque de Grêle',
     setCode: 'SV2P',
     number: '083/069',
@@ -335,7 +335,7 @@ export const products: Product[] = [
   // ── SV3 – Flamme Obsidienne ───────────────────────────────────────
   {
     id: 'sv3-112',
-    name: 'Bellibolt',
+    name: 'Ampibidou',
     set: 'Flamme Obsidienne',
     setCode: 'SV3',
     number: '112/108',
@@ -349,7 +349,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv3-117',
-    name: 'Varoom',
+    name: 'Vrombi',
     set: 'Flamme Obsidienne',
     setCode: 'SV3',
     number: '117/108',
@@ -365,7 +365,7 @@ export const products: Product[] = [
   // ── SV4K – Rugissement Antique ────────────────────────────────────
   {
     id: 'sv4k-073',
-    name: 'Garganacl',
+    name: 'Gigansel',
     set: 'Rugissement Antique',
     setCode: 'SV4K',
     number: '073/066',
@@ -379,7 +379,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4k-074',
-    name: 'Aile Reptante',
+    name: 'Rampe-aile',
     set: 'Rugissement Antique',
     setCode: 'SV4K',
     number: '074/066',
@@ -393,7 +393,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4k-075',
-    name: 'Sacrimain',
+    name: 'Miasmax',
     set: 'Rugissement Antique',
     setCode: 'SV4K',
     number: '075/066',
@@ -407,7 +407,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4k-093',
-    name: 'Lune Rugissante ex',
+    name: 'Rugit-lune ex',
     set: 'Rugissement Antique',
     setCode: 'SV4K',
     number: '093/066',
@@ -423,7 +423,7 @@ export const products: Product[] = [
   // ── SV4M – Éclair Futur ───────────────────────────────────────────
   {
     id: 'sv4m-040',
-    name: 'Toxtricity ex',
+    name: 'Salarsen ex',
     set: 'Éclair Futur',
     setCode: 'SV4M',
     number: '040/066',
@@ -437,7 +437,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4m-067',
-    name: 'Araqua',
+    name: 'Coléodome',
     set: 'Éclair Futur',
     setCode: 'SV4M',
     number: '067/066',
@@ -451,7 +451,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4m-068',
-    name: 'Toedscruel',
+    name: 'Terracool',
     set: 'Éclair Futur',
     setCode: 'SV4M',
     number: '068/066',
@@ -465,7 +465,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv4m-069',
-    name: 'Papelame de Fer',
+    name: 'Mite-de-fer',
     set: 'Éclair Futur',
     setCode: 'SV4M',
     number: '069/066',
@@ -509,7 +509,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5k-074',
-    name: 'Brozor',
+    name: 'Archéomire',
     set: 'Force Temporelle',
     setCode: 'SV5K',
     number: '074/071',
@@ -523,7 +523,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5k-076',
-    name: 'Crinière Flottante',
+    name: 'Flotte-mèche',
     set: 'Force Temporelle',
     setCode: 'SV5K',
     number: '076/071',
@@ -537,7 +537,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5k-078',
-    name: 'Ébouléros',
+    name: 'Bourrinos',
     set: 'Force Temporelle',
     setCode: 'SV5K',
     number: '078/071',
@@ -565,7 +565,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5k-083',
-    name: 'Ermitache',
+    name: 'Pashmilla',
     set: 'Force Temporelle',
     setCode: 'SV5K',
     number: '083/071',
@@ -651,7 +651,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv5m-093',
-    name: 'Feuilles de Fer ex',
+    name: 'Vert-de-fer ex',
     set: 'Cyber Juge',
     setCode: 'SV5M',
     number: '093/071',
@@ -711,7 +711,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv6-103',
-    name: 'Dipplin',
+    name: 'Pomdramour',
     set: 'Mascarade Crépusculaire',
     setCode: 'SV6',
     number: '103/101',
@@ -725,7 +725,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv6-109',
-    name: 'Bébécaille',
+    name: 'Charpenti',
     set: 'Mascarade Crépusculaire',
     setCode: 'SV6',
     number: '109/101',
@@ -769,7 +769,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv6a-075',
-    name: 'Miaouss',
+    name: 'Persian',
     set: 'Erreurs Nocturnes',
     setCode: 'SV6A',
     number: '075/064',
@@ -783,7 +783,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv6a-080',
-    name: 'Munkidori ex',
+    name: 'Fortusimia ex',
     set: 'Erreurs Nocturnes',
     setCode: 'SV6A',
     number: '080/064',
@@ -827,7 +827,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-103',
-    name: 'Coxy',
+    name: 'Coxyclaque',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '103/102',
@@ -855,7 +855,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-107',
-    name: 'Crustabri',
+    name: 'Crabominable',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '107/102',
@@ -869,7 +869,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-110',
-    name: 'Lait-Flan',
+    name: 'Cremy',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '110/102',
@@ -897,7 +897,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7-113',
-    name: 'Archaludon',
+    name: 'Pondralugon',
     set: 'Couronne Stellaire',
     setCode: 'SV7',
     number: '113/102',
@@ -927,7 +927,7 @@ export const products: Product[] = [
   // ── SV7A – Paradis Dragona ────────────────────────────────────────
   {
     id: 'sv7a-069',
-    name: 'Cetitan',
+    name: 'Beldeneige',
     set: 'Paradis Dragona',
     setCode: 'SV7A',
     number: '069/064',
@@ -941,7 +941,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv7a-074',
-    name: 'Flapple',
+    name: 'Pomdrapi',
     set: 'Paradis Dragona',
     setCode: 'SV7A',
     number: '074/064',
@@ -971,7 +971,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv8-108',
-    name: 'Colarva',
+    name: 'Pyronille',
     set: 'Super Briseur Électrique',
     setCode: 'SV8',
     number: '108/106',
@@ -1015,7 +1015,7 @@ export const products: Product[] = [
   // ── SV9 – Voyage Ensemble ─────────────────────────────────────────
   {
     id: 'sv9-101',
-    name: 'Maractus',
+    name: 'Marakachi',
     set: 'Voyage Ensemble',
     setCode: 'SV9',
     number: '101/100',
@@ -1071,7 +1071,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv9-111',
-    name: 'Nœlard',
+    name: 'Sonistrelle',
     set: 'Voyage Ensemble',
     setCode: 'SV9',
     number: '111/100',
@@ -1117,7 +1117,7 @@ export const products: Product[] = [
   // ── M1S – Méga Symphonie ──────────────────────────────────────────
   {
     id: 'm1s-070',
-    name: 'Hélioptile',
+    name: 'Galvaran',
     set: 'Méga Symphonie',
     setCode: 'M1S',
     number: '070/063',
@@ -1147,7 +1147,7 @@ export const products: Product[] = [
   // ── Foudre Noire (JAP) ────────────────────────────────────────────
   {
     id: 'sv11b-124',
-    name: 'Duoblob',
+    name: 'Meios',
     set: 'Foudre Noire',
     setCode: 'SV11B',
     number: '124/086',
@@ -1161,7 +1161,7 @@ export const products: Product[] = [
   },
   {
     id: 'blk-146',
-    name: 'Cizayox',
+    name: 'Lancargot',
     set: 'Foudre Noire',
     setCode: 'SV11B',
     number: '146/086',
@@ -1205,7 +1205,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-094',
-    name: 'Carkoi',
+    name: 'Limaspeed',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '094/086',
@@ -1233,7 +1233,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-101',
-    name: 'Rongourmand',
+    name: 'Aflamanoir',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '101/086',
@@ -1247,7 +1247,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-103',
-    name: 'Moustillon',
+    name: 'Mateloutre',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '103/086',
@@ -1261,7 +1261,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-104',
-    name: 'Samorott',
+    name: 'Clamiral',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '104/086',
@@ -1275,7 +1275,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-106',
-    name: 'Canartichaut',
+    name: 'Couaneton',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '106/086',
@@ -1303,7 +1303,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-108',
-    name: 'Vanillite',
+    name: 'Sorbébé',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '108/086',
@@ -1317,7 +1317,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-111',
-    name: 'Zéblitz',
+    name: 'Zebibron',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '111/086',
@@ -1331,7 +1331,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-112',
-    name: 'Zéblastik',
+    name: 'Zeblitz',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '112/086',
@@ -1387,7 +1387,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-117',
-    name: 'Swoobat',
+    name: 'Rhinolove',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '117/086',
@@ -1401,7 +1401,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-118',
-    name: 'Mémo',
+    name: 'Cryptero',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '118/086',
@@ -1429,7 +1429,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-121',
-    name: 'Gothita',
+    name: 'Scrutella',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '121/086',
@@ -1443,7 +1443,7 @@ export const products: Product[] = [
   },
   {
     id: 'sv11w-170',
-    name: 'Galekid ex',
+    name: 'Moyade ex',
     set: 'Flamme Blanche',
     setCode: 'SV11W',
     number: '170/086',
