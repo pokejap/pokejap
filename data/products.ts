@@ -1036,7 +1036,7 @@ export const products: Product[] = [
     rarity: 'AR',
     condition: 'Neuf',
     language: 'JAP',
-    price: 9.99,
+    price: 14.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
     imageUrl: `${IMG}/408/Articuno.SV9.102.55538.png`,
