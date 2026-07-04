@@ -1,5 +1,6 @@
 'use client'
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import { ShoppingCart, Package, Box, Layers, Filter } from 'lucide-react'
 import { sealedProducts } from '@/data/sealed'
 import { useCartStore } from '@/lib/cart-store'
@@ -19,6 +20,8 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
 
   return (
     <div className="relative group rounded-2xl overflow-hidden border border-white/10 bg-[#0d0d14] hover:border-pokemon-red/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-900/30 flex flex-col">
+      {/* Lien vers page détail — couvre toute la card sauf le bouton Ajouter */}
+      <Link href={`/scelles/${product.id}`} className="absolute inset-0 z-0" aria-label={product.name} />
 
       {/* Image de fond */}
       <div className="relative h-44 overflow-hidden">
@@ -74,7 +77,7 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
           <span className="text-pokemon-red font-black text-xl">{product.price.toFixed(2)} €</span>
           <button
             onClick={onAdd}
-            className="flex items-center gap-1.5 bg-pokemon-red hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors duration-200 active:scale-95"
+            className="relative z-10 flex items-center gap-1.5 bg-pokemon-red hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors duration-200 active:scale-95"
           >
             <ShoppingCart size={14} /> Ajouter
           </button>

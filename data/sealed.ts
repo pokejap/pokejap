@@ -1,23 +1,22 @@
 import { Product } from '@/types'
 
-const LOGOS = 'https://den-media.pokellector.com/logos'
-const IMG   = 'https://den-cards.pokellector.com'
+// ─────────────────────────────────────────────────────────────────────────────
+//  CDN Hikaru Distribution — images officielles produits
+// ─────────────────────────────────────────────────────────────────────────────
+const H = 'https://hikarudistribution.com/cdn/shop/files'
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  TARIFICATION — Compte Pro Hikaru/TCGdirect
 //  Prix achat estimé = retail Hikaru × 0.80 (remise pro ~20%)
 //  Prix vente = retail Hikaru − 5 à 10 € → marge brute 10-15 €/display
-//  Boosters : achat ~4.50 € → vente 5.90 € → marge ~1.40 €
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const sealedProducts: Product[] = [
 
   // ════════════════════════════════════════════════════════════════
   //  📦  DISPLAYS JAPONAIS (30 boosters sauf mention)
-  //  Ordre : plus récent en premier
   // ════════════════════════════════════════════════════════════════
 
-  // ── SV10 – La Gloire de la Team Rocket 🔥 ────────────────────────
   {
     id: 'display-sv10',
     name: 'Display La Gloire de la Team Rocket',
@@ -30,13 +29,17 @@ export const sealedProducts: Product[] = [
     price: 189.90,
     stock: 99,
     number: '',
-    description: 'Display japonais La Gloire de la Team Rocket (Glory of Team Rocket) — 30 boosters. Édition la plus populaire du moment, contient des cartes Team Rocket exclusives.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/414/Ns-Plot.SV11B.173.57888.png`,
-    logoUrl: `${LOGOS}/Glory-of-Team-Rocket.logo.421.png`,
+    description: `L'édition la plus attendue de 2025. Le retour de la Team Rocket dans le TCG japonais après des années d'absence — avec Méwtwo ex, Jessie & James en SAR et une collection de cartes Team Rocket introuvables en dehors du Japon. Taux de chase estimé : 1 SAR pour 3 boosters. Set incontournable pour les collectionneurs et investisseurs.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Cartes Team Rocket exclusives (Méwtwo ex, Giovanni, Jessie & James)',
+      'SAR ultra-rares estimées à haute valeur de revente',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/display-box-glory-of-team-rocket-sv10.jpg`,
   },
 
-  // ── SV9A – Heat Wave Arena ────────────────────────────────────────
   {
     id: 'display-sv9a',
     name: 'Display Heat Wave Arena',
@@ -49,13 +52,17 @@ export const sealedProducts: Product[] = [
     price: 84.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Heat Wave Arena — 30 boosters. Édition spéciale Scarlet & Violet avec Pokémon de feu légendaires.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/408/Articuno.SV9.102.55538.png`,
-    logoUrl: `${LOGOS}/Heat-Wave-Arena.logo.419.png`,
+    description: `Extension spéciale centrée sur les Pokémon de type Feu et leurs dresseurs emblématiques. Contient les SAR très recherchées Typhlosion d'Éthan, Ho-Oh de Karen et la légendaire Ondine avec Psykokwak. Un display très prisé pour sa richesse en SAR personnages.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Typhlosion d\'Éthan, Ho-Oh de Karen',
+      'SAR Psykokwak d\'Ondine (très recherchée)',
+      'Scellé sous cellophane officielle',
+      'Expédié via TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display-heat-wave-arena-sv9a-2.jpg`,
   },
 
-  // ── M2A – MEGA Dream ex ───────────────────────────────────────────
   {
     id: 'display-m2a',
     name: 'Display MEGA Dream ex',
@@ -68,13 +75,17 @@ export const sealedProducts: Product[] = [
     price: 89.90,
     stock: 99,
     number: '',
-    description: 'Display japonais MEGA Dream ex — 30 boosters. Édition Méga Évolution avec des cartes ex MEGA exclusives.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/417/Helioptile.M1S.70.58947.png`,
-    logoUrl: `${LOGOS}/Mega-Dream.logo.420.png`,
+    description: `Deuxième extension spéciale de la série Méga Évolution, avec les Méga Pokémon ex les plus puissants. Set très demandé pour ses illustrations exclusives et ses cartes ex MEGA introuvables dans les sets Écarlate & Violet classiques. Excellent rapport valeur/prix pour les collectionneurs.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Cartes Méga ex exclusives à la série Méga Évolution',
+      'Illustrations alternatives Ultra Rares',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display-mega-dream-ex-m2a.jpg`,
   },
 
-  // ── SV8A – Terastal Festival ex (10 boosters) ─────────────────────
   {
     id: 'display-sv8a',
     name: 'Display Terastal Festival ex',
@@ -87,13 +98,17 @@ export const sealedProducts: Product[] = [
     price: 94.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Terastal Festival ex — 10 boosters premium. Édition spéciale avec illustrations Terastal exclusives.',
-    contents: ['10 boosters japonais premium', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/405/Vivillon.SV8.107.54500.png`,
-    logoUrl: `${LOGOS}/Terastal-Festival-ex.logo.410.png`,
+    description: `Extension premium en format 10 boosters par display — chaque booster contient davantage de cartes rares que les extensions standard. Illustrée autour des cristallisations Téracristal, cette édition spéciale propose des cartes ex avec des formes Téracristal inédites et des artworks exclusifs signés par les meilleurs illustrateurs Pokémon.`,
+    contents: [
+      '10 boosters japonais premium',
+      'Format spécial : taux de cartes rares augmenté',
+      'Cartes ex Téracristal exclusives',
+      'Artworks premium signés illustrateurs officiels',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/terastal-festival-ex-box.png`,
   },
 
-  // ── M2 – Inferno X ────────────────────────────────────────────────
   {
     id: 'display-m2',
     name: 'Display Inferno X',
@@ -106,13 +121,17 @@ export const sealedProducts: Product[] = [
     price: 69.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Inferno X (Méga Évolution) — 30 boosters. Avec des Méga Pokémon feu légendaires.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/415/Hydreigon-ex.SV11W.171.57965.png`,
-    logoUrl: `${LOGOS}/Inferno-X.logo.418.png`,
+    description: `Première extension Méga Évolution centrée sur les Pokémon de type Feu. Contient les Méga Évolutions de Dracaufeu, Démanta et Méga Braségali en cartes ex — des pièces très recherchées par les fans nostalgiques de l'ère Méga. Idéal pour commencer une collection Méga Évolution japonaise.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Méga Dracaufeu ex, Méga Démanta ex',
+      'Cartes Méga Feu exclusives série Méga Évolution',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display-inferno-x.jpg`,
   },
 
-  // ── M5 – MEGA Abyss Eye ───────────────────────────────────────────
   {
     id: 'display-m5',
     name: 'Display MEGA Abyss Eye',
@@ -125,13 +144,17 @@ export const sealedProducts: Product[] = [
     price: 64.90,
     stock: 99,
     number: '',
-    description: 'Display japonais MEGA Abyss Eye — 30 boosters. Dernière édition Méga Évolution avec des Pokémon abyssaux.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/393/Chansey.SV6.113.52894.png`,
-    logoUrl: `${LOGOS}/Mega-Abyss-Eye.logo.424.png`,
+    description: `Cinquième et dernière extension principale de la série Méga Évolution japonaise. Centrée sur les Pokémon des abysses et du type Ténèbres/Spectre, avec des Méga Évolutions mythiques et légendaires. Un display collector pour compléter la série complète Méga Évolution — valeur d'investissement à long terme.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Méga Évolutions Ténèbres/Spectre exclusives',
+      'Cartes mythiques et légendaires en Méga ex',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/display_abyss_eye_M5.png`,
   },
 
-  // ── M4 – Ninja Spinner ────────────────────────────────────────────
   {
     id: 'display-m4',
     name: 'Display Ninja Spinner',
@@ -144,13 +167,17 @@ export const sealedProducts: Product[] = [
     price: 79.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Ninja Spinner — 30 boosters. Édition Méga Évolution avec des Pokémon de type Combat et Ténèbres.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/398/Munkidori-ex.SV6A.80.53585.png`,
-    logoUrl: `${LOGOS}/Ninja-Spinner.logo.423.png`,
+    description: `Quatrième extension de la série Méga Évolution japonaise, centrée sur les types Combat, Poison et Acier. Contient les Méga Camérupt, Méga Galopa et Méga Aérodactyl ex avec des illustrations épiques. Très populaire en compétition pour sa densité en cartes utiles et ses SAR de haut niveau.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Méga Camérupt ex, Méga Galopa ex',
+      'SAR Combat/Poison très recherchées',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/Displayboxninjaspinnerm4.png`,
   },
 
-  // ── M3 – Munikis Zero ─────────────────────────────────────────────
   {
     id: 'display-m3',
     name: 'Display Munikis Zero',
@@ -163,13 +190,17 @@ export const sealedProducts: Product[] = [
     price: 64.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Munikis Zero — 30 boosters. Édition Méga Évolution avec des Pokémon psychiques rares.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/401/Terapagos-ex.SV7.133.53789.png`,
-    logoUrl: `${LOGOS}/Munikis-Zero.logo.422.png`,
+    description: `Troisième extension de la série Méga Évolution japonaise, avec un focus sur les Pokémon Psy et Normal. Contient les Méga Gardevoir ex, Méga Kangourex ex et Méga Osselait ex en version SAR. Un display très apprécié pour ses illustrations romantiques et ses cartes de dresseurs en illustration complète.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Méga Gardevoir ex, Méga Kangourex ex',
+      'Cartes de dresseurs en illustration complète',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display_Munikis_Zero_M3.png`,
   },
 
-  // ── M1S – Méga Symphonie ──────────────────────────────────────────
   {
     id: 'display-m1s',
     name: 'Display Méga Symphonie',
@@ -182,13 +213,17 @@ export const sealedProducts: Product[] = [
     price: 69.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Méga Symphonie — 30 boosters. Première édition de la série Méga Évolution avec des SAR exclusifs.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/417/Delibird.M1S.74.58951.png`,
-    logoUrl: `${LOGOS}/Mega-Symphonia.logo.417.png`,
+    description: `Première extension de la nouvelle ère Méga Évolution japonaise — le set qui a lancé la série. Contient les premières cartes Méga ex du format avec des illustrations spectaculaires. Méga Lucario ex, Méga Diancie ex et les premières SAR Méga Évolution très prisées des collectionneurs.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Méga Lucario ex, Méga Diancie ex (premières cartes Méga ex)',
+      'SAR exclusives au lancement de la série',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/Display-Mega-Symphonia-M1S.jpg`,
   },
 
-  // ── M1L – Méga Bravoure ───────────────────────────────────────────
   {
     id: 'display-m1l',
     name: 'Display Méga Bravoure',
@@ -201,13 +236,17 @@ export const sealedProducts: Product[] = [
     price: 84.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Méga Bravoure — 30 boosters. En parallèle de Méga Symphonie, avec des Méga Pokémon légendaires.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/416/Exeggutor.M1L.66.58867.png`,
-    logoUrl: `${LOGOS}/Mega-Brave.logo.416.png`,
+    description: `Extension jumelle de Méga Symphonie — deux displays complémentaires qui se sortent simultanément. Méga Bravoure se concentre sur les types Eau, Plante et Électrik avec Méga Lougaroc ex, Méga Florizarre ex et Méga Tortank ex. Un display iconic pour les fans de la première génération.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Méga Lougaroc ex, Méga Florizarre ex, Méga Tortank ex',
+      'SAR Gen 1 très recherchées',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/Display-Mega-Brave-M1L.jpg`,
   },
 
-  // ── SV11W – Flamme Blanche ────────────────────────────────────────
   {
     id: 'display-sv11w',
     name: 'Display Flamme Blanche',
@@ -220,13 +259,17 @@ export const sealedProducts: Product[] = [
     price: 79.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Flamme Blanche (White Flare) — 30 boosters. Contient les SAR Trioxhydre ex et Moyade ex très recherchés.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/415/Hydreigon-ex.SV11W.171.57965.png`,
-    logoUrl: `${LOGOS}/White-Flare.logo.415.png`,
+    description: `L'une des deux extensions duales SV11, centrée sur les types Feu, Dragon et Eau. Contient la SAR Trioxhydre ex de N en illustration alternative — l'une des cartes les plus recherchées de l'année. Display indispensable pour les chasseurs de SAR rares et les fans de Pokémon Noir & Blanc.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Trioxhydre ex de N (très recherchée)',
+      'Cartes Feu/Dragon en illustration complète',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display-white-flare-sv11w.jpg`,
   },
 
-  // ── SV11B – Foudre Noire ──────────────────────────────────────────
   {
     id: 'display-sv11b',
     name: 'Display Foudre Noire',
@@ -239,13 +282,17 @@ export const sealedProducts: Product[] = [
     price: 79.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Foudre Noire (Black Bolt) — 30 boosters. Contient la SAR Plan de N très recherchée (69.99 €).',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/414/Ns-Plot.SV11B.173.57888.png`,
-    logoUrl: `${LOGOS}/Black-Bolt.logo.414.png`,
+    description: `Extension duale de Flamme Blanche — contient la SAR "Plan de N" estimée à plus de 60€ à l'unité. Display orienté types Électrik, Glace et Spectre avec des cartes Pokémon Noir & Blanc en illustration complète. À ouvrir en parallèle de SV11W pour maximiser les chances de tirer les deux SAR iconiques.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Plan de N (valeur unitaire ~60 €)',
+      'Cartes Électrik/Glace/Spectre en illustration complète',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display-black-bolt-sv11b.jpg`,
   },
 
-  // ── SV9 – Voyage Ensemble ─────────────────────────────────────────
   {
     id: 'display-sv9',
     name: 'Display Voyage Ensemble',
@@ -258,13 +305,17 @@ export const sealedProducts: Product[] = [
     price: 74.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Voyage Ensemble (Battle Partners) — 30 boosters. Dernière édition principale Écarlate & Violet.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/408/Articuno.SV9.102.55538.png`,
-    logoUrl: `${LOGOS}/Battle-Partners.logo.408.png`,
+    description: `Extension principale de la série Écarlate & Violet — Battle Partners. Centrée sur le duo Dresseur/Pokémon avec des SAR illustrant les partenaires de combat légendaires. Contient des cartes ex des Pokémon les plus populaires dans de nouvelles illustrations orientées combat et amitié.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR duos Dresseur/Pokémon exclusives',
+      'Cartes ex des Pokémon légendaires',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/display-battle-partners-SV9.jpg`,
   },
 
-  // ── SV8 – Super Briseur Électrique ───────────────────────────────
   {
     id: 'display-sv8',
     name: 'Display Super Briseur Électrique',
@@ -277,13 +328,17 @@ export const sealedProducts: Product[] = [
     price: 184.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Super Briseur Électrique — 30 boosters. Édition collector très recherchée avec Pikachu exclusif.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/405/Vivillon.SV8.107.54500.png`,
-    logoUrl: `${LOGOS}/Super-Electric-Breaker.logo.405.png`,
+    description: `Extension collector centrée sur Pikachu et les Pokémon Électrik avec des artworks d'une qualité graphique exceptionnelle. Parmi les sets japonais les plus difficiles à trouver — valeur de revente élevée. Contient des versions ex et SAR de Pikachu introuvables dans d'autres sets, ainsi que des Pokémon Scarlet & Violet en Terastal Électrik.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Pikachu ex en versions exclusives (très recherché)',
+      'SAR Pokémon Électrik introuvables ailleurs',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/4.png`,
   },
 
-  // ── SV7A – Paradis Dragona ────────────────────────────────────────
   {
     id: 'display-sv7a',
     name: 'Display Paradis Dragona',
@@ -296,13 +351,17 @@ export const sealedProducts: Product[] = [
     price: 94.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Paradis Dragona — 30 boosters. Édition spéciale Dragon avec des SARs Dracolosse très recherchés.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/403/Flapple.SV7A.74.54040.png`,
-    logoUrl: `${LOGOS}/Paradise-Dragona.logo.403.png`,
+    description: `Extension spéciale dédiée aux Pokémon Dragon — le type le plus populaire chez les collectionneurs japonais. Contient des SAR Dracolosse ex, Roigada ex et les plus belles illustrations Dragon du format Écarlate & Violet. Le display de référence pour les fans de Dragons.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Dracolosse ex, Roigada ex (très recherchées)',
+      'Pokémon Dragon en illustration complète',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/display-paradise-dragona-sv7A.png`,
   },
 
-  // ── SV7 – Couronne Stellaire ──────────────────────────────────────
   {
     id: 'display-sv7',
     name: 'Display Couronne Stellaire',
@@ -315,13 +374,17 @@ export const sealedProducts: Product[] = [
     price: 49.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Couronne Stellaire (Stellar Crown) — 30 boosters. Contient la SAR Terapagos ex.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/401/Terapagos-ex.SV7.133.53789.png`,
-    logoUrl: `${LOGOS}/Stella-Miracle.logo.401.png`,
+    description: `Extension principale Stellar Crown — introduit le nouveau type Stellaire dans le TCG. Contient la SAR Terapagos ex en illustration complète et des cartes Stellaires inédites. Set abordable avec un très bon rapport contenu/prix pour les débutants souhaitant se lancer dans les displays japonais.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Terapagos ex Stellaire',
+      'Introduction du type Stellaire dans le TCG',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/stellar-miracle-sv7-box.png`,
   },
 
-  // ── SV6A – Erreurs Nocturnes ──────────────────────────────────────
   {
     id: 'display-sv6a',
     name: 'Display Erreurs Nocturnes',
@@ -334,32 +397,17 @@ export const sealedProducts: Product[] = [
     price: 44.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Erreurs Nocturnes (Night Wanderer) — 30 boosters. Contient la SAR Munkidori ex.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/398/Munkidori-ex.SV6A.80.53585.png`,
-    logoUrl: `${LOGOS}/Night-Wanderer.logo.398.png`,
+    description: `Extension spéciale centrée sur les Pokémon de la nuit — Spectre, Ténèbres et Plante. Contient la SAR Munkidori ex et des cartes illustrées dans une ambiance nocturne unique. L'un des displays les plus accessibles en prix avec un contenu de qualité. Idéal pour les ouvertures en groupe.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Munkidori ex',
+      'Pokémon Nuit en illustration complète',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/night-wanderer-sv6a.png`,
   },
 
-  // ── SV6 – Mascarade Crépusculaire ────────────────────────────────
-  {
-    id: 'display-sv6',
-    name: 'Display Mascarade Crépusculaire',
-    set: 'Mascarade Crépusculaire',
-    setCode: 'SV6',
-    category: 'display',
-    rarity: 'Rare',
-    condition: 'Neuf',
-    language: 'JAP',
-    price: 64.90,
-    stock: 99,
-    number: '',
-    description: 'Display japonais Mascarade Crépusculaire (Twilight Masquerade) — 30 boosters.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/393/Chansey.SV6.113.52894.png`,
-    logoUrl: `${LOGOS}/Mask-of-Change.logo.393.png`,
-  },
-
-  // ── SV5M – Cyber Juge ─────────────────────────────────────────────
   {
     id: 'display-sv5m',
     name: 'Display Cyber Juge',
@@ -372,13 +420,17 @@ export const sealedProducts: Product[] = [
     price: 59.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Cyber Juge — 30 boosters. Contient la SAR Vert-de-fer ex.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/387/Iron-Leaves-ex.SV5M.93.51711.png`,
-    logoUrl: `${LOGOS}/Cyber-Judge.logo.387.png`,
+    description: `Extension Future (Paradoxe du Futur) — Cyber Judge. Contient les Pokémon futuristes comme Vert-de-fer ex, Paladius ex et les cartes ex des Paradoxes du futur. Set populaire en compétition pour les types Acier et Électrik futuristes avec des SAR très valorisées.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Vert-de-fer ex, Paladius ex SAR',
+      'Pokémon Paradoxe Futur exclusifs',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/cyber-judge-sv5m-box.png`,
   },
 
-  // ── SV5K – Force Temporelle ───────────────────────────────────────
   {
     id: 'display-sv5k',
     name: 'Display Force Temporelle',
@@ -391,13 +443,17 @@ export const sealedProducts: Product[] = [
     price: 99.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Force Temporelle (Wild Force) — 30 boosters.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/386/Flutter-Mane.SV5K.76.51716.png`,
-    logoUrl: `${LOGOS}/Wild-Force.logo.386.png`,
+    description: `Extension Passé (Paradoxe du Passé) — Wild Force. Contient les Pokémon anciens comme Rugit-lune ex, Serpevil ex et les cartes Paradoxe Passé les plus recherchées. Très populaire pour ses SAR de Pokémon anciens avec des illustrations de style préhistorique épique.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Rugit-lune ex SAR, Serpevil ex',
+      'Pokémon Paradoxe Passé exclusifs',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/wild-force-sv5k-box.png`,
   },
 
-  // ── SV4M – Éclair Futur ───────────────────────────────────────────
   {
     id: 'display-sv4m',
     name: 'Display Éclair Futur',
@@ -410,13 +466,17 @@ export const sealedProducts: Product[] = [
     price: 79.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Éclair Futur (Future Flash) — 30 boosters. Contient la SAR Tulipe.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/382/Tulip.SV4K.87.50914.png`,
-    logoUrl: `${LOGOS}/Future-Flash.logo.382.png`,
+    description: `Extension Future Flash — les Pokémon Paradoxe du Futur dans leur version la plus puissante. Contient la SAR Tulipe (Dresseur) très recherchée et des versions ex futuristes d'Amphinobi, Raichu et Électhor. Très apprécié pour ses illustrations de dresseurs en illustration complète.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Tulipe (Dresseur) très recherchée',
+      'Pokémon ex Paradoxe Futur',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution & TCGdirect Pro',
+    ],
+    imageUrl: `${H}/future-flash-sv4m-box.png`,
   },
 
-  // ── SV4K – Rugissement Antique ────────────────────────────────────
   {
     id: 'display-sv4k',
     name: 'Display Rugissement Antique',
@@ -429,13 +489,17 @@ export const sealedProducts: Product[] = [
     price: 74.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Rugissement Antique (Ancient Roar) — 30 boosters. Contient la SAR Rugit-lune ex.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/381/Roaring-Moon-ex.SV4K.93.50825.png`,
-    logoUrl: `${LOGOS}/Ancient-Roar.logo.381.png`,
+    description: `Extension Ancient Roar — les Pokémon anciens dans leur version la plus brute. Contient la SAR Rugit-lune ex en illustration alternative, considérée comme l'une des plus belles cartes de la série Écarlate & Violet. Display collector pour les fans des Pokémon Paradoxe Passé.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'SAR Rugit-lune ex (une des plus belles cartes SV)',
+      'Pokémon Paradoxe Passé exclusifs',
+      'Scellé sous cellophane officielle',
+      'Expédié via TCGdirect Pro',
+    ],
+    imageUrl: `${H}/stellar-miracle-sv7-box.png`,
   },
 
-  // ── SV3A – Raging Surf ────────────────────────────────────────────
   {
     id: 'display-sv3a',
     name: 'Display Raging Surf',
@@ -448,14 +512,19 @@ export const sealedProducts: Product[] = [
     price: 109.90,
     stock: 99,
     number: '',
-    description: 'Display japonais Raging Surf — 30 boosters. Édition spéciale avec Dodonex et des cartes Eau rares.',
-    contents: ['30 boosters japonais', 'Scellé sous blister officiel', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/393/Dipplin.SV6.103.52897.png`,
-    logoUrl: `${LOGOS}/Raging-Surf.logo.373.png`,
+    description: `Extension spéciale dédiée aux Pokémon Eau et Dragon avec Dodonex, Tiégro ex et les SAR de la région de Paldea en version aquatique. Un display japonais iconique pour les amateurs de Pokémon de la mer — les cartes SAR de cette extension ont une forte valeur de collection à long terme.`,
+    contents: [
+      '30 boosters japonais scellés',
+      'Dodonex ex SAR, Tiégro ex',
+      'Pokémon Eau/Dragon en illustration complète',
+      'Scellé sous cellophane officielle',
+      'Expédié via Hikaru Distribution Pro',
+    ],
+    imageUrl: `${H}/raging-suef-sv3a-box.png`,
   },
 
   // ════════════════════════════════════════════════════════════════
-  //  🎁  ETB JAPONAIS (Elite Trainer Box / Coffret Dresseur d'Élite)
+  //  🎁  ETB JAPONAIS (Elite Trainer Box)
   // ════════════════════════════════════════════════════════════════
 
   {
@@ -470,10 +539,15 @@ export const sealedProducts: Product[] = [
     price: 69.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais La Gloire de la Team Rocket — 10 boosters + sleeves, dés et carte promo exclusive.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/414/Ns-Plot.SV11B.173.57888.png`,
-    logoUrl: `${LOGOS}/Glory-of-Team-Rocket.logo.421.png`,
+    description: `Le Coffret Dresseur d'Élite de l'édition Team Rocket — le cadeau collector idéal. Contient 10 boosters du set SV10 avec la totalité des accessoires officiels : sleeves illustrées Team Rocket, dés énergie et une carte promo exclusive Méwtwo impossible à trouver autrement.`,
+    contents: [
+      '10 boosters La Gloire de la Team Rocket',
+      '65 sleeves illustrées Team Rocket',
+      '6 dés énergie officiels',
+      '1 marqueur de dégâts',
+      '1 carte promo exclusive Méwtwo',
+    ],
+    imageUrl: `${H}/display-box-glory-of-team-rocket-sv10.jpg`,
   },
   {
     id: 'etb-m1s',
@@ -487,10 +561,15 @@ export const sealedProducts: Product[] = [
     price: 59.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Méga Symphonie — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/417/Delibird.M1S.74.58951.png`,
-    logoUrl: `${LOGOS}/Mega-Symphonia.logo.417.png`,
+    description: `Le Coffret Dresseur d'Élite du premier set Méga Évolution japonais — format premium pour découvrir la série. 10 boosters de Méga Symphonie avec sleeves exclusives illustrées Méga Lucario et une carte promo Méga ex introuvable à l'unité.`,
+    contents: [
+      '10 boosters Méga Symphonie',
+      '65 sleeves illustrées Méga Lucario',
+      '6 dés énergie officiels',
+      '1 carte promo exclusive Méga ex',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/Display-Mega-Symphonia-M1S.jpg`,
   },
   {
     id: 'etb-m1l',
@@ -504,10 +583,15 @@ export const sealedProducts: Product[] = [
     price: 59.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Méga Bravoure — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/416/Exeggutor.M1L.66.58867.png`,
-    logoUrl: `${LOGOS}/Mega-Brave.logo.416.png`,
+    description: `Le Coffret Dresseur d'Élite de Méga Bravoure — l'extension jumelle de Méga Symphonie. Sleeves illustrées Méga Tortank et promo exclusive Méga ex. À combiner avec l'ETB Méga Symphonie pour la collection complète du premier lancement Méga Évolution japonais.`,
+    contents: [
+      '10 boosters Méga Bravoure',
+      '65 sleeves illustrées Méga Tortank',
+      '6 dés énergie officiels',
+      '1 carte promo exclusive Méga ex',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/Display-Mega-Brave-M1L.jpg`,
   },
   {
     id: 'etb-sv11w',
@@ -521,10 +605,15 @@ export const sealedProducts: Product[] = [
     price: 54.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Flamme Blanche — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/415/Hydreigon-ex.SV11W.171.57965.png`,
-    logoUrl: `${LOGOS}/White-Flare.logo.415.png`,
+    description: `Coffret Dresseur d'Élite Flamme Blanche (SV11W). 10 boosters avec les accessoires officiels Pokémon Noir & Blanc. Sleeves illustrées Trioxhydre et promo exclusive — la façon idéale d'entrer dans l'extension SV11W sans acheter un display complet.`,
+    contents: [
+      '10 boosters Flamme Blanche',
+      '65 sleeves illustrées Trioxhydre',
+      '6 dés énergie officiels',
+      '1 carte promo exclusive SV11W',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/display-white-flare-sv11w.jpg`,
   },
   {
     id: 'etb-sv11b',
@@ -538,10 +627,15 @@ export const sealedProducts: Product[] = [
     price: 54.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Foudre Noire — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/414/Escavalier.SV11B.146.57865.png`,
-    logoUrl: `${LOGOS}/Black-Bolt.logo.414.png`,
+    description: `Coffret Dresseur d'Élite Foudre Noire (SV11B). Idéal pour chasser la SAR Plan de N sans acheter un display. 10 boosters avec sleeves illustrées Zekrom et promo exclusive — à combiner avec l'ETB Flamme Blanche pour la collection SV11 complète.`,
+    contents: [
+      '10 boosters Foudre Noire',
+      '65 sleeves illustrées Zekrom',
+      '6 dés énergie officiels',
+      '1 carte promo exclusive SV11B',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/display-black-bolt-sv11b.jpg`,
   },
   {
     id: 'etb-sv9',
@@ -555,10 +649,15 @@ export const sealedProducts: Product[] = [
     price: 59.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Voyage Ensemble — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/408/Lycanroc.SV9.107.56518.png`,
-    logoUrl: `${LOGOS}/Battle-Partners.logo.408.png`,
+    description: `Coffret Dresseur d'Élite Battle Partners (SV9). 10 boosters de l'extension principale SV9 avec sleeves illustrées duos Dresseur/Pokémon et une carte promo exclusive. Format ETB idéal pour un cadeau collector ou pour compléter sa collection.`,
+    contents: [
+      '10 boosters Voyage Ensemble',
+      '65 sleeves illustrées duo SV9',
+      '6 dés énergie officiels',
+      '1 carte promo exclusive SV9',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/display-battle-partners-SV9.jpg`,
   },
   {
     id: 'etb-sv8',
@@ -572,10 +671,15 @@ export const sealedProducts: Product[] = [
     price: 49.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Super Briseur Électrique — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/405/Kecleon.SV8.118.54523.png`,
-    logoUrl: `${LOGOS}/Super-Electric-Breaker.logo.405.png`,
+    description: `Coffret Dresseur d'Élite Super Electric Breaker (SV8) — l'ETB Pikachu collector. 10 boosters de l'édition électrique avec sleeves Pikachu exclusives et promo Pikachu ex. Rare en stock et très demandé — ne pas rater.`,
+    contents: [
+      '10 boosters Super Briseur Électrique',
+      '65 sleeves illustrées Pikachu',
+      '6 dés énergie officiels',
+      '1 carte promo Pikachu ex exclusive',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/4.png`,
   },
   {
     id: 'etb-sv7',
@@ -589,10 +693,15 @@ export const sealedProducts: Product[] = [
     price: 44.90,
     stock: 99,
     number: '',
-    description: 'Elite Trainer Box japonais Couronne Stellaire — 10 boosters + accessoires officiels.',
-    contents: ['10 boosters japonais', '65 sleeves officielles', '6 dés énergie', '1 carte promo exclusive', 'Disponible chez Hikaru Distribution'],
-    imageUrl: `${IMG}/401/Milcery.SV7.110.53770.png`,
-    logoUrl: `${LOGOS}/Stella-Miracle.logo.401.png`,
+    description: `Coffret Dresseur d'Élite Stellar Crown (SV7). Le premier ETB du type Stellaire avec 10 boosters, sleeves Terapagos illustrées et promo Terapagos ex. Set d'entrée idéal pour découvrir l'univers Stellaire à prix accessible.`,
+    contents: [
+      '10 boosters Couronne Stellaire',
+      '65 sleeves illustrées Terapagos',
+      '6 dés énergie officiels',
+      '1 carte promo Terapagos exclusive',
+      '1 marqueur de dégâts',
+    ],
+    imageUrl: `${H}/stellar-miracle-sv7-box.png`,
   },
 
   // ════════════════════════════════════════════════════════════════
@@ -601,7 +710,7 @@ export const sealedProducts: Product[] = [
 
   {
     id: 'coffret-victini-sv11',
-    name: 'Coffret Victini — Foudre Noire & Flamme Blanche',
+    name: 'Coffret Victini — SV11 Foudre & Flamme',
     set: 'Foudre Noire & Flamme Blanche',
     setCode: 'SV11',
     category: 'coffret',
@@ -611,14 +720,19 @@ export const sealedProducts: Product[] = [
     price: 24.90,
     stock: 99,
     number: '',
-    description: 'Coffret Collection File Victini — 6 boosters (3 Foudre Noire + 3 Flamme Blanche) + 1 carte promo Victini. Exclusif Pokémon Center japonais.',
-    contents: ['3 boosters Foudre Noire', '3 boosters Flamme Blanche', '1 carte promo Victini', 'Classeur de collection', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/415/Samurott.SV11W.104.57208.png`,
-    logoUrl: `${LOGOS}/White-Flare.logo.415.png`,
+    description: `Coffret exclusif Pokémon Center japonais — Victini SV11. 6 boosters répartis entre Foudre Noire et Flamme Blanche avec un classeur de collection et la carte promo Victini holographique impossible à obtenir autrement. Édition limitée Pokémon Center, stock très limité.`,
+    contents: [
+      '3 boosters Foudre Noire (SV11B)',
+      '3 boosters Flamme Blanche (SV11W)',
+      '1 carte promo Victini holo (exclusive)',
+      'Classeur de collection officiel',
+      'Édition limitée Pokémon Center',
+    ],
+    imageUrl: `${H}/display-white-flare-sv11w.jpg`,
   },
   {
     id: 'coffret-center-m1s',
-    name: 'Coffret Pokémon Center Méga Symphonie',
+    name: 'Coffret Pokémon Center × Méga Symphonie',
     set: 'Méga Symphonie',
     setCode: 'M1S',
     category: 'coffret',
@@ -628,14 +742,19 @@ export const sealedProducts: Product[] = [
     price: 154.90,
     stock: 99,
     number: '',
-    description: 'Coffret Officiel Pokémon Center — 2 displays Méga Symphonie (60 boosters). Exclusif Pokémon Center.',
-    contents: ['2 displays Méga Symphonie (60 boosters)', 'Emballage Pokémon Center officiel', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/417/Helioptile.M1S.70.58947.png`,
-    logoUrl: `${LOGOS}/Mega-Symphonia.logo.417.png`,
+    description: `Coffret collector Officiel Pokémon Center Japon — 2 displays Méga Symphonie dans un packaging exclusif Pokémon Center. 60 boosters scellés avec emballage premium introuvable hors Pokémon Center. Parfait pour les collectionneurs qui veulent garder le coffret intact en plus d'ouvrir les displays.`,
+    contents: [
+      '2 displays Méga Symphonie (60 boosters)',
+      'Emballage exclusif Pokémon Center Japon',
+      'Packaging collector à conserver',
+      'Produit officiel importé du Japon',
+      'Expédié via TCGdirect Pro',
+    ],
+    imageUrl: `${H}/Display-Mega-Symphonia-M1S.jpg`,
   },
   {
     id: 'coffret-center-m1l',
-    name: 'Coffret Pokémon Center Méga Bravoure',
+    name: 'Coffret Pokémon Center × Méga Bravoure',
     set: 'Méga Bravoure',
     setCode: 'M1L',
     category: 'coffret',
@@ -645,10 +764,15 @@ export const sealedProducts: Product[] = [
     price: 174.90,
     stock: 99,
     number: '',
-    description: 'Coffret Officiel Pokémon Center — 2 displays Méga Bravoure (60 boosters). Exclusif Pokémon Center.',
-    contents: ['2 displays Méga Bravoure (60 boosters)', 'Emballage Pokémon Center officiel', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/416/Exeggutor.M1L.66.58867.png`,
-    logoUrl: `${LOGOS}/Mega-Brave.logo.416.png`,
+    description: `Coffret collector Officiel Pokémon Center Japon — 2 displays Méga Bravoure dans un packaging exclusif. Format Pokémon Center idéal pour les investisseurs : le coffret fermé prend de la valeur au fil du temps. L'un des rares produits où l'emballage vaut autant que le contenu.`,
+    contents: [
+      '2 displays Méga Bravoure (60 boosters)',
+      'Emballage exclusif Pokémon Center Japon',
+      'Packaging collector à conserver',
+      'Produit officiel importé du Japon',
+      'Expédié via TCGdirect Pro',
+    ],
+    imageUrl: `${H}/Display-Mega-Brave-M1L.jpg`,
   },
 
   // ════════════════════════════════════════════════════════════════
@@ -667,10 +791,25 @@ export const sealedProducts: Product[] = [
     price: 6.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais La Gloire de la Team Rocket à l\'unité — 5 cartes. Set le plus populaire du moment.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/414/Ns-Plot.SV11B.173.57888.png`,
-    logoUrl: `${LOGOS}/Glory-of-Team-Rocket.logo.421.png`,
+    description: `Booster japonais à l'unité — La Gloire de la Team Rocket (SV10). Le set le plus populaire du moment à prix booster. Chaque booster contient 5 cartes dont au moins 1 carte rare. Probabilité de SAR : environ 1 sur 30 boosters. Le meilleur set du moment pour débuter dans les boosters japonais.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible carte SAR Team Rocket', 'Scellé officiel'],
+    imageUrl: `${H}/booster-glory-of-team-rocket-sv10.jpg`,
+  },
+  {
+    id: 'booster-sv9a',
+    name: 'Booster Heat Wave Arena',
+    set: 'Heat Wave Arena',
+    setCode: 'SV9A',
+    category: 'booster',
+    rarity: 'Commune',
+    condition: 'Neuf',
+    language: 'JAP',
+    price: 5.90,
+    stock: 99,
+    number: '',
+    description: `Booster japonais à l'unité — Heat Wave Arena (SV9A). Extension spéciale Feu avec des SAR de dresseurs Johto très recherchées. 5 cartes par booster, probabilité SAR environ 1/30. Idéal pour compléter une collection SV9A sans acheter un display entier.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR dresseur Johto', 'Scellé officiel'],
+    imageUrl: `${H}/booster-heat-wave-arena-sv9a.jpg`,
   },
   {
     id: 'booster-m2a',
@@ -684,10 +823,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais MEGA Dream ex à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/417/Helioptile.M1S.70.58947.png`,
-    logoUrl: `${LOGOS}/Mega-Dream.logo.420.png`,
+    description: `Booster japonais à l'unité — MEGA Dream ex (M2A). 5 cartes par booster avec possibilité de tirer une Méga ex en SAR. Probabilité carte rare : garantie. Probabilité SAR : environ 1/30 boosters. Le meilleur set Méga Évolution pour les boosters à l'unité.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible Méga ex SAR', 'Scellé officiel'],
+    imageUrl: `${H}/alt-display-mega-dream-ex-m2a.jpg`,
   },
   {
     id: 'booster-m2',
@@ -701,10 +839,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Inferno X à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/415/Hydreigon-ex.SV11W.171.57965.png`,
-    logoUrl: `${LOGOS}/Inferno-X.logo.418.png`,
+    description: `Booster japonais à l'unité — Inferno X (M2). 5 cartes Méga Évolution Feu par booster. Pour les collectionneurs voulant compléter leur set M2 carte par carte ou tenter leur chance sur une SAR Méga Feu rare.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible Méga ex Feu SAR', 'Scellé officiel'],
+    imageUrl: `${H}/booster-inferno-x_506b0079-b9d1-4f1a-881e-142d913ad5cf.jpg`,
   },
   {
     id: 'booster-m4',
@@ -718,10 +855,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Ninja Spinner à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/398/Munkidori-ex.SV6A.80.53585.png`,
-    logoUrl: `${LOGOS}/Ninja-Spinner.logo.423.png`,
+    description: `Booster japonais à l'unité — Ninja Spinner (M4). Extension Combat/Poison/Acier de la série Méga Évolution. 5 cartes par booster avec probabilité SAR ~1/30. Idéal pour compléter la collection M4 à l'unité.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Combat/Poison', 'Scellé officiel'],
+    imageUrl: `${H}/boosterpackninjaspinnerm4.png`,
   },
   {
     id: 'booster-m3',
@@ -735,10 +871,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Munikis Zero à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/401/Terapagos-ex.SV7.133.53789.png`,
-    logoUrl: `${LOGOS}/Munikis-Zero.logo.422.png`,
+    description: `Booster japonais à l'unité — Munikis Zero (M3). Extension Psy/Normal de la série Méga Évolution. 5 cartes par booster avec les Méga Gardevoir ex et SAR de dresseurs en illustration complète.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Méga Gardevoir ex', 'Scellé officiel'],
+    imageUrl: `${H}/booster_Munikis_Zero_M3.png`,
   },
   {
     id: 'booster-m1s',
@@ -752,10 +887,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Méga Symphonie à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/417/Delibird.M1S.74.58951.png`,
-    logoUrl: `${LOGOS}/Mega-Symphonia.logo.417.png`,
+    description: `Booster japonais à l'unité — Méga Symphonie (M1S). Le premier set Méga Évolution en booster individuel. 5 cartes par booster, probabilité SAR Méga Lucario ex ~1/30. Parfait pour compléter sa collection du set fondateur.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Méga Lucario ex', 'Scellé officiel'],
+    imageUrl: `${H}/booster-Mega-Symphonia-M1S.jpg`,
   },
   {
     id: 'booster-m1l',
@@ -769,10 +903,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Méga Bravoure à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/416/Exeggutor.M1L.66.58867.png`,
-    logoUrl: `${LOGOS}/Mega-Brave.logo.416.png`,
+    description: `Booster japonais à l'unité — Méga Bravoure (M1L). Extension jumelle de Méga Symphonie en booster individuel. 5 cartes par booster avec les Méga Tortank ex et SAR de la Gen 1 japonaise.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Méga Tortank ex', 'Scellé officiel'],
+    imageUrl: `${H}/booster-Mega-Brave-M1L.jpg`,
   },
   {
     id: 'booster-sv11w',
@@ -786,10 +919,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Flamme Blanche à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/415/Ducklett.SV11W.106.57902.png`,
-    logoUrl: `${LOGOS}/White-Flare.logo.415.png`,
+    description: `Booster japonais à l'unité — Flamme Blanche (SV11W). Tentez de tirer la SAR Trioxhydre ex de N au prix d'un booster. 5 cartes par booster, probabilité SAR ~1/30. La carte la plus recherchée du set vaut plus de 50€ — le rapport risque/gain est excellent.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Trioxhydre ex de N (~50 €)', 'Scellé officiel'],
+    imageUrl: `${H}/display-white-flare-sv11w.jpg`,
   },
   {
     id: 'booster-sv11b',
@@ -803,10 +935,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Foudre Noire à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/414/Duosion.SV11B.124.57844.png`,
-    logoUrl: `${LOGOS}/Black-Bolt.logo.414.png`,
+    description: `Booster japonais à l'unité — Foudre Noire (SV11B). Tentez de tirer la SAR Plan de N évaluée à ~60€ au prix d'un booster. 5 cartes par booster, probabilité SAR ~1/30. Le meilleur rapport valeur potentielle/prix booster de la gamme actuelle.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Plan de N (~60 €)', 'Scellé officiel'],
+    imageUrl: `${H}/display-black-bolt-sv11b.jpg`,
   },
   {
     id: 'booster-sv9',
@@ -820,10 +951,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Voyage Ensemble à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/408/Maractus.SV9.101.55541.png`,
-    logoUrl: `${LOGOS}/Battle-Partners.logo.408.png`,
+    description: `Booster japonais à l'unité — Voyage Ensemble/Battle Partners (SV9). Extension principale avec les meilleurs duos Dresseur/Pokémon en SAR. 5 cartes par booster, taux de rares garanti. Idéal pour débuter dans les boosters japonais SV9.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR duo Dresseur/Pokémon', 'Scellé officiel'],
+    imageUrl: `${H}/Battle-partners-SV9.png`,
   },
   {
     id: 'booster-sv8a',
@@ -837,10 +967,9 @@ export const sealedProducts: Product[] = [
     price: 5.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Terastal Festival ex à l\'unité — 5 cartes premium.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/405/Vivillon.SV8.107.54500.png`,
-    logoUrl: `${LOGOS}/Terastal-Festival-ex.logo.410.png`,
+    description: `Booster japonais premium à l'unité — Terastal Festival ex (SV8A). Format spécial avec taux de cartes rares amélioré par rapport aux boosters standards. 5 cartes par booster avec une densité plus élevée en cartes ex et SAR.`,
+    contents: ['5 cartes japonaises premium', 'Taux de cartes ex augmenté', 'Possible SAR Téracristal', 'Scellé officiel'],
+    imageUrl: `${H}/SV8-asset-3.png`,
   },
   {
     id: 'booster-sv8',
@@ -854,10 +983,9 @@ export const sealedProducts: Product[] = [
     price: 4.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Super Briseur Électrique à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/405/Larvesta.SV8.108.54608.png`,
-    logoUrl: `${LOGOS}/Super-Electric-Breaker.logo.405.png`,
+    description: `Booster japonais à l'unité — Super Electric Breaker (SV8). 5 cartes par booster avec la possibilité de tirer un Pikachu ex SAR très valorisé. Extension difficile à trouver — les boosters à l'unité permettent d'y accéder sans payer le prix d'un display complet.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible Pikachu ex SAR', 'Scellé officiel'],
+    imageUrl: `${H}/booster-sv8.png`,
   },
   {
     id: 'booster-sv7',
@@ -871,10 +999,9 @@ export const sealedProducts: Product[] = [
     price: 4.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Couronne Stellaire à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez Hikaru Distribution & TCGdirect'],
-    imageUrl: `${IMG}/401/Ledian.SV7.103.53706.png`,
-    logoUrl: `${LOGOS}/Stella-Miracle.logo.401.png`,
+    description: `Booster japonais à l'unité — Stellar Crown (SV7). Set d'entrée abordable avec Terapagos ex SAR. 5 cartes par booster, idéal pour débuter dans les boosters japonais à petit budget. Probabilité SAR ~1/30.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Terapagos ex', 'Scellé officiel'],
+    imageUrl: `${H}/stellar-miracle-sv7-box.png`,
   },
   {
     id: 'booster-sv6a',
@@ -888,10 +1015,9 @@ export const sealedProducts: Product[] = [
     price: 3.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Erreurs Nocturnes à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/398/Persian.SV6A.75.53580.png`,
-    logoUrl: `${LOGOS}/Night-Wanderer.logo.398.png`,
+    description: `Booster japonais à l'unité — Night Wanderer (SV6A). L'un des boosters les plus accessibles de la gamme. 5 cartes par booster avec la possibilité de tirer la SAR Munkidori ex. Parfait pour les petits budgets ou les ouvertures en quantité.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Munkidori ex', 'Scellé officiel'],
+    imageUrl: `${H}/night-wanderer-sv6a.png`,
   },
   {
     id: 'booster-sv5m',
@@ -905,10 +1031,9 @@ export const sealedProducts: Product[] = [
     price: 3.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Cyber Juge à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/387/Metagross.SV5M.80.52220.png`,
-    logoUrl: `${LOGOS}/Cyber-Judge.logo.387.png`,
+    description: `Booster japonais à l'unité — Cyber Judge (SV5M). Extension Paradoxe Futur avec Vert-de-fer ex et Paladius ex en SAR. 5 cartes par booster à prix très accessible — idéal pour les grandes collections.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Paradoxe Futur', 'Scellé officiel'],
+    imageUrl: `${H}/cyber-judge-sv5m-box.png`,
   },
   {
     id: 'booster-sv4m',
@@ -922,9 +1047,8 @@ export const sealedProducts: Product[] = [
     price: 3.90,
     stock: 99,
     number: '',
-    description: 'Booster japonais Éclair Futur à l\'unité — 5 cartes.',
-    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Disponible chez TCGdirect'],
-    imageUrl: `${IMG}/382/Tulip.SV4K.87.50914.png`,
-    logoUrl: `${LOGOS}/Future-Flash.logo.382.png`,
+    description: `Booster japonais à l'unité — Future Flash (SV4M). Extension avec la SAR Tulipe très recherchée. 5 cartes par booster à prix très accessible. Bonne extension pour compléter une collection SV4M carte par carte.`,
+    contents: ['5 cartes japonaises', 'Au moins 1 carte rare', 'Possible SAR Tulipe (dresseur)', 'Scellé officiel'],
+    imageUrl: `${H}/future-flash-sv4m-box.png`,
   },
 ]
