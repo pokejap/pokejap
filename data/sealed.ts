@@ -129,7 +129,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-inferno-x.jpg`,
+    imageUrl: `${H}/display-inferno-x_6663aa80-6f81-4d8b-9f44-9623ae652611.jpg`,
   },
 
   {
