@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { products } from '@/data/products'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.pokemon-cartes.fr'
+  const baseUrl = 'https://www.pokejap.fr'
 
   const productUrls = products.map(product => ({
     url: `${baseUrl}/boutique/${product.id}`,

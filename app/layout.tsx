@@ -6,17 +6,17 @@ import CartProvider from '@/components/CartProvider'
 import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.pokemon-cartes.fr'),
+  metadataBase: new URL('https://www.pokejap.fr'),
   title: {
     default: 'PokeJap — Cartes Pokémon Japonaises',
     template: '%s — PokeJap',
   },
-  description: 'Boutique spécialisée en singles Pokémon japonais et français. Cartes authentiques importées directement du Japon : AR, SAR, ex, CHR et plus encore.',
-  keywords: ['pokémon', 'cartes pokémon japonaises', 'singles pokémon', 'pokémon TCG japonais', 'AR card pokémon', 'SAR pokémon', 'acheter carte pokémon japon', 'pokejap', 'pokemon-cartes.fr', 'carte pokémon rare', 'CHR pokémon'],
+  description: 'Boutique spécialisée en singles Pokémon japonais authentiques. Cartes AR, SAR, ex, CHR importées directement du Japon. Sleeve et top loader inclus. Livraison rapide en France.',
+  keywords: ['pokémon', 'cartes pokémon japonaises', 'singles pokémon', 'pokémon TCG japonais', 'AR card pokémon', 'SAR pokémon', 'acheter carte pokémon japon', 'pokejap', 'carte pokémon rare', 'CHR pokémon', 'carte pokémon authentique', 'boutique pokémon france'],
   openGraph: {
     title: 'PokeJap — Cartes Pokémon Japonaises',
-    description: 'Singles Pokémon japonais et français importés directement du Japon. AR, SAR, ex, CHR…',
-    url: 'https://www.pokemon-cartes.fr',
+    description: 'Singles Pokémon japonais authentiques importés directement du Japon. AR, SAR, ex, CHR. Sleeve et top loader inclus.',
+    url: 'https://www.pokejap.fr',
     siteName: 'PokeJap',
     locale: 'fr_FR',
     type: 'website',
