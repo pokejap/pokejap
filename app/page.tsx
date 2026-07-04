@@ -36,7 +36,7 @@ function SakuraPetal({ left, delay, duration, size, opacity }: typeof SAKURA_PET
   )
 }
 
-const FEATURED_SEALED_IDS = ['display-sv10', 'display-sv9a', 'etb-sv10', 'display-sv8a']
+const FEATURED_SEALED_IDS = ['display-sv10', 'display-sv9a', 'display-sv11w', 'display-sv8a']
 
 export default function HomePage() {
   // Les 4 SAR les plus visuellement impressionnantes du catalogue

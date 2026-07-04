@@ -68,10 +68,10 @@ export default function CGVPage() {
       <Section title="6. Livraison">
         <p>
           Les commandes sont expédiées sous <strong className="text-white">1 à 2 jours ouvrés</strong> après confirmation du paiement,
-          via Colissimo ou lettre suivie selon le montant de la commande.
+          via Mondial Relay (livraison en point relais sous 3 à 5 jours ouvrés).
         </p>
         <p>
-          <strong className="text-white">Livraison offerte</strong> dès 30 € d'achat. En dessous, les frais de port s'élèvent à 5,99 €.
+          Les frais de livraison sont de <strong className="text-white">5,99 €</strong> par commande, quelle que soit la valeur du panier.
         </p>
         <p>
           PokeJap ne peut être tenu responsable des retards ou pertes imputables au transporteur.

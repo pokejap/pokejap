@@ -22,7 +22,7 @@ export default function AddToCart({ product }: { product: Product }) {
         <div>
           <p className="text-gray-500 text-xs mb-1">Prix TTC</p>
           <p className="text-pokemon-red font-black text-4xl">{product.price.toFixed(2)} €</p>
-          <p className="text-gray-500 text-xs mt-1">Livraison offerte dès 50 €</p>
+          <p className="text-gray-500 text-xs mt-1">Livraison 5,99 € · Mondial Relay</p>
         </div>
         <div className="text-right">
           <p className="text-gray-500 text-xs mb-1">Quantité</p>

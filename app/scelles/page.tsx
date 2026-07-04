@@ -114,7 +114,6 @@ export default function ScellesPage() {
   const counts = {
     tous:    sealedProducts.length,
     display: sealedProducts.filter(p => p.category === 'display').length,
-    etb:     sealedProducts.filter(p => p.category === 'etb').length,
     coffret: sealedProducts.filter(p => p.category === 'coffret').length,
   }
 
@@ -128,7 +127,7 @@ export default function ScellesPage() {
           Produits <span className="text-pokemon-red">Scellés</span>
         </h1>
         <p className="text-gray-400 text-sm">
-          {sealedProducts.length} produits · Displays, ETB &amp; Coffrets japonais · Expédié sous 48h
+          {sealedProducts.length} produits · Displays &amp; Coffrets japonais · Expédié sous 48h
         </p>
         <div className="mt-3 inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold px-3 py-1.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
@@ -141,7 +140,6 @@ export default function ScellesPage() {
         {([
           { key: 'tous',    label: 'Tous',     emoji: '🎯', count: counts.tous    },
           { key: 'display', label: 'Displays', emoji: '📦', count: counts.display },
-          { key: 'etb',     label: 'ETB',      emoji: '🎁', count: counts.etb     },
           { key: 'coffret', label: 'Coffrets', emoji: '🎀', count: counts.coffret },
         ] as const).map(({ key, label, emoji, count }) => (
           <button

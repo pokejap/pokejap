@@ -18,7 +18,7 @@ export default function PanierPage() {
     )
   }
   const subtotal = getTotalPrice()
-  const shipping = subtotal >= 30 ? 0 : 5.99
+  const shipping = 5.99
   const total = subtotal + shipping
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -61,10 +61,10 @@ export default function PanierPage() {
                 <span className="text-white">{subtotal.toFixed(2)} €</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-400">Livraison</span>
-                <span className={shipping === 0 ? "text-green-400 font-medium" : "text-white"}>{shipping === 0 ? "Gratuite !" : `${shipping.toFixed(2)} €`}</span>
+                <span className="text-gray-400">Livraison Mondial Relay</span>
+                <span className="text-white">{shipping.toFixed(2)} €</span>
               </div>
-              {shipping > 0 && <p className="text-gray-500 text-xs">Gratuite dès 30 € d'achat</p>}
+              <p className="text-gray-500 text-xs">Livraison en point relais 3–5 jours ouvrés</p>
               <div className="border-t border-white/10 pt-3 flex justify-between">
                 <span className="text-white font-bold">Total</span>
                 <span className="text-pokemon-yellow font-black text-xl">{total.toFixed(2)} €</span>

@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
     // ── Calcul du total et de la livraison (serveur) ─────────────────────────
     const siteUrl  = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
     const subtotal = resolvedItems.reduce((s, i) => s + i.product.price * i.quantity, 0)
-    const shipping = subtotal >= 30 ? 0 : 5.99
+    const shipping = 5.99
 
     // ── Line items Stripe ────────────────────────────────────────────────────
     const lineItems = resolvedItems.map(({ product, quantity }) => ({
@@ -104,21 +104,19 @@ export async function POST(request: NextRequest) {
       quantity,
     }))
 
-    if (shipping > 0) {
-      lineItems.push({
-        price_data: {
-          currency:     'eur',
-          product_data: {
-            name:        'Livraison Colissimo',
-            description: 'Livraison 2–3 jours ouvrés',
-            images:      [],
-            metadata:    { productId: '__shipping__' },
-          },
-          unit_amount: Math.round(shipping * 100),
+    lineItems.push({
+      price_data: {
+        currency:     'eur',
+        product_data: {
+          name:        'Livraison Mondial Relay',
+          description: 'Livraison en point relais 3–5 jours ouvrés',
+          images:      [],
+          metadata:    { productId: '__shipping__' },
         },
-        quantity: 1,
-      })
-    }
+        unit_amount: Math.round(shipping * 100),
+      },
+      quantity: 1,
+    })
 
     // ── Code promo ───────────────────────────────────────────────────────────
     let discounts: { promotion_code: string }[] | undefined

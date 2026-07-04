@@ -68,7 +68,7 @@ export default function CheckoutPage() {
   const [couponCode, setCouponCode] = useState('')
 
   const subtotal = getTotalPrice()
-  const shipping = subtotal >= 30 ? 0 : 5.99
+  const shipping = 5.99
   const total = subtotal + shipping
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -225,14 +225,10 @@ export default function CheckoutPage() {
                   <span className="text-white">{subtotal.toFixed(2)} €</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Livraison</span>
-                  <span className={shipping === 0 ? 'text-green-400' : 'text-white'}>
-                    {shipping === 0 ? 'Gratuite 🎉' : `${shipping.toFixed(2)} €`}
-                  </span>
+                  <span className="text-gray-400">Livraison Mondial Relay</span>
+                  <span className="text-white">{shipping.toFixed(2)} €</span>
                 </div>
-                {shipping > 0 && (
-                  <p className="text-gray-600 text-xs">Livraison offerte dès 30 €</p>
-                )}
+                <p className="text-gray-600 text-xs">Livraison en point relais 3–5 jours ouvrés</p>
                 <div className="flex justify-between font-bold pt-2 border-t border-white/10">
                   <span className="text-white">Total</span>
                   <span className="text-pokemon-yellow text-xl">{total.toFixed(2)} €</span>
