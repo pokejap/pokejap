@@ -83,7 +83,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/alt-display-mega-dream-ex-m2a.jpg`,
+    imageUrl: `${H}/display-mega-dream-ex-m2a.jpg`,
   },
 
   {
@@ -106,7 +106,7 @@ export const sealedProducts: Product[] = [
       'Artworks premium signés illustrateurs officiels',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/terastal-festival-ex-box.png`,
+    imageUrl: `${H}/SV8-asset-3.png`,
   },
 
   {
