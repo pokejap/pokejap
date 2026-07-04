@@ -40,16 +40,15 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
           ✓ En stock
         </span>
 
-        {/* Logo de l'édition au centre */}
-        {product.logoUrl && (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <img
-              src={product.logoUrl}
-              alt={product.set}
-              className="max-w-[70%] max-h-[80px] object-contain drop-shadow-[0_2px_16px_rgba(0,0,0,1)] group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        )}
+        {/* Nom de l'édition au centre */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-3 text-center pointer-events-none">
+          <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase mb-1" translate="no">
+            {product.setCode}
+          </span>
+          <span className="text-white font-black text-sm leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,1)] group-hover:scale-105 transition-transform duration-300 line-clamp-2">
+            {product.set}
+          </span>
+        </div>
       </div>
 
       {/* Infos produit */}
