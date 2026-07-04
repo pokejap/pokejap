@@ -2,19 +2,22 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { X } from 'lucide-react'
+import { useAuthStore } from '@/lib/auth-store'
 
 const STORAGE_KEY = 'pokejap_popup_seen'
 
 export default function WelcomePopup() {
   const [visible, setVisible] = useState(false)
+  const user = useAuthStore(s => s.user)
 
   useEffect(() => {
+    if (user) return // déjà connecté → pas de popup
     const seen = localStorage.getItem(STORAGE_KEY)
     if (!seen) {
       const t = setTimeout(() => setVisible(true), 2000)
       return () => clearTimeout(t)
     }
-  }, [])
+  }, [user])
 
   function close() {
     localStorage.setItem(STORAGE_KEY, '1')
