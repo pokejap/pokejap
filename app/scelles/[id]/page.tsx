@@ -240,9 +240,8 @@ export default function SealedDetailPage() {
                 }
               </button>
 
-              {/* Note dropshipping */}
               <p className="text-center text-[11px] text-gray-600 mt-3">
-                Dropshipping via Hikaru Distribution Pro · Stock permanent · Expédié sous 48h
+                Produit importé du Japon · Stock permanent · Expédié sous 48h
               </p>
             </div>
 
