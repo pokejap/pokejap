@@ -39,7 +39,11 @@ function SakuraPetal({ left, delay, duration, size, opacity }: typeof SAKURA_PET
 const FEATURED_SEALED_IDS = ['display-sv10', 'display-sv9a', 'etb-sv10', 'display-sv8a']
 
 export default function HomePage() {
-  const featuredSingles = products.slice(0, 4)
+  // Les 4 SAR les plus visuellement impressionnantes du catalogue
+  const FEATURED_SINGLES_IDS = ['blk-173', 'sv11w-171', 'sv5m-093', 'sv4k-093']
+  const featuredSingles = FEATURED_SINGLES_IDS
+    .map(id => products.find(p => p.id === id))
+    .filter(Boolean) as typeof products
   const featuredSealed  = FEATURED_SEALED_IDS
     .map(id => sealedProducts.find(p => p.id === id))
     .filter(Boolean) as typeof sealedProducts
