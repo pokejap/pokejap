@@ -199,35 +199,21 @@ export default function ScellesPage() {
         </div>
       )}
 
-      {/* Info dropshipping */}
-      <div className="mt-12 bg-white/3 border border-white/10 rounded-2xl p-6">
-        <h2 className="text-white font-black mb-3 flex items-center gap-2">
-          <Package size={18} className="text-pokemon-red" />
-          Comment ça marche ?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-400">
-          <div className="flex gap-3">
-            <span className="text-2xl">🛒</span>
+      {/* Garanties livraison */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { emoji: '🇯🇵', title: 'Import direct Japon', desc: 'Tous nos produits sont des éditions japonaises authentiques, 100% scellées et vérifiées.' },
+          { emoji: '📦', title: 'Emballage soigné', desc: 'Chaque commande est emballée avec soin pour garantir l\'arrivée en parfait état.' },
+          { emoji: '🚀', title: 'Expédition sous 48h', desc: 'Commande passée avant midi ? Expédiée le jour même ou le lendemain.' },
+        ].map(({ emoji, title, desc }) => (
+          <div key={title} className="bg-white/3 border border-white/5 rounded-2xl p-5 flex gap-4">
+            <span className="text-3xl">{emoji}</span>
             <div>
-              <p className="text-white font-semibold mb-1">Tu commandes</p>
-              <p>Tu passes ta commande sur pokejap.fr comme pour n'importe quel produit.</p>
+              <p className="text-white font-bold text-sm mb-1">{title}</p>
+              <p className="text-gray-400 text-xs leading-relaxed">{desc}</p>
             </div>
           </div>
-          <div className="flex gap-3">
-            <span className="text-2xl">🏭</span>
-            <div>
-              <p className="text-white font-semibold mb-1">On expédie pour toi</p>
-              <p>On prépare ta commande depuis notre stock en France — produits importés directement du Japon.</p>
-            </div>
-          </div>
-          <div className="flex gap-3">
-            <span className="text-2xl">📬</span>
-            <div>
-              <p className="text-white font-semibold mb-1">Tu reçois sous 48h</p>
-              <p>Le produit est expédié directement depuis le stock Hikaru en France.</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )
