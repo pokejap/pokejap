@@ -11,7 +11,7 @@ const TYPE_META: Record<string, { label: string; emoji: string; color: string; b
   display: { label: 'Display',  emoji: '📦', color: 'text-yellow-400',  bg: 'bg-yellow-400/10',  border: 'border-yellow-400/30'  },
   etb:     { label: 'ETB',      emoji: '🎁', color: 'text-purple-400',  bg: 'bg-purple-400/10',  border: 'border-purple-400/30'  },
   booster: { label: 'Booster',  emoji: '🎴', color: 'text-blue-400',    bg: 'bg-blue-400/10',    border: 'border-blue-400/30'    },
-  coffret: { label: 'Coffret',  emoji: '🏷️', color: 'text-green-400',  bg: 'bg-green-400/10',  border: 'border-green-400/30'  },
+  coffret: { label: 'Coffret',  emoji: '🎀', color: 'text-green-400',  bg: 'bg-green-400/10',  border: 'border-green-400/30'  },
 }
 
 function RelatedCard({ product }: { product: Product }) {

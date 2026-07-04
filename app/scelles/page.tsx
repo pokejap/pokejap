@@ -1,7 +1,7 @@
 'use client'
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { ShoppingCart, Package, Box, Layers, Filter } from 'lucide-react'
+import { ShoppingCart, Package, Box, Layers } from 'lucide-react'
 import { sealedProducts } from '@/data/sealed'
 import { useCartStore } from '@/lib/cart-store'
 import { Product, ProductCategory } from '@/types'
@@ -11,7 +11,7 @@ const TYPE_LABELS: Record<string, { label: string; emoji: string; color: string;
   display: { label: 'Display',  emoji: '📦', color: 'text-yellow-400',  bg: 'bg-yellow-400/10 border-yellow-400/30' },
   etb:     { label: 'ETB',      emoji: '🎁', color: 'text-purple-400',  bg: 'bg-purple-400/10 border-purple-400/30' },
   booster: { label: 'Booster',  emoji: '🎴', color: 'text-blue-400',    bg: 'bg-blue-400/10   border-blue-400/30'   },
-  coffret: { label: 'Coffret',  emoji: '🏷️', color: 'text-green-400',  bg: 'bg-green-400/10  border-green-400/30'  },
+  coffret: { label: 'Coffret',  emoji: '🎀', color: 'text-green-400',  bg: 'bg-green-400/10  border-green-400/30'  },
 }
 
 // ── Sealed Product Card ───────────────────────────────────────────────────────
@@ -115,7 +115,7 @@ export default function ScellesPage() {
     tous:    sealedProducts.length,
     display: sealedProducts.filter(p => p.category === 'display').length,
     etb:     sealedProducts.filter(p => p.category === 'etb').length,
-    booster: sealedProducts.filter(p => p.category === 'booster').length,
+    coffret: sealedProducts.filter(p => p.category === 'coffret').length,
   }
 
   return (
@@ -128,7 +128,7 @@ export default function ScellesPage() {
           Produits <span className="text-pokemon-red">Scellés</span>
         </h1>
         <p className="text-gray-400 text-sm">
-          {sealedProducts.length} produits · Displays, ETB &amp; Boosters japonais · Expédié sous 48h
+          {sealedProducts.length} produits · Displays, ETB &amp; Coffrets japonais · Expédié sous 48h
         </p>
         <div className="mt-3 inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold px-3 py-1.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
@@ -142,7 +142,7 @@ export default function ScellesPage() {
           { key: 'tous',    label: 'Tous',     emoji: '🎯', count: counts.tous    },
           { key: 'display', label: 'Displays', emoji: '📦', count: counts.display },
           { key: 'etb',     label: 'ETB',      emoji: '🎁', count: counts.etb     },
-          { key: 'booster', label: 'Boosters', emoji: '🎴', count: counts.booster },
+          { key: 'coffret', label: 'Coffrets', emoji: '🎀', count: counts.coffret },
         ] as const).map(({ key, label, emoji, count }) => (
           <button
             key={key}
