@@ -7,6 +7,9 @@ import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.pokejap.fr'),
+  verification: {
+    google: 'zidWcWqO28miF2rADu6-iNq0ViUq63PC1xHU5UAWZf0',
+  },
   title: {
     default: 'PokeJap — Cartes Pokémon Japonaises',
     template: '%s — PokeJap',
