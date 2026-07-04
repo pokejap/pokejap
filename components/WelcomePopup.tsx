@@ -66,14 +66,8 @@ export default function WelcomePopup() {
             Créez votre compte gratuitement et recevez immédiatement un code de réduction de <strong className="text-white">10%</strong> sur l'ensemble de la boutique.
           </p>
 
-          {/* Badge code promo */}
-          <div className="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3 mb-6">
-            <span className="text-gray-400 text-xs uppercase tracking-widest">Code</span>
-            <span className="text-pokemon-yellow font-black text-lg tracking-widest">BIENVENUE10</span>
-          </div>
-
           <Link
-            href="/compte"
+            href="/compte?tab=register"
             onClick={close}
             className="block w-full py-4 bg-pokemon-red hover:bg-red-700 text-white font-black text-base rounded-2xl transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-red-950/50 mb-3"
           >

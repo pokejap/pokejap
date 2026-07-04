@@ -276,10 +276,23 @@ export default function ComptePage() {
             <Check size={28} className="text-green-400" />
           </div>
           <h2 className="text-white font-black text-xl mb-2">Compte créé !</h2>
-          <p className="text-gray-400 text-sm mb-6">Vous êtes maintenant connecté. Vos infos seront pré-remplies au checkout.</p>
-          <Link href="/boutique" className="inline-block bg-pokemon-red hover:bg-red-600 text-white font-bold px-8 py-3 rounded-xl transition-all">
-            Aller à la boutique
-          </Link>
+          <p className="text-gray-400 text-sm mb-6">Bienvenue ! Voici votre code de réduction — utilisez-le sur votre première commande.</p>
+
+          {/* Code promo révélé */}
+          <div className="bg-gradient-to-br from-yellow-500/10 to-red-900/10 border border-yellow-400/30 rounded-2xl px-6 py-5 mb-6">
+            <p className="text-yellow-400 text-xs font-bold uppercase tracking-widest mb-2">🎁 Votre réduction de bienvenue</p>
+            <p className="text-white font-black text-3xl tracking-widest mb-1">BIENVENUE10</p>
+            <p className="text-gray-400 text-xs">−10% sur toute la boutique · Valable sur votre 1ère commande</p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/scelles" className="inline-block bg-pokemon-red hover:bg-red-600 text-white font-bold px-8 py-3 rounded-xl transition-all">
+              Voir les scellés →
+            </Link>
+            <Link href="/boutique" className="inline-block bg-white/5 border border-white/10 hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-xl transition-all">
+              Singles japonais
+            </Link>
+          </div>
         </div>
       ) : (
         <div className="bg-pokemon-card rounded-2xl border border-white/5 overflow-hidden">
