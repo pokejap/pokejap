@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CartProvider from '@/components/CartProvider'
 import CookieBanner from '@/components/CookieBanner'
+import WelcomePopup from '@/components/WelcomePopup'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.pokejap.fr'),
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-0 min-h-screen">{children}</main>
           <Footer />
           <CookieBanner />
+          <WelcomePopup />
         </CartProvider>
       </body>
     </html>
