@@ -19,10 +19,10 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
   const t = TYPE_LABELS[product.category ?? 'display']
 
   return (
-    <div className="relative group rounded-2xl overflow-hidden border border-white/10 bg-[#0d0d14] hover:border-pokemon-red/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-900/30 flex flex-col">
-      {/* Lien vers page détail — couvre toute la card sauf le bouton Ajouter */}
-      <Link href={`/scelles/${product.id}`} className="absolute inset-0 z-0" aria-label={product.name} />
-
+    <Link
+      href={`/scelles/${product.id}`}
+      className="group rounded-2xl overflow-hidden border border-white/10 bg-[#0d0d14] hover:border-pokemon-red/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-900/30 flex flex-col"
+    >
       {/* Image de fond */}
       <div className="relative h-44 overflow-hidden">
         <img
@@ -38,7 +38,7 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
           {t.emoji} {t.label}
         </span>
 
-        {/* Badge dropship */}
+        {/* Badge stock */}
         <span className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-[10px] text-green-400 font-bold px-2 py-1 rounded-full border border-green-400/30 z-10">
           ✓ En stock
         </span>
@@ -76,14 +76,14 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
         <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
           <span className="text-pokemon-red font-black text-xl">{product.price.toFixed(2)} €</span>
           <button
-            onClick={onAdd}
-            className="relative z-10 flex items-center gap-1.5 bg-pokemon-red hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors duration-200 active:scale-95"
+            onClick={e => { e.preventDefault(); e.stopPropagation(); onAdd() }}
+            className="flex items-center gap-1.5 bg-pokemon-red hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors duration-200 active:scale-95"
           >
             <ShoppingCart size={14} /> Ajouter
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
