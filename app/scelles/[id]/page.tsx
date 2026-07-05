@@ -98,10 +98,16 @@ export default function SealedDetailPage({ params }: { params: { id: string } })
                 <span className={`absolute top-4 left-4 text-xs font-bold px-3 py-1.5 rounded-full border backdrop-blur-sm ${t.bg} ${t.color} ${t.border}`}>
                   {t.emoji} {t.label}
                 </span>
-                <span className="absolute top-4 right-4 flex items-center gap-1.5 bg-green-500/15 border border-green-500/30 text-green-400 text-xs font-bold px-3 py-1.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  En stock
-                </span>
+                {product.stock > 0 ? (
+                  <span className="absolute top-4 right-4 flex items-center gap-1.5 bg-green-500/15 border border-green-500/30 text-green-400 text-xs font-bold px-3 py-1.5 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                    En stock
+                  </span>
+                ) : (
+                  <span className="absolute top-4 right-4 flex items-center gap-1.5 bg-gray-500/15 border border-gray-500/30 text-gray-400 text-xs font-bold px-3 py-1.5 rounded-full">
+                    Rupture de stock
+                  </span>
+                )}
                 <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white/40 text-[10px] font-mono font-bold px-2 py-1 rounded-lg border border-white/10">
                   {product.setCode}
                 </div>

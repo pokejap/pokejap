@@ -16,6 +16,23 @@ export default function AddToCart({ product }: { product: Product }) {
     openCart()
   }
 
+  if (product.stock === 0) {
+    return (
+      <div className="bg-white/3 border border-white/5 rounded-2xl p-6">
+        <div className="mb-5">
+          <p className="text-gray-500 text-xs mb-1">Prix TTC</p>
+          <p className="text-gray-500 font-black text-4xl">{product.price.toFixed(2)} €</p>
+        </div>
+        <div className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl font-black text-base bg-white/5 border border-white/10 text-gray-500 cursor-not-allowed">
+          Rupture de stock
+        </div>
+        <p className="text-center text-[11px] text-gray-600 mt-3">
+          Ce produit sera bientôt disponible
+        </p>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-white/3 border border-white/5 rounded-2xl p-6">
       <div className="flex items-end justify-between mb-5">
