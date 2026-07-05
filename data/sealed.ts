@@ -530,33 +530,6 @@ export const sealedProducts: Product[] = [
   },
 
   // ════════════════════════════════════════════════════════════════
-  //  🎀  COFFRETS SPÉCIAUX (vérifiés sur Hikaru Distribution)
-  // ════════════════════════════════════════════════════════════════
-
-  {
-    id: 'coffret-center-m1l',
-    name: 'Coffret Pokémon Center × Méga Bravoure',
-    set: 'Méga Bravoure',
-    setCode: 'M1L',
-    category: 'coffret',
-    rarity: 'Rare',
-    condition: 'Neuf',
-    language: 'JAP',
-    price: 194.9,
-    stock: 99,
-    number: '',
-    description: `Coffret collector Officiel Pokémon Center Japon — édition exclusive Méga Bravoure dans un packaging Pokémon Center introuvable en boutique classique. Format Pokémon Center idéal pour les investisseurs : le coffret fermé prend de la valeur au fil du temps. L'un des rares produits où l'emballage vaut autant que le contenu.`,
-    contents: [
-      'Display Méga Bravoure (30 boosters)',
-      'Emballage exclusif Pokémon Center Japon',
-      'Packaging collector à conserver',
-      'Produit officiel importé du Japon',
-      'Expédié depuis notre stock en France',
-    ],
-    imageUrl: `${H}/MEGABRAVEGYMBOX.jpg`,
-  },
-
-  // ════════════════════════════════════════════════════════════════
   //  📦  DISPLAYS SV — SÉRIE SCARLET & VIOLET (nouveaux)
   // ════════════════════════════════════════════════════════════════
 
@@ -935,6 +908,29 @@ export const sealedProducts: Product[] = [
   // ════════════════════════════════════════════════════════════════
   //  🎀  COFFRETS SPÉCIAUX — NOUVEAUX
   // ════════════════════════════════════════════════════════════════
+
+  {
+    id: 'coffret-center-m1l',
+    name: 'Coffret Pokémon Center × Méga Bravoure',
+    set: 'Méga Bravoure',
+    setCode: 'M1L',
+    category: 'coffret',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'JAP',
+    price: 194.9,
+    stock: 99,
+    number: '',
+    description: `Coffret collector Officiel Pokémon Center Japon — édition exclusive Méga Bravoure dans un packaging Pokémon Center introuvable en boutique classique. Format Pokémon Center idéal pour les investisseurs : le coffret fermé prend de la valeur au fil du temps. L'un des rares produits où l'emballage vaut autant que le contenu.`,
+    contents: [
+      'Display Méga Bravoure (30 boosters)',
+      'Emballage exclusif Pokémon Center Japon',
+      'Packaging collector à conserver',
+      'Produit officiel importé du Japon',
+      'Expédié depuis notre stock en France',
+    ],
+    imageUrl: `${H}/MEGABRAVEGYMBOX.jpg`,
+  },
 
   {
     id: 'valise-sv10-team-rocket',

@@ -49,7 +49,7 @@ export default function SealedDetailPage({ params }: { params: { id: string } })
 
   const specs = product.category === 'display'
     ? [
-        { icon: '📦', label: 'Contenu', value: product.set.includes('Terastal') ? '10 boosters' : '30 boosters' },
+        { icon: '📦', label: 'Contenu', value: (product.contents ?? [])[0]?.match(/^(\d+)\s+boosters?/i)?.[0] ?? '30 boosters' },
         { icon: '🇯🇵', label: 'Langue', value: 'Japonais (JAP)' },
         { icon: '✨', label: 'Taux SAR', value: '~1 pour 3 boosters' },
         { icon: '🔒', label: 'État', value: 'Scellé sous cellophane' },
