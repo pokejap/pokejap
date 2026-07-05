@@ -165,9 +165,15 @@ export default function HomePage() {
                     <span className={`absolute top-3 left-3 text-[11px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-sm z-10 ${tc}`}>
                       {tl}
                     </span>
-                    <span className="absolute top-3 right-3 flex items-center gap-1 bg-green-500/15 border border-green-500/30 text-green-400 text-[10px] font-bold px-2 py-1 rounded-full z-10">
-                      <span className="w-1 h-1 rounded-full bg-green-400 animate-pulse" /> En stock
-                    </span>
+                    {product.stock > 0 ? (
+                      <span className="absolute top-3 right-3 flex items-center gap-1 bg-green-500/15 border border-green-500/30 text-green-400 text-[10px] font-bold px-2 py-1 rounded-full z-10">
+                        <span className="w-1 h-1 rounded-full bg-green-400 animate-pulse" /> En stock
+                      </span>
+                    ) : (
+                      <span className="absolute top-3 right-3 flex items-center gap-1 bg-gray-500/15 border border-gray-500/30 text-gray-400 text-[10px] font-bold px-2 py-1 rounded-full z-10">
+                        Rupture de stock
+                      </span>
+                    )}
                     <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-3 text-center pointer-events-none">
                       <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase mb-1" translate="no">{product.setCode}</span>
                       <span className="text-white font-black text-sm leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,1)] group-hover:scale-105 transition-transform duration-300 line-clamp-2">{product.set}</span>
