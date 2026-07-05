@@ -90,21 +90,12 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
 // ── Page principale ───────────────────────────────────────────────────────────
 export default function ScellesPage() {
   const [activeType, setActiveType] = useState<ProductCategory | 'tous'>('tous')
-  const [activeSet, setActiveSet]   = useState<string>('tous')
   const { addItem, openCart }       = useCartStore()
 
-  // Construire la liste des sets uniques
-  const allSets = useMemo(() =>
-    Array.from(new Set(sealedProducts.map(p => p.set))),
-    []
-  )
-
   const filtered = useMemo(() => {
-    let result = [...sealedProducts]
-    if (activeType !== 'tous') result = result.filter(p => p.category === activeType)
-    if (activeSet  !== 'tous') result = result.filter(p => p.set      === activeSet)
-    return result
-  }, [activeType, activeSet])
+    if (activeType === 'tous') return [...sealedProducts]
+    return sealedProducts.filter(p => p.category === activeType)
+  }, [activeType])
 
   function handleAdd(product: Product) {
     addItem(product)
@@ -160,24 +151,6 @@ export default function ScellesPage() {
         ))}
       </div>
 
-      {/* Filtre par édition */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        <button
-          onClick={() => setActiveSet('tous')}
-          className={`px-3 py-1.5 rounded-lg border text-xs font-medium transition-all ${activeSet === 'tous' ? 'bg-white/10 border-white/30 text-white' : 'border-white/5 text-gray-500 hover:text-gray-300'}`}
-        >
-          Toutes les éditions
-        </button>
-        {allSets.map(set => (
-          <button
-            key={set}
-            onClick={() => setActiveSet(set)}
-            className={`px-3 py-1.5 rounded-lg border text-xs font-medium transition-all ${activeSet === set ? 'bg-white/10 border-white/30 text-white' : 'border-white/5 text-gray-500 hover:text-gray-300'}`}
-          >
-            {set}
-          </button>
-        ))}
-      </div>
 
       {/* Grille produits */}
       {filtered.length === 0 ? (
