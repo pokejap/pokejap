@@ -16,11 +16,12 @@ const TYPE_LABELS: Record<string, { label: string; emoji: string; color: string;
 // ── Card produit scellé FR ────────────────────────────────────────────────────
 function SealedFrCard({ product, onAdd }: { product: Product; onAdd: () => void }) {
   const t = TYPE_LABELS[product.category ?? 'display']
+  const inStock = product.stock > 0
 
   return (
     <Link
       href={`/scelles-fr/${product.id}`}
-      className="group rounded-2xl overflow-hidden border border-white/10 bg-[#0d0d14] hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/30 flex flex-col"
+      className={`group rounded-2xl overflow-hidden border bg-[#0d0d14] transition-all duration-300 flex flex-col ${inStock ? 'border-white/10 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/30' : 'border-white/5 opacity-60'}`}
     >
       {/* Image */}
       <div className="relative h-44 overflow-hidden">
@@ -28,9 +29,18 @@ function SealedFrCard({ product, onAdd }: { product: Product; onAdd: () => void 
           src={product.imageUrl}
           alt=""
           aria-hidden
-          className="absolute inset-0 w-full h-full object-cover object-top scale-110 opacity-40 group-hover:opacity-55 group-hover:scale-115 transition-all duration-500"
+          className={`absolute inset-0 w-full h-full object-cover object-top scale-110 transition-all duration-500 ${inStock ? 'opacity-40 group-hover:opacity-55 group-hover:scale-115' : 'opacity-20'}`}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-[#0d0d14]" />
+
+        {/* Overlay sold out */}
+        {!inStock && (
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <span className="bg-black/80 text-gray-400 text-xs font-bold px-3 py-1.5 rounded-full border border-white/10 tracking-widest uppercase">
+              Rupture de stock
+            </span>
+          </div>
+        )}
 
         {/* Badge type */}
         <span className={`absolute top-3 left-3 text-[11px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-sm z-10 ${t.bg} ${t.color}`}>
@@ -72,13 +82,19 @@ function SealedFrCard({ product, onAdd }: { product: Product; onAdd: () => void 
 
         {/* Prix + bouton */}
         <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
-          <span className="text-blue-400 font-black text-xl">{product.price.toFixed(2)} €</span>
-          <button
-            onClick={e => { e.preventDefault(); e.stopPropagation(); onAdd() }}
-            className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors duration-200 active:scale-95"
-          >
-            <ShoppingCart size={14} /> Ajouter
-          </button>
+          <span className={`font-black text-xl ${inStock ? 'text-blue-400' : 'text-gray-500'}`}>{product.price.toFixed(2)} €</span>
+          {inStock ? (
+            <button
+              onClick={e => { e.preventDefault(); e.stopPropagation(); onAdd() }}
+              className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors duration-200 active:scale-95"
+            >
+              <ShoppingCart size={14} /> Ajouter
+            </button>
+          ) : (
+            <span className="text-[10px] text-gray-600 font-semibold px-3 py-2 rounded-xl border border-white/5">
+              Indisponible
+            </span>
+          )}
         </div>
       </div>
     </Link>
@@ -100,7 +116,7 @@ export default function ScellesFrPage() {
   const visibleSets = showAllSets ? allSets : allSets.slice(0, 3)
 
   const filtered = useMemo(() => {
-    let result = sealedFrProducts.filter(p => p.stock > 0)
+    let result = [...sealedFrProducts]
     if (activeType !== 'tous') result = result.filter(p => p.category === activeType)
     if (activeSet  !== 'tous') result = result.filter(p => p.set      === activeSet)
     return result
