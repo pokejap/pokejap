@@ -33,7 +33,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 194.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `L'édition la plus attendue de 2025. Le retour de la Team Rocket dans le TCG japonais après des années d'absence — avec Méwtwo ex, Jessie & James en SAR et une collection de cartes Team Rocket introuvables en dehors du Japon. Taux de chase estimé : 1 SAR pour 3 boosters. Set incontournable pour les collectionneurs et investisseurs.`,
     contents: [
@@ -79,7 +79,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 89.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Deuxième extension spéciale de la série Méga Évolution, avec les Méga Pokémon ex les plus puissants. Set très demandé pour ses illustrations exclusives et ses cartes ex MEGA introuvables dans les sets Écarlate & Violet classiques. Excellent rapport valeur/prix pour les collectionneurs.`,
     contents: [
@@ -102,7 +102,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 94.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension premium en format 10 boosters par display — chaque booster contient davantage de cartes rares que les extensions standard. Illustrée autour des cristallisations Téracristal, cette édition spéciale propose des cartes ex avec des formes Téracristal inédites et des artworks exclusifs signés par les meilleurs illustrateurs Pokémon.`,
     contents: [
@@ -148,7 +148,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 84.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Cinquième et dernière extension principale de la série Méga Évolution japonaise. Centrée sur les Pokémon des abysses et du type Ténèbres/Spectre, avec des Méga Évolutions mythiques et légendaires. Un display collector pour compléter la série complète Méga Évolution — valeur d'investissement à long terme.`,
     contents: [
@@ -171,7 +171,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 79.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Quatrième extension de la série Méga Évolution japonaise, centrée sur les types Combat, Poison et Acier. Contient les Méga Camérupt, Méga Galopa et Méga Aérodactyl ex avec des illustrations épiques. Très populaire en compétition pour sa densité en cartes utiles et ses SAR de haut niveau.`,
     contents: [
@@ -194,7 +194,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 74.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Troisième extension de la série Méga Évolution japonaise, avec un focus sur les Pokémon Psy et Normal. Contient les Méga Gardevoir ex, Méga Kangourex ex et Méga Osselait ex en version SAR. Un display très apprécié pour ses illustrations romantiques et ses cartes de dresseurs en illustration complète.`,
     contents: [
@@ -217,7 +217,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 76.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Première extension de la nouvelle ère Méga Évolution japonaise — le set qui a lancé la série. Contient les premières cartes Méga ex du format avec des illustrations spectaculaires. Méga Lucario ex, Méga Diancie ex et les premières SAR Méga Évolution très prisées des collectionneurs.`,
     contents: [
@@ -240,7 +240,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 84.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension jumelle de Méga Symphonie — deux displays complémentaires qui se sortent simultanément. Méga Bravoure se concentre sur les types Eau, Plante et Électrik avec Méga Lougaroc ex, Méga Florizarre ex et Méga Tortank ex. Un display iconic pour les fans de la première génération.`,
     contents: [
@@ -263,7 +263,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 99.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `L'une des deux extensions duales SV11, centrée sur les types Feu, Dragon et Eau. Contient la SAR Trioxhydre ex de N en illustration alternative — l'une des cartes les plus recherchées de l'année. Display indispensable pour les chasseurs de SAR rares et les fans de Pokémon Noir & Blanc.`,
     contents: [
@@ -286,7 +286,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 139.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension duale de Flamme Blanche — contient la SAR "Plan de N" estimée à plus de 60€ à l'unité. Display orienté types Électrik, Glace et Spectre avec des cartes Pokémon Noir & Blanc en illustration complète. À ouvrir en parallèle de SV11W pour maximiser les chances de tirer les deux SAR iconiques.`,
     contents: [
@@ -892,7 +892,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 64.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Sixième et avant-dernière extension de la série Méga Évolution japonaise. Centrée sur les Pokémon de type Tempête — Eau, Électrik et Vol — avec des Méga Évolutions marines et aériennes spectaculaires. Display idéal pour compléter la série Méga Évolution et accéder aux Méga Évolutions rares des types Eau.`,
     contents: [
@@ -919,7 +919,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 194.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret collector Officiel Pokémon Center Japon — édition exclusive Méga Bravoure dans un packaging Pokémon Center introuvable en boutique classique. Format Pokémon Center idéal pour les investisseurs : le coffret fermé prend de la valeur au fil du temps. L'un des rares produits où l'emballage vaut autant que le contenu.`,
     contents: [
@@ -942,7 +942,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 274.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret collector ultime Team Rocket — la valise officielle R du set SV10 avec un contenu exclusif introuvable séparément. Packaging Team Rocket emblématique avec l'iconographie Jessie & James. Produit limité qui combine le display SV10 avec du contenu exclusif dans une valise collector scellée. Investissement à fort potentiel de valeur à long terme.`,
     contents: [

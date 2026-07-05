@@ -304,7 +304,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 119.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV08.5 dédié aux évolutions d'Évoli dans un univers coloré et étincelant. Carte promo brillante exclusive à l'effigie d'Évoli incluse. Très recherché des collectionneurs.`,
     contents: [
@@ -348,7 +348,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 85.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV07 centré sur Terapagos Téracristal. Extension aux types stellaires avec des visuels époustouflants. Carte promo brillante exclusive Terapagos incluse.`,
     contents: [
@@ -370,7 +370,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 69.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV06.5 inspiré par les mythes et Pêchaminus. Extension surnaturelle aux visuels envoûtants. Carte promo brillante exclusive Pêchaminus incluse.`,
     contents: [
@@ -392,7 +392,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 79.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV06 plongeant dans les brumes de Septentria avec Ogerpon. Atmosphère sombre et mystique. Carte promo brillante exclusive Ogerpon incluse.`,
     contents: [
@@ -595,7 +595,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 169.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Super Premium (SPC) EV08.5 — le coffret collector ultime de l'extension Évolutions Prismatiques. Contient de nombreux boosters, une figurine exclusive et des cartes promos de haute qualité. La pièce maîtresse pour les fans d'Évoli.`,
     contents: [
@@ -890,7 +890,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 199.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display officiel de la série Méga-Évolution 3 en version française. 36 boosters scellés pour explorer l'extension Équilibre Parfait et traquer les versions Full Art, SAR et Gold des Pokémon emblématiques. Sortie officielle le 27 mars 2026.`,
     contents: [
@@ -915,7 +915,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 84.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel de l'extension Aventures Ensemble (EV09). Contient 9 boosters et une carte promo exclusive Pecharunt. Produit neuf et scellé, expédié depuis la France.`,
     contents: [
@@ -937,7 +937,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 84.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel dédié à Méga-Lucario, l'icône de la série Méga-Évolution ME01. Contient 9 boosters scellés et une carte promo exclusive. Produit neuf, scellé et expédié depuis la France.`,
     contents: [
@@ -959,7 +959,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 84.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel dédié à Méga-Gardevoir, figure emblématique de la série Méga-Évolution ME01. Contient 9 boosters et une carte promo exclusive. Neuf et scellé, expédié depuis la France.`,
     contents: [
@@ -981,7 +981,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 79.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel de la série Méga-Évolution 2, mettant à l'honneur Méga Dracaufeu X ex. Contient 9 boosters Flammes Fantasmagoriques et une carte promo exclusive Charcadet. Sortie officielle le 14 novembre 2025.`,
     contents: [
@@ -1003,7 +1003,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 64.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel de l'extension Équilibre Parfait (ME03). Contient 9 boosters et une carte promo exclusive Ptyranidur. Inclut les accessoires dresseur complets. Sortie officielle le 27 mars 2026.`,
     contents: [
@@ -1027,7 +1027,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 21.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Tripack officiel de la série Méga-Évolution ME01 en version française. Contient 3 boosters scellés et une carte promo holographique aléatoire. Parfait pour débuter la collection Méga-Évolution.`,
     contents: [
@@ -1048,7 +1048,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 18.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Tripack officiel de l'extension Chaos Ascendant (ME04) en version française. Contient 3 boosters ME04 et une carte promo holographique exclusive Reptincel. Idéal pour chasser Méga-Amphinobi ex et les nouvelles raretés Méga Attaque Rare.`,
     contents: [
