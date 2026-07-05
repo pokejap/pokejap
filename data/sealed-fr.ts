@@ -872,4 +872,191 @@ export const sealedFrProducts: Product[] = [
     imageUrl: `${H}/CoffretFigurine_MegaLucario-ex_Francais.png`,
   },
 
+
+  // ════════════════════════════════════════════════════════════════
+  //  🆕  NOUVEAUTÉS — MÉGA-ÉVOLUTION (ME01 · ME02 · ME03 · ME04)
+  //       + EV09 Aventures Ensemble manquant
+  // ════════════════════════════════════════════════════════════════
+
+  // ── Display ──────────────────────────────────────────────────────
+
+  {
+    id: 'display-fr-me03',
+    name: 'Display Équilibre Parfait – ME03',
+    set: 'Équilibre Parfait',
+    setCode: 'ME03',
+    category: 'display',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 199.90,
+    stock: 1,
+    number: '',
+    description: `Display officiel de la série Méga-Évolution 3 en version française. 36 boosters scellés pour explorer l'extension Équilibre Parfait et traquer les versions Full Art, SAR et Gold des Pokémon emblématiques. Sortie officielle le 27 mars 2026.`,
+    contents: [
+      '36 boosters Équilibre Parfait (ME03)',
+      '10 cartes par booster',
+      'Full Art, SAR, Gold et Méga-Évolutions rares',
+      'Produit officiel Pokémon – scellé sous cellophane',
+      'Expédié depuis la France',
+    ],
+    imageUrl: `${H}/DisplayME03equilibreparfaitFR.png`,
+  },
+
+  // ── ETBs ─────────────────────────────────────────────────────────
+
+  {
+    id: 'etb-fr-ev09',
+    name: 'ETB Aventures Ensemble – EV09',
+    set: 'Aventures Ensemble',
+    setCode: 'EV09',
+    category: 'etb',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 84.90,
+    stock: 1,
+    number: '',
+    description: `Coffret Dresseur d'Élite officiel de l'extension Aventures Ensemble (EV09). Contient 9 boosters et une carte promo exclusive Pecharunt. Produit neuf et scellé, expédié depuis la France.`,
+    contents: [
+      '9 boosters Aventures Ensemble (EV09)',
+      '1 carte promo exclusive Pecharunt',
+      '65 protège-cartes, dés, marqueurs, séparateurs, livret et carte à code',
+      'Produit officiel Pokémon – scellé sous cellophane',
+    ],
+    imageUrl: `${H}/etb-EV9_7032762a-73b6-43c7-aeee-bf57ec69b2ec.jpg`,
+  },
+
+  {
+    id: 'etb-fr-me01-lucario',
+    name: 'ETB Méga-Lucario – ME01',
+    set: 'Méga-Évolution',
+    setCode: 'ME01',
+    category: 'etb',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 84.90,
+    stock: 1,
+    number: '',
+    description: `Coffret Dresseur d'Élite officiel dédié à Méga-Lucario, l'icône de la série Méga-Évolution ME01. Contient 9 boosters scellés et une carte promo exclusive. Produit neuf, scellé et expédié depuis la France.`,
+    contents: [
+      '9 boosters Méga-Évolution (ME01)',
+      '1 carte promo exclusive Méga-Lucario',
+      'Sleeves, dés, marqueurs, séparateurs et livret',
+      'Produit officiel Pokémon – scellé sous cellophane',
+    ],
+    imageUrl: `${H}/MegaEvolutionetbLucario.png`,
+  },
+
+  {
+    id: 'etb-fr-me01-gardevoir',
+    name: 'ETB Méga-Gardevoir – ME01',
+    set: 'Méga-Évolution',
+    setCode: 'ME01',
+    category: 'etb',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 84.90,
+    stock: 1,
+    number: '',
+    description: `Coffret Dresseur d'Élite officiel dédié à Méga-Gardevoir, figure emblématique de la série Méga-Évolution ME01. Contient 9 boosters et une carte promo exclusive. Neuf et scellé, expédié depuis la France.`,
+    contents: [
+      '9 boosters Méga-Évolution (ME01)',
+      '1 carte promo exclusive Méga-Gardevoir',
+      'Sleeves Gardevoir, marqueurs, dés, séparateurs et livret',
+      'Produit officiel Pokémon – scellé sous cellophane',
+    ],
+    imageUrl: `${H}/MegaEvolutionetbgardevoir.png`,
+  },
+
+  {
+    id: 'etb-fr-me02',
+    name: 'ETB Flammes Fantasmagoriques – ME02',
+    set: 'Flammes Fantasmagoriques',
+    setCode: 'ME02',
+    category: 'etb',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 79.90,
+    stock: 1,
+    number: '',
+    description: `Coffret Dresseur d'Élite officiel de la série Méga-Évolution 2, mettant à l'honneur Méga Dracaufeu X ex. Contient 9 boosters Flammes Fantasmagoriques et une carte promo exclusive Charcadet. Sortie officielle le 14 novembre 2025.`,
+    contents: [
+      '9 boosters Flammes Fantasmagoriques (ME02)',
+      '1 carte promo exclusive Charcadet (Illustration Rare)',
+      '65 protège-cartes, dés, séparateurs, livret et carte à code',
+      'Produit officiel Pokémon – scellé sous cellophane',
+    ],
+    imageUrl: `${H}/CoffretDresseurd_Elite_ETBMega-Evolution-FlammesFantasmagoriques_ME2_Francais-2.png`,
+  },
+
+  {
+    id: 'etb-fr-me03',
+    name: 'ETB Équilibre Parfait – ME03',
+    set: 'Équilibre Parfait',
+    setCode: 'ME03',
+    category: 'etb',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 64.90,
+    stock: 1,
+    number: '',
+    description: `Coffret Dresseur d'Élite officiel de l'extension Équilibre Parfait (ME03). Contient 9 boosters et une carte promo exclusive Ptyranidur. Inclut les accessoires dresseur complets. Sortie officielle le 27 mars 2026.`,
+    contents: [
+      '9 boosters Équilibre Parfait (ME03)',
+      '1 carte promo exclusive Ptyranidur',
+      '65 protège-cartes Méga-Dracolosse, 45 Énergies, dés, marqueurs et livret',
+      'Produit officiel Pokémon – scellé sous cellophane',
+    ],
+    imageUrl: `${H}/CoffretDresseurd_EliteMega-Evolution-EquilibreParfaiteETBFR_589a42fb-0233-4a37-ba43-f555815f6122.png`,
+  },
+
+  // ── Coffrets / Tripacks ──────────────────────────────────────────
+
+  {
+    id: 'coffret-fr-tripack-me01',
+    name: 'Tripack Méga-Évolution – ME01',
+    set: 'Méga-Évolution',
+    setCode: 'ME01',
+    category: 'coffret',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 21.90,
+    stock: 1,
+    number: '',
+    description: `Tripack officiel de la série Méga-Évolution ME01 en version française. Contient 3 boosters scellés et une carte promo holographique aléatoire. Parfait pour débuter la collection Méga-Évolution.`,
+    contents: [
+      '3 boosters Méga-Évolution (ME01)',
+      '1 carte promo holographique aléatoire',
+      'Produit officiel Pokémon – sous blister scellé',
+    ],
+    imageUrl: `${H}/Tri-Pack_Mega-Evolution-ME-PromoAkwakwak_Francais.png`,
+  },
+
+  {
+    id: 'coffret-fr-tripack-me04',
+    name: 'Tripack Chaos Ascendant – ME04',
+    set: 'Chaos Ascendant',
+    setCode: 'ME04',
+    category: 'coffret',
+    rarity: 'Rare',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 18.90,
+    stock: 1,
+    number: '',
+    description: `Tripack officiel de l'extension Chaos Ascendant (ME04) en version française. Contient 3 boosters ME04 et une carte promo holographique exclusive Reptincel. Idéal pour chasser Méga-Amphinobi ex et les nouvelles raretés Méga Attaque Rare.`,
+    contents: [
+      '3 boosters Chaos Ascendant (ME04)',
+      '1 carte promo holographique Reptincel',
+      'Produit officiel Pokémon – sous blister scellé',
+    ],
+    imageUrl: `${H}/tripackME04.png`,
+  },
+
 ]
