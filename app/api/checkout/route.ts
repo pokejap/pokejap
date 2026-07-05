@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { stripe } from '@/lib/stripe'
 import { products } from '@/data/products'
+import { sealedProducts } from '@/data/sealed'
 import { stockStore } from '@/lib/stock-store'
 
 interface CustomerInfo {
@@ -59,14 +60,15 @@ export async function POST(request: NextRequest) {
 
     // ── Validation & récupération des prix côté serveur ──────────────────────
     // On ignore totalement les prix envoyés par le front.
-    // On relit chaque produit depuis products.ts (source de vérité).
-    const resolvedItems: { product: typeof products[0]; quantity: number }[] = []
+    // On relit chaque produit depuis products.ts ou sealed.ts (source de vérité).
+    const allProducts = [...products, ...sealedProducts]
+    const resolvedItems: { product: typeof allProducts[0]; quantity: number }[] = []
 
     for (const item of items) {
       if (!item.productId || typeof item.quantity !== 'number' || item.quantity < 1) {
         return NextResponse.json({ error: 'Données invalides' }, { status: 400 })
       }
-      const product = products.find(p => p.id === item.productId)
+      const product = allProducts.find(p => p.id === item.productId)
       if (!product) {
         return NextResponse.json(
           { error: `Produit introuvable : ${item.productId}` },
