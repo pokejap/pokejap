@@ -542,7 +542,7 @@ export const sealedProducts: Product[] = [
     rarity: 'Rare',
     condition: 'Neuf',
     language: 'JAP',
-    price: 299.9,
+    price: 354.9,
     stock: 0,
     number: '',
     description: `Le set le plus mythique de la série Écarlate & Violet — un hommage complet aux 151 Pokémon originaux de la première génération. Chaque booster est une capsule temporelle vers l'ère Génération 1, avec des cartes ex de Dracaufeu, Mewtwo, Florizarre et Tortank dans des artworks inédits. SAR "Professeur Chen" et "Dresseur avec Pikachu" classées parmi les 10 cartes les plus recherchées de l'année. Idéal pour les collectionneurs nostalgiques et les investisseurs.`,

@@ -32,7 +32,7 @@ export const sealedFrProducts: Product[] = [
     contents: [
       '36 boosters Rivalités Destinées (EV10)',
       '10 cartes par booster',
-      'Possibilité d'obtenir des Pokémon-ex, SAR, cartes alternatives',
+      "Possibilité d'obtenir des Pokémon-ex, SAR, cartes alternatives",
       'Produit officiel Pokémon – scellé sous cellophane',
       'Expédié depuis la France',
     ],
@@ -556,7 +556,7 @@ export const sealedFrProducts: Product[] = [
     description: `Coffret Poster EV10.5 avec boosters et poster exclusif de l'extension. Produit officiel neuf et scellé, parfait pour décorer et enrichir sa collection.`,
     contents: [
       'Boosters Foudre Noire & Flammes Blanches (EV10.5)',
-      'Poster exclusif de l'extension',
+      "Poster exclusif de l'extension",
       'Cartes promos',
       'Produit officiel Pokémon scellé',
     ],
