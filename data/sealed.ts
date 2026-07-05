@@ -56,7 +56,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 164.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale centrée sur les Pokémon de type Feu et leurs dresseurs emblématiques. Contient les SAR très recherchées Typhlosion d'Éthan, Ho-Oh de Karen et la légendaire Ondine avec Psykokwak. Un display très prisé pour sa richesse en SAR personnages.`,
     contents: [
@@ -125,7 +125,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 134.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Première extension Méga Évolution centrée sur les Pokémon de type Feu. Contient les Méga Évolutions de Dracaufeu, Démanta et Méga Braségali en cartes ex — des pièces très recherchées par les fans nostalgiques de l'ère Méga. Idéal pour commencer une collection Méga Évolution japonaise.`,
     contents: [
@@ -309,7 +309,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 74.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension principale de la série Écarlate & Violet — Battle Partners. Centrée sur le duo Dresseur/Pokémon avec des SAR illustrant les partenaires de combat légendaires. Contient des cartes ex des Pokémon les plus populaires dans de nouvelles illustrations orientées combat et amitié.`,
     contents: [
@@ -332,7 +332,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 194.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension collector centrée sur Pikachu et les Pokémon Électrik avec des artworks d'une qualité graphique exceptionnelle. Parmi les sets japonais les plus difficiles à trouver — valeur de revente élevée. Contient des versions ex et SAR de Pikachu introuvables dans d'autres sets, ainsi que des Pokémon Scarlet & Violet en Terastal Électrik.`,
     contents: [
@@ -355,7 +355,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 94.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale dédiée aux Pokémon Dragon — le type le plus populaire chez les collectionneurs japonais. Contient des SAR Dracolosse ex, Roigada ex et les plus belles illustrations Dragon du format Écarlate & Violet. Le display de référence pour les fans de Dragons.`,
     contents: [
@@ -378,7 +378,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 49.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension principale Stellar Crown — introduit le nouveau type Stellaire dans le TCG. Contient la SAR Terapagos ex en illustration complète et des cartes Stellaires inédites. Set abordable avec un très bon rapport contenu/prix pour les débutants souhaitant se lancer dans les displays japonais.`,
     contents: [
@@ -401,7 +401,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 44.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale centrée sur les Pokémon de la nuit — Spectre, Ténèbres et Plante. Contient la SAR Munkidori ex et des cartes illustrées dans une ambiance nocturne unique. L'un des displays les plus accessibles en prix avec un contenu de qualité. Idéal pour les ouvertures en groupe.`,
     contents: [
@@ -424,7 +424,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 59.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension Future (Paradoxe du Futur) — Cyber Judge. Contient les Pokémon futuristes comme Vert-de-fer ex, Paladius ex et les cartes ex des Paradoxes du futur. Set populaire en compétition pour les types Acier et Électrik futuristes avec des SAR très valorisées.`,
     contents: [
@@ -447,7 +447,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 104.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension Passé (Paradoxe du Passé) — Wild Force. Contient les Pokémon anciens comme Rugit-lune ex, Serpevil ex et les cartes Paradoxe Passé les plus recherchées. Très populaire pour ses SAR de Pokémon anciens avec des illustrations de style préhistorique épique.`,
     contents: [
@@ -470,7 +470,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 79.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension Future Flash — les Pokémon Paradoxe du Futur dans leur version la plus puissante. Contient la SAR Tulipe (Dresseur) très recherchée et des versions ex futuristes d'Amphinobi, Raichu et Électhor. Très apprécié pour ses illustrations de dresseurs en illustration complète.`,
     contents: [
@@ -493,7 +493,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 69.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension Ancient Roar — les Pokémon anciens dans leur version la plus brute. Contient la SAR Rugit-lune ex en illustration alternative, considérée comme l'une des plus belles cartes de la série Écarlate & Violet. Display collector pour les fans des Pokémon Paradoxe Passé.`,
     contents: [
@@ -516,7 +516,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 109.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale dédiée aux Pokémon Eau et Dragon avec Dodonex, Tiégro ex et les SAR de la région de Paldea en version aquatique. Un display japonais iconique pour les amateurs de Pokémon de la mer — les cartes SAR de cette extension ont une forte valeur de collection à long terme.`,
     contents: [
@@ -543,7 +543,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 299.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Le set le plus mythique de la série Écarlate & Violet — un hommage complet aux 151 Pokémon originaux de la première génération. Chaque booster est une capsule temporelle vers l'ère Génération 1, avec des cartes ex de Dracaufeu, Mewtwo, Florizarre et Tortank dans des artworks inédits. SAR "Professeur Chen" et "Dresseur avec Pikachu" classées parmi les 10 cartes les plus recherchées de l'année. Idéal pour les collectionneurs nostalgiques et les investisseurs.`,
     contents: [
@@ -566,7 +566,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 109.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `La première extension spéciale de la série Scarlet & Violet japonaise — le set qui a ouvert l'ère ex avec des trios de Pokémon en illustrations complètes. Contient les premières SAR ex de la nouvelle génération : Mâchefer ex de Nymphia, Carchacrok ex et Carabaffe ex. Un display fondateur pour toute collection SV japonaise.`,
     contents: [
@@ -589,7 +589,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 74.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Le tout premier display de la série Écarlate & Violet japonaise — la base de toute collection SV. Contient les premières cartes ex de la nouvelle génération avec Koraidon ex et les Pokémon de Paldea. Un display fondateur dont la valeur collector ne cesse de croître depuis sa sortie.`,
     contents: [
@@ -612,7 +612,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 79.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Display complémentaire de Scarlet ex — l'autre moitié du duo fondateur de la série SV. Contient Miraidon ex et les Pokémon futuristes de Paldea. Les SAR Miraidon ex et les cartes ex futuristes sont très prisées des collectionneurs qui souhaitent posséder les deux faces de la Génération 9.`,
     contents: [
@@ -635,7 +635,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 84.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale centrée sur les Pokémon de type Sol et Roche — les Paradoxes du Passé les plus bruts. Contient Donphan ex de l'ère ancienne, des cartes ex très demandées en compétition et des SAR de Pokémon fossiles avec des illustrations épiques style rupestre. Set idéal pour les fans du type Sol.`,
     contents: [
@@ -658,7 +658,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 134.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `LE display shiny de la série SV — l'équivalent japonais des Destinées Futures et Chrono Impact. Chaque booster peut contenir des versions shiny (brillantes) de Pokémon de toute la série Écarlate & Violet. Taux de cartes rares garanti supérieur aux sets standards. Indispensable pour les chasseurs de shinies.`,
     contents: [
@@ -681,7 +681,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 159.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension principale SV3 centrée sur le Roi de la Flamme Noire. Contient les cartes ex de Dracaufeu Tera Feu avec des illustrations de feu noir spectaculaires, ainsi que la SAR Grusha (dresseur Glace) très recherchée. L'un des displays SV les plus demandés pour sa densité en cartes de valeur et ses Pokémon de Paldea en version Teracristal.`,
     contents: [
@@ -704,7 +704,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 104.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale à l'ambiance vapeur rouge et mystérieuse, centrée sur les Pokémon Poison et Fée. Contient les SAR Nymphia ex en illustration complète et des cartes ex de Pokémon de la région de Paldea dans des artworks enveloppés de brume pourpre. Très apprécié pour ses illustrations artistiques uniques dans la série SV.`,
     contents: [
@@ -727,7 +727,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 99.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension principale SV6 avec Ogerpon et les masques — un set riche en Pokémon légendaires exclusifs au DLC La Disque Turquoise de Pokémon Écarlate & Violet. Contient des SAR Ogerpon ex dans ses quatre formes de masque, toutes différentes et très recherchées. Un display stratégique pour les collectionneurs qui suivent les exclusivités DLC.`,
     contents: [
@@ -754,7 +754,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 224.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Le set ultime de la génération VSTAR — l'équivalent japonais des Destinées Futures de l'ère V. Contient des versions ASTRO (brilliant star) et SAR de tous les Pokémon VSTAR de l'ère Épée & Bouclier. Chaque display est une véritable loterie avec des cartes atteignant plusieurs centaines d'euros à l'unité. Set incontournable pour les collectionneurs de Pokémon VSTAR.`,
     contents: [
@@ -777,7 +777,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 224.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `L'un des sets japonais les plus iconiques et recherchés de tous les temps — un set entièrement composé de cartes rares et ultra-rares avec VMAX, V et Character Rare. Taux de cartes standard quasi nul : chaque booster contient des cartes de valeur. Les Character Rare dresseurs de Vmax Climax sont parmi les cartes les plus cotées du TCG japonais.`,
     contents: [
@@ -800,7 +800,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 274.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension emblématique de la Zone Perdue — réintroduction du mécanisme de Zone Perdue dans le TCG avec des cartes V et VSTAR liées à la disparition. Contient les célèbres Giratine VSTAR et Comfey en versions ultra-rares. L'un des sets les plus appréciés pour son thème sombre et mystérieux, avec des illustrations parmi les plus artistiques de toute la série Épée & Bouclier.`,
     contents: [
@@ -823,7 +823,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 164.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Dernier set principal de la génération Épée & Bouclier avant l'ère SV. Contient Lugia VSTAR et Unown VSTAR dans des artworks cosmiques époustouflants. Display très prisé pour clore la collection Épée & Bouclier — les SAR de ce set atteignent des prix records sur le marché secondaire.`,
     contents: [
@@ -846,7 +846,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 179.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Extension spéciale E&B centrée sur les Pokémon Spectre et Ténèbres dans une ambiance de fantômes. Contient les SAR Hisuian Zoroark VSTAR et des cartes Pokémon de Hisui dans des illustrations nocturnes et mystérieuses. L'un des sets spéciaux E&B les plus recherchés pour ses cartes Hisui exclusives.`,
     contents: [
@@ -869,7 +869,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 119.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Le set qui a introduit les cartes VSTAR dans le TCG Pokémon — un moment historique du jeu de cartes. Contient Arceus VSTAR, la carte la plus puissante et recherchée de toute la génération Épée & Bouclier. Un display fondamental pour toute collection E&B complète.`,
     contents: [
@@ -965,7 +965,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 269.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret Ultra Premium édition spéciale 30e anniversaire Pokémon — un produit officiel Japonais célébrant 3 décennies du jeu de cartes. Contenu exclusif 30th avec des cartes anniversaire introuvables dans les sets standards, dans un packaging futuriste collector. Pièce d'exception pour les collectionneurs souhaitant marquer l'histoire du TCG Pokémon.`,
     contents: [
@@ -988,7 +988,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 184.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret édition limitée exclusive au Pokémon Center de Fukuoka — introuvable en dehors du Japon et impossible à commander en ligne au Japon. Contenu spécial région Fukuoka avec des cartes et produits Pokémon Center exclusifs à cette boutique. Un produit de collection rare qui atteste d'un import direct du Pokémon Center officiel.`,
     contents: [
@@ -1011,7 +1011,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 154.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret collector Officiel Pokémon Center Japon — édition exclusive Méga Symphonie dans un packaging Pokémon Center introuvable en boutique classique. Complémentaire au Coffret Méga Bravoure, les deux ensemble forment la collection complète des coffrets Pokémon Center Méga. Valeur croissante en tant que paire collector.`,
     contents: [
@@ -1034,7 +1034,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 144.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret édition limitée exclusive au Pokémon Center Tōhoku — la seule boutique Pokémon Center dans le nord du Japon. Produit spécial région Tōhoku avec des cartes exclusives représentant des Pokémon liés à la culture et aux paysages du nord japonais. Très difficile à obtenir même depuis le Japon.`,
     contents: [
@@ -1057,7 +1057,7 @@ export const sealedProducts: Product[] = [
     condition: 'Neuf',
     language: 'JAP',
     price: 144.9,
-    stock: 99,
+    stock: 0,
     number: '',
     description: `Coffret collector édition limitée du Pokémon Center d'Hiroshima — avec des cartes et produits exclusifs à cette boutique régionale. Format collector Pokémon Center qui inclut un contenu introuvable dans les circuits classiques. Un cadeau idéal pour les fans de Pokémon et les amateurs de culture japonaise.`,
     contents: [

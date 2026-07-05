@@ -26,7 +26,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 274.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display officiel en version française de la dixième extension Écarlate & Violet. Contient 36 boosters scellés pour maximiser vos chances d'obtenir les cartes les plus recherchées de l'édition. Produit neuf, scellé sous cellophane d'origine. Expédié depuis la France, aucun frais de douane.`,
     contents: [
@@ -49,7 +49,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 279.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display officiel EV08 en version française. Plonge les joueurs dans une tempête de puissance avec Dracaufeu, Pikachu et Amphinobi Téracristal. 36 boosters pour explorer toute la richesse de cette extension populaire.`,
     contents: [
@@ -72,7 +72,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 219.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display EV07 en version française mettant en vedette Terapagos sous sa forme Téracristal. Cette extension cosmique introduit de nouvelles mécaniques stellaires et des illustrations spectaculaires.`,
     contents: [
@@ -95,7 +95,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 219.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display EV06 en version française. L'édition sombre et envoûtante portée par Ogerpon et ses masques légendaires. Des cartes brillantes, EX et SAR dans une atmosphère mystique unique.`,
     contents: [
@@ -118,7 +118,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 229.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display EV05 en version française explorant les paradoxes temporels avec Serpente-Eau et Vert-de-Fer. Des designs rétro-futuristes et de nouvelles mécaniques stratégiques pour collectionneurs et compétiteurs.`,
     contents: [
@@ -141,7 +141,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 249.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display EV04 en version française. Des Pokémon Paradoxes issus du passé et du futur dans une atmosphère rétro-futuriste unique. Idéal pour compléter votre collection ou optimiser vos decks compétitifs.`,
     contents: [
@@ -164,7 +164,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 249.90,
-    stock: 5,
+    stock: 0,
     number: '',
     description: `Display EV03 en version française avec des Pokémon-ex incandescents et des illustrations explosives. Extension populaire du bloc Écarlate & Violet — des cartes puissantes pour la collection et le compétitif.`,
     contents: [
@@ -187,7 +187,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 249.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display EV02 en version française. Explorez les évolutions des starters de Paldea — Flâmigator, Miascarade et Palmaval — dans une extension haute en couleur avec Pokémon-ex Téracristal.`,
     contents: [
@@ -210,7 +210,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 224.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Display EV01 en version française. La première extension du bloc Écarlate & Violet inaugurant la 9e génération avec Koraidon et Miraidon. Introduction des Pokémon-ex dans un format revisité.`,
     contents: [
@@ -238,7 +238,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 79.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel inspiré par Zekrom et la région d'Unys. Contient 9 boosters Foudre Noire (EV10.5) et une carte promo brillante exclusive. Produit neuf et scellé, expédié depuis la France.`,
     contents: [
@@ -260,7 +260,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 79.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel inspiré par Reshiram. Contient 9 boosters Flammes Blanches (EV10.5) et une carte promo brillante exclusive. Thématique ardente mêlant puissance légendaire et esthétique flamboyante.`,
     contents: [
@@ -282,7 +282,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 94.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite officiel de la 10e extension Écarlate & Violet. 9 boosters scellés avec carte promo brillante exclusive. Format idéal pour découvrir l'édition ou enrichir sa collection.`,
     contents: [
@@ -326,7 +326,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 114.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV08 avec Pikachu Téracristal en promo exclusive. Extension mettant en vedette Dracaufeu, Pikachu et Amphinobi dans des illustrations spectaculaires. Parfait pour la collection et le compétitif.`,
     contents: [
@@ -414,7 +414,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 109.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV05 explorant les paradoxes temporels avec Serpente-Eau et Vert-de-Fer. Carte promo brillante exclusive incluse. Extension idéale pour diversifier votre collection.`,
     contents: [
@@ -436,7 +436,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 109.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV4.5 avec plus de 100 Pokémon chromatiques dans un design raffiné. Carte promo exclusive (Miascarade, Flâmigator ou Palmaval) incluse. Très prisé des collectionneurs de shiny.`,
     contents: [
@@ -458,7 +458,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 109.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV04 avec les Pokémon Paradoxes du passé et du futur. Carte promo exclusive (Motive-Foudre ou Garde-de-Fer) incluse. Parfait pour les fans de l'ère Paradoxe.`,
     contents: [
@@ -480,7 +480,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 189.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV03 avec des Pokémon-ex incandescents. Édition ancienne et de plus en plus rare. Carte promo brillante exclusive incluse. Idéal pour les collectionneurs qui complètent la série.`,
     contents: [
@@ -502,7 +502,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 199.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Dresseur d'Élite EV02 avec les starters de Paldea — Flâmigator, Miascarade et Palmaval. Édition rare et très recherchée. Carte promo exclusive incluse.`,
     contents: [
@@ -529,7 +529,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 29.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Illustration Victini – EV10.5. Célèbre le Pokémon Victorieux avec des cartes promos brillantes et une carte jumbo artistique exclusive. Contient 2 boosters EV10.5 et 2 cartes promos Victini.`,
     contents: [
@@ -551,7 +551,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 29.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Poster EV10.5 avec boosters et poster exclusif de l'extension. Produit officiel neuf et scellé, parfait pour décorer et enrichir sa collection.`,
     contents: [
@@ -573,7 +573,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 64.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Classeur EV08.5 avec classeur aux couleurs d'Évoli et boosters Évolutions Prismatiques. Contient un album de rangement pour vos cartes et des boosters exclusifs de cette édition très demandée.`,
     contents: [
@@ -618,7 +618,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 42.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Pochette EV08.5 avec pochette d'accessoires aux couleurs d'Évoli et boosters exclusifs. Inclut une pochette pratique pour ranger vos cartes et des boosters Évolutions Prismatiques.`,
     contents: [
@@ -640,7 +640,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 24.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Poster EV08.5 avec poster exclusif aux couleurs d'Évoli et boosters Évolutions Prismatiques. Le complément parfait pour décorer sa salle de jeu.`,
     contents: [
@@ -662,7 +662,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 54.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Premium mettant à l'honneur Dracaufeu-ex dans une édition collector exclusive. Cartes promos brillantes exclusives et boosters inclus. L'indispensable pour les fans du dragon de feu emblématique.`,
     contents: [
@@ -684,7 +684,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 59.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret mettant à l'honneur Amphinobi-ex dans l'univers mystérieux de Fable Nébuleuse. Cartes promos exclusives et boosters EV06.5 inclus. Parfait pour les fans du Pokémon ninja aquatique.`,
     contents: [
@@ -706,7 +706,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 59.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Premium mettant à l'honneur Flamigator-ex de l'extension Destinées de Paldea. Cartes promos brillantes exclusives et boosters EV04.5 inclus.`,
     contents: [
@@ -728,7 +728,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 25.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Premium mettant à l'honneur Miascarade-ex de l'extension Destinées de Paldea. Cartes promos brillantes exclusives et boosters EV04.5 inclus.`,
     contents: [
@@ -750,7 +750,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 74.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Premium mettant à l'honneur Palmaval-ex de l'extension Destinées de Paldea. Cartes promos brillantes exclusives et boosters EV04.5 inclus.`,
     contents: [
@@ -772,7 +772,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 74.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Pack de 5 mini boîtes métalliques aux designs des 151 Pokémon originaux. Chaque mini tin contient des boosters de l'extension 151 (EV03.5). Idéal pour les nostalgiques de la première génération.`,
     contents: [
@@ -794,7 +794,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 29.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret collector vintage mettant à l'honneur Méga-Latias EX. Édition Méga-Évolution avec cartes promos exclusives. Une pièce rare pour les collectionneurs de la génération 6.`,
     contents: [
@@ -816,7 +816,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 29.99,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret collector vintage mettant à l'honneur Méga-Kangourex EX. Édition ME2 avec cartes promos exclusives. Pour les nostalgiques de la Méga-Évolution.`,
     contents: [
@@ -838,7 +838,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 52.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Premium vintage mettant à l'honneur Méga-Florizarre EX. Édition collector rare avec cartes promos exclusives. Très recherché par les collectionneurs de la première génération.`,
     contents: [
@@ -860,7 +860,7 @@ export const sealedFrProducts: Product[] = [
     condition: 'Neuf',
     language: 'FR',
     price: 39.90,
-    stock: 1,
+    stock: 0,
     number: '',
     description: `Coffret Figurine mettant à l'honneur Méga-Lucario EX. Inclut une figurine exclusive et des cartes promos brillantes. Un coffret collector pour les fans du Pokémon de l'Aura.`,
     contents: [
