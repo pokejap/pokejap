@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm tracking-wide">Navigation</h3>
             <ul className="space-y-2.5">
-              {[['/', 'Accueil'], ['/boutique', 'Boutique'], ['/scelles', 'Scellés'], ['/a-propos', 'À propos'], ['/panier', 'Mon Panier']].map(([href, label]) => (
+              {[['/', 'Accueil'], ['/boutique', 'Boutique'], ['/scelles', 'Scellés JAP'], ['/scelles-fr', 'Scellés FR'], ['/a-propos', 'À propos'], ['/panier', 'Mon Panier']].map(([href, label]) => (
                 <li key={href}>
                   <Link href={href} className="text-gray-500 text-sm hover:text-white transition-colors flex items-center gap-2 group">
                     <span className="w-3 h-px bg-red-800/40 group-hover:bg-pokemon-red group-hover:w-5 transition-all duration-300" />
