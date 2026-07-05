@@ -6,7 +6,7 @@ import { sealedProducts } from '@/data/sealed'
 
 export const metadata: Metadata = {
   title: 'PokeJap — Cartes & Scellés Pokémon Japonais',
-  description: 'Boutique spécialisée en Pokémon japonais — displays, ETB, coffrets et singles authentiques importés directement du Japon.',
+  description: 'Boutique spécialisée en Pokémon japonais — displays, coffrets scellés et cartes singles authentiques importés directement du Japon.',
 }
 
 const SAKURA_PETALS = [
@@ -49,8 +49,8 @@ export default function HomePage() {
     .filter(Boolean) as typeof sealedProducts
 
   const displayCount = sealedProducts.filter(p => p.category === 'display').length
-  const etbCount     = sealedProducts.filter(p => p.category === 'etb').length
   const coffretCount = sealedProducts.filter(p => p.category === 'coffret').length
+  const cartesCount  = products.length
 
   return (
     <div className="overflow-hidden">
@@ -81,7 +81,7 @@ export default function HomePage() {
           </p>
 
           <p className="animate-fade-in-up delay-300 text-gray-300 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Displays, ETB et coffrets japonais scellés — introuvables en France,
+            Displays, coffrets et cartes japonaises scellés — introuvables en France,
             importés directement du Japon pour les vrais collectionneurs.
           </p>
 
@@ -113,8 +113,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 text-center">
           {[
             { value: `${displayCount}`, label: 'Displays japonais', emoji: '📦' },
-            { value: `${etbCount}`,     label: 'ETB disponibles',   emoji: '🎁' },
             { value: `${coffretCount}`, label: 'Coffrets exclusifs', emoji: '🎀' },
+            { value: `${cartesCount}`,  label: 'Cartes singles',     emoji: '🃏' },
           ].map(({ value, label, emoji }) => (
             <div key={label}>
               <p className="text-3xl font-black text-white mb-1">{emoji} {value}</p>
@@ -205,7 +205,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: "🇯🇵", kanji: "本物", titre: "100% Authentique", texte: "Produits importés directement du Japon. Chaque scellé est vérifié et authentifié avant l'envoi." },
-              { icon: "📦", kanji: "安心", titre: "Emballage soigné", texte: "Vos displays et ETBs sont protégés avec soin pour arriver en parfait état, scellés sous cellophane officielle." },
+              { icon: "📦", kanji: "安心", titre: "Emballage soigné", texte: "Vos displays et coffrets sont protégés avec soin pour arriver en parfait état, scellés sous cellophane officielle." },
               { icon: "🔒", kanji: "安全", titre: "Paiement sécurisé", texte: "Stripe, la référence mondiale en sécurité. Vos données bancaires ne transitent jamais par nos serveurs." },
             ].map((g, i) => (
               <div key={i} className="relative group bg-white/[0.03] border border-white/5 rounded-2xl p-6 hover:border-red-800/40 transition-all duration-500 hover:-translate-y-2 animate-border-glow card-shine">
@@ -249,7 +249,7 @@ export default function HomePage() {
             <div className="text-6xl mb-6 inline-block animate-float">📦</div>
             <h2 className="text-3xl font-black text-white mb-4">Prêt à ouvrir des boosters japonais ?</h2>
             <p className="text-gray-400 mb-8">
-              {sealedProducts.length} produits scellés disponibles — displays, ETB &amp; coffrets introuvables en France.
+              {sealedProducts.length} produits scellés disponibles — displays &amp; coffrets introuvables en France.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/scelles" className="inline-block px-10 py-4 bg-pokemon-yellow text-black font-black text-lg rounded-2xl hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl shadow-yellow-900/20">

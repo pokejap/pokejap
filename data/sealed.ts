@@ -1,9 +1,15 @@
 import { Product } from '@/types'
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  CDN Hikaru Distribution — images officielles produits
+//  CDN Hikaru Distribution — uniquement pour les coffrets exclusifs
+//  (les coffrets Pokémon Center n'ont pas d'équivalent sur le site officiel)
 // ─────────────────────────────────────────────────────────────────────────────
 const H = 'https://hikarudistribution.com/cdn/shop/files'
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  Images officielles Pokémon Card JP — aucun watermark
+// ─────────────────────────────────────────────────────────────────────────────
+const P = 'https://www.pokemon-card.com/products'
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  TARIFICATION — Compte Pro Hikaru/TCGdirect
@@ -37,7 +43,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-box-glory-of-team-rocket-sv10.jpg`,
+    imageUrl: `${P}/2025/images/sv10.jpg`,
   },
 
   {
@@ -60,7 +66,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-heat-wave-arena-sv9a-2.jpg`,
+    imageUrl: `${P}/2025/images/sv9a.jpg`,
   },
 
   {
@@ -83,7 +89,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-mega-dream-ex-m2a.jpg`,
+    imageUrl: `${P}/2025/images/m2a.jpg`,
   },
 
   {
@@ -106,7 +112,7 @@ export const sealedProducts: Product[] = [
       'Artworks premium signés illustrateurs officiels',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/SV8-asset-3.png`,
+    imageUrl: `${P}/2024/images/sv8a.jpg`,
   },
 
   {
@@ -129,7 +135,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-inferno-x_6663aa80-6f81-4d8b-9f44-9623ae652611.jpg`,
+    imageUrl: `${P}/2025/images/M2.jpg`,
   },
 
   {
@@ -152,7 +158,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display_abyss_eye_M5.png`,
+    imageUrl: `${P}/2026/images/abisueye.jpg`,
   },
 
   {
@@ -175,7 +181,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/Displayboxninjaspinnerm4.png`,
+    imageUrl: `${P}/2026/images/m4pkg.jpg`,
   },
 
   {
@@ -198,7 +204,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display_Munikis_Zero_M3.png`,
+    imageUrl: `${P}/2025/images/m3.jpg`,
   },
 
   {
@@ -221,7 +227,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/Display-Mega-Symphonia-M1S.jpg`,
+    imageUrl: `${P}/2025/images/M1S.jpg`,
   },
 
   {
@@ -244,7 +250,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/Display-Mega-Brave-M1L.jpg`,
+    imageUrl: `${P}/2025/images/M1L.jpg`,
   },
 
   {
@@ -267,7 +273,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-white-flare-sv11w.jpg`,
+    imageUrl: `${P}/2025/images/sv11w.jpg`,
   },
 
   {
@@ -290,7 +296,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-black-bolt-sv11b.jpg`,
+    imageUrl: `${P}/2025/images/sv11b.jpg`,
   },
 
   {
@@ -313,7 +319,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-battle-partners-SV9.jpg`,
+    imageUrl: `${P}/2024/images/sv9.jpg`,
   },
 
   {
@@ -336,7 +342,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/4.png`,
+    imageUrl: `${P}/2024/images/pakku_choudenbureika.jpg`,
   },
 
   {
@@ -359,7 +365,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-paradise-dragona-sv7A.png`,
+    imageUrl: `${P}/2024/images/sv7a_pillow_thumbnail.jpg`,
   },
 
   {
@@ -382,7 +388,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/stellar-miracle-sv7-box.png`,
+    imageUrl: `${P}/2024/images/pakku_suteramirakuru.jpg`,
   },
 
   {
@@ -405,7 +411,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/night-wanderer-sv6a.png`,
+    imageUrl: `${P}/2024/images/sv6a.jpg`,
   },
 
   {
@@ -428,7 +434,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/cyber-judge-sv5m-box.png`,
+    imageUrl: `${P}/2023/images/SV5_20.jpg`,
   },
 
   {
@@ -451,7 +457,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/wild-force-sv5k-box.png`,
+    imageUrl: `${P}/2023/images/SV5_21.jpg`,
   },
 
   {
@@ -474,7 +480,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/future-flash-sv4m-box.png`,
+    imageUrl: `${P}/2023/images/sv4m_pkg.jpg`,
   },
 
   {
@@ -497,7 +503,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/ancient-roar-sv4k-box.png`,
+    imageUrl: `${P}/2023/images/sv4k_pkg.jpg`,
   },
 
   {
@@ -520,7 +526,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/raging-suef-sv3a-box.png`,
+    imageUrl: `${P}/2023/images/sv3_pkg_2.jpg`,
   },
 
   // ════════════════════════════════════════════════════════════════
@@ -574,7 +580,7 @@ export const sealedProducts: Product[] = [
       'SAR Professeur Chen (très haute valeur)',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-pokemon-151-sv2A.png`,
+    imageUrl: `${P}/2023/images/sv2a.jpg`,
   },
 
   {
@@ -597,7 +603,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/triplet-beat-sv1a-box.png`,
+    imageUrl: `${P}/2023/images/SV1a_PKG.jpg`,
   },
 
   {
@@ -620,7 +626,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/scarlet-sv1s-box.png`,
+    imageUrl: `${P}/2022/images/sv1s_pillow.jpg`,
   },
 
   {
@@ -643,7 +649,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/violet-ex-sv1v-box.png`,
+    imageUrl: `${P}/2022/images/sv1v_pillow.jpg`,
   },
 
   {
@@ -666,7 +672,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/clay-burst-sv2D-box.png`,
+    imageUrl: `${P}/2023/images/sv2d.jpg`,
   },
 
   {
@@ -689,7 +695,7 @@ export const sealedProducts: Product[] = [
       'Exclusivités SV brillantes introuvables ailleurs',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/display-shiny-treasure-sv4A.png`,
+    imageUrl: `${P}/2024/images/8e09f54354fc14218aadc0b0e85f86f301f57d22.jpg`,
   },
 
   {
@@ -712,7 +718,7 @@ export const sealedProducts: Product[] = [
       'Pokémon Paldea en version Teracristal',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/ruler-of-black-flame-sv3-box.png`,
+    imageUrl: `${P}/2023/images/sv3.jpg`,
   },
 
   {
@@ -735,7 +741,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/crimson-haze-sv5A.png`,
+    imageUrl: `${P}/2024/images/sv5a_PKG.jpg`,
   },
 
   {
@@ -758,7 +764,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/mas-of-change-sv6-box.png`,
+    imageUrl: `${P}/2024/images/SV6.jpg`,
   },
 
   // ════════════════════════════════════════════════════════════════
@@ -785,7 +791,7 @@ export const sealedProducts: Product[] = [
       'Pokémon V, VMAX et VSTAR en version ultime',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/vstar-universe-s12a-box.png`,
+    imageUrl: `${P}/2022/images/s12a.jpg`,
   },
 
   {
@@ -808,7 +814,7 @@ export const sealedProducts: Product[] = [
       'Taux de rares exceptionnel — quasi 0% commun',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/27.jpg`,
+    imageUrl: `${P}/2021/images/S8b_PKG.jpg`,
   },
 
   {
@@ -831,7 +837,7 @@ export const sealedProducts: Product[] = [
       'Cartes V et VSTAR en illustration complète',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/lost-abyss-s11-box.png`,
+    imageUrl: `${P}/2022/images/s11_pillow.jpg`,
   },
 
   {
@@ -854,7 +860,7 @@ export const sealedProducts: Product[] = [
       'Dernier set E&B — valeur collector en hausse',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/paradigm-trigger-s12-box.png`,
+    imageUrl: `${P}/2022/images/s12.jpg`,
   },
 
   {
@@ -877,7 +883,7 @@ export const sealedProducts: Product[] = [
       'Artworks nocturnes exclusifs Dark Phantasma',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/Shopify-Product-import-2_ac523cbe-1c48-46ed-a737-a7acd46a958e.png`,
+    imageUrl: `${P}/2022/images/s10a.jpg`,
   },
 
   {
@@ -900,7 +906,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/Shopify-Product-import-2.jpg`,
+    imageUrl: `${P}/2021/images/S9_PKG.jpg`,
   },
 
   {
@@ -923,7 +929,7 @@ export const sealedProducts: Product[] = [
       'Scellé sous cellophane officielle',
       'Expédié depuis notre stock en France',
     ],
-    imageUrl: `${H}/Box_display_Storm_Emeralda_M6.jpg`,
+    imageUrl: `${P}/2026/images/stormemeralda.jpg`,
   },
 
   // ════════════════════════════════════════════════════════════════
