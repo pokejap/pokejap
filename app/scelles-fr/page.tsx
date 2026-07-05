@@ -100,7 +100,7 @@ export default function ScellesFrPage() {
   const visibleSets = showAllSets ? allSets : allSets.slice(0, 3)
 
   const filtered = useMemo(() => {
-    let result = [...sealedFrProducts]
+    let result = sealedFrProducts.filter(p => p.stock > 0)
     if (activeType !== 'tous') result = result.filter(p => p.category === activeType)
     if (activeSet  !== 'tous') result = result.filter(p => p.set      === activeSet)
     return result
