@@ -146,9 +146,9 @@ export default function ScellesFrPage() {
         <p className="text-gray-400 text-sm">
           {sealedFrProducts.length} produits · Displays, ETB &amp; Coffrets FR · Expédié sous 48h
         </p>
-        <div className="mt-3 inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold px-3 py-1.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-          Stock permanent — expédié directement depuis la France
+        <div className="mt-3 inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
+          Stock momentanément indisponible — bientôt de retour
         </div>
       </div>
 
