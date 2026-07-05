@@ -90,12 +90,23 @@ function SealedCard({ product, onAdd }: { product: Product; onAdd: () => void })
 // ── Page principale ───────────────────────────────────────────────────────────
 export default function ScellesPage() {
   const [activeType, setActiveType] = useState<ProductCategory | 'tous'>('tous')
+  const [activeSet, setActiveSet]   = useState<string>('tous')
+  const [showAllSets, setShowAllSets] = useState(false)
   const { addItem, openCart }       = useCartStore()
 
+  const allSets = useMemo(() =>
+    Array.from(new Set(sealedProducts.map(p => p.set))),
+    []
+  )
+
+  const visibleSets = showAllSets ? allSets : allSets.slice(0, 3)
+
   const filtered = useMemo(() => {
-    if (activeType === 'tous') return [...sealedProducts]
-    return sealedProducts.filter(p => p.category === activeType)
-  }, [activeType])
+    let result = [...sealedProducts]
+    if (activeType !== 'tous') result = result.filter(p => p.category === activeType)
+    if (activeSet  !== 'tous') result = result.filter(p => p.set      === activeSet)
+    return result
+  }, [activeType, activeSet])
 
   function handleAdd(product: Product) {
     addItem(product)
@@ -151,6 +162,30 @@ export default function ScellesPage() {
         ))}
       </div>
 
+      {/* Filtre par édition */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <button
+          onClick={() => setActiveSet('tous')}
+          className={`px-3 py-1.5 rounded-lg border text-xs font-medium transition-all ${activeSet === 'tous' ? 'bg-white/10 border-white/30 text-white' : 'border-white/5 text-gray-500 hover:text-gray-300'}`}
+        >
+          Toutes les éditions
+        </button>
+        {visibleSets.map(set => (
+          <button
+            key={set}
+            onClick={() => setActiveSet(set)}
+            className={`px-3 py-1.5 rounded-lg border text-xs font-medium transition-all ${activeSet === set ? 'bg-white/10 border-white/30 text-white' : 'border-white/5 text-gray-500 hover:text-gray-300'}`}
+          >
+            {set}
+          </button>
+        ))}
+        <button
+          onClick={() => setShowAllSets(v => !v)}
+          className="px-3 py-1.5 rounded-lg border border-white/5 text-xs font-medium text-gray-500 hover:text-gray-300 transition-all"
+        >
+          {showAllSets ? 'Voir moins ↑' : `Voir plus (${allSets.length - 3}) ↓`}
+        </button>
+      </div>
 
       {/* Grille produits */}
       {filtered.length === 0 ? (
