@@ -49,10 +49,11 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json()
-    const { items, customer, couponCode }: {
+    const { items, customer, couponCode, shippingMethod }: {
       items: { productId: string; quantity: number }[]
       customer?: CustomerInfo
       couponCode?: string
+      shippingMethod?: 'relay' | 'home' | 'international'
     } = body
 
     if (!items || items.length === 0) {
@@ -88,9 +89,29 @@ export async function POST(request: NextRequest) {
     }
 
     // ── Calcul du total et de la livraison (serveur) ─────────────────────────
-    const siteUrl  = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+    const SHIPPING_COSTS = {
+      relay:         { price: 4.99,  label: 'Mondial Relay — Point Relais',      desc: 'France · 3–5 jours ouvrés' },
+      home:          { price: 7.99,  label: 'Colissimo — Livraison à domicile',   desc: 'France · 2–3 jours ouvrés' },
+      international: { price: 24.99, label: 'Livraison Internationale',           desc: 'Europe, USA · 7–14 jours ouvrés' },
+    } as const
+    // Validation runtime — rejette toute valeur non autorisée (ex: injection "gratuit")
+    const VALID_METHODS = ['relay', 'home', 'international'] as const
+    type ValidMethod = typeof VALID_METHODS[number]
+    const resolvedMethod: ValidMethod = VALID_METHODS.includes(shippingMethod as ValidMethod)
+      ? (shippingMethod as ValidMethod)
+      : 'relay'
+    const selectedShipping = SHIPPING_COSTS[resolvedMethod]
+    // Utiliser l'origin de la requête pour que les redirects Stripe
+    // pointent toujours vers le bon domaine (prod, preview Vercel, localhost…)
+    const siteUrl = request.headers.get('origin')
+                 ?? process.env.NEXT_PUBLIC_SITE_URL
+                 ?? 'http://localhost:3000'
     const subtotal = resolvedItems.reduce((s, i) => s + i.product.price * i.quantity, 0)
-    const shipping = 5.99
+    const FREE_SHIPPING_THRESHOLD = 50
+    const isFranceMethod = resolvedMethod === 'relay' || resolvedMethod === 'home'
+    const shippingFree = isFranceMethod && subtotal >= FREE_SHIPPING_THRESHOLD
+    const shippingPrice = shippingFree ? 0 : selectedShipping.price
+    const shippingLabel = shippingFree ? `${selectedShipping.label} — Offerte` : selectedShipping.label
 
     // ── Line items Stripe ────────────────────────────────────────────────────
     const lineItems = resolvedItems.map(({ product, quantity }) => ({
@@ -111,12 +132,14 @@ export async function POST(request: NextRequest) {
       price_data: {
         currency:     'eur',
         product_data: {
-          name:        'Livraison Mondial Relay',
-          description: 'Livraison en point relais 3–5 jours ouvrés',
+          name:        shippingLabel,
+          description: shippingFree
+            ? 'Livraison offerte en France à partir de 50 € — France uniquement'
+            : selectedShipping.desc,
           images:      [],
           metadata:    { productId: '__shipping__' },
         },
-        unit_amount: Math.round(shipping * 100),
+        unit_amount: Math.round(shippingPrice * 100), // 0 si gratuit — s'affiche "Livraison offerte" dans Stripe
       },
       quantity: 1,
     })

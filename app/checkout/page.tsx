@@ -1,13 +1,51 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Lock, Loader2, User, MapPin, Phone, Mail, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Lock, Loader2, User, MapPin, Truck, ChevronRight } from 'lucide-react'
 import { useCartStore } from '@/lib/cart-store'
 import { useAuthStore } from '@/lib/auth-store'
 import { loadStripe } from '@stripe/stripe-js'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+
+const PAYS_OPTIONS = [
+  { value: 'France',          label: '🇫🇷 France' },
+  { value: 'Belgique',        label: '🇧🇪 Belgique' },
+  { value: 'Luxembourg',      label: '🇱🇺 Luxembourg' },
+  { value: 'Suisse',          label: '🇨🇭 Suisse' },
+  { value: 'Monaco',          label: '🇲🇨 Monaco' },
+  { value: 'Allemagne',       label: '🇩🇪 Allemagne' },
+  { value: 'Espagne',         label: '🇪🇸 Espagne' },
+  { value: 'Italie',          label: '🇮🇹 Italie' },
+  { value: 'Pays-Bas',        label: '🇳🇱 Pays-Bas' },
+  { value: 'Portugal',        label: '🇵🇹 Portugal' },
+  { value: 'Autriche',        label: '🇦🇹 Autriche' },
+  { value: 'Suède',           label: '🇸🇪 Suède' },
+  { value: 'Danemark',        label: '🇩🇰 Danemark' },
+  { value: 'Finlande',        label: '🇫🇮 Finlande' },
+  { value: 'Norvège',         label: '🇳🇴 Norvège' },
+  { value: 'Pologne',         label: '🇵🇱 Pologne' },
+  { value: 'République Tchèque', label: '🇨🇿 République Tchèque' },
+  { value: 'Hongrie',         label: '🇭🇺 Hongrie' },
+  { value: 'Roumanie',        label: '🇷🇴 Roumanie' },
+  { value: 'Grèce',           label: '🇬🇷 Grèce' },
+  { value: 'Irlande',         label: '🇮🇪 Irlande' },
+  { value: 'Royaume-Uni',     label: '🇬🇧 Royaume-Uni' },
+  { value: 'États-Unis',      label: '🇺🇸 États-Unis' },
+  { value: 'Canada',          label: '🇨🇦 Canada' },
+  { value: 'Australie',       label: '🇦🇺 Australie' },
+  { value: 'Japon',           label: '🇯🇵 Japon' },
+  { value: 'Autre',           label: '🌍 Autre pays' },
+]
+
+type ShippingMethod = 'relay' | 'home' | 'international'
+
+const SHIPPING_OPTIONS: Record<ShippingMethod, { label: string; desc: string; price: number; badge?: string }> = {
+  relay:         { label: 'Mondial Relay — Point Relais', desc: 'France · 3–5 jours ouvrés',      price: 4.99,  badge: 'Le moins cher' },
+  home:          { label: 'Colissimo — Livraison à domicile', desc: 'France · 2–3 jours ouvrés',  price: 7.99  },
+  international: { label: 'International (hors France)',  desc: 'Europe, USA · 7–14 jours ouvrés', price: 24.99 },
+}
 
 interface CustomerInfo {
   prenom: string
@@ -66,9 +104,22 @@ export default function CheckoutPage() {
   const [loading, setLoading] = useState(false)
   const [apiError, setApiError] = useState<string | null>(null)
   const [couponCode, setCouponCode] = useState('')
+  const [shippingMethod, setShippingMethod] = useState<ShippingMethod>('relay')
 
+  // Synchro pays → méthode de livraison
+  useEffect(() => {
+    if (info.pays !== 'France') {
+      setShippingMethod('international')
+    } else {
+      setShippingMethod(prev => prev === 'international' ? 'relay' : prev)
+    }
+  }, [info.pays])
+
+  const FREE_SHIPPING_THRESHOLD = 50
   const subtotal = getTotalPrice()
-  const shipping = 5.99
+  const isFranceMethod = shippingMethod === 'relay' || shippingMethod === 'home'
+  const shippingFree = isFranceMethod && subtotal >= FREE_SHIPPING_THRESHOLD
+  const shipping = shippingFree ? 0 : SHIPPING_OPTIONS[shippingMethod].price
   const total = subtotal + shipping
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -103,7 +154,7 @@ export default function CheckoutPage() {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: safeItems, customer: info, couponCode: couponCode.trim() || undefined }),
+        body: JSON.stringify({ items: safeItems, customer: info, couponCode: couponCode.trim() || undefined, shippingMethod }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Une erreur est survenue')
@@ -190,7 +241,83 @@ export default function CheckoutPage() {
                     {errors.ville && <p className="text-red-400 text-xs mt-1">{errors.ville}</p>}
                   </div>
                 </div>
-                <Field label="Pays" name="pays" value={info.pays} onChange={handleChange} placeholder="France" />
+                <div>
+                  <label className="block text-gray-400 text-xs font-medium mb-1">Pays <span className="text-pokemon-red">*</span></label>
+                  <div className="relative">
+                    <select
+                      name="pays"
+                      value={info.pays}
+                      onChange={e => setInfo(prev => ({ ...prev, pays: e.target.value }))}
+                      className="w-full bg-white/5 border border-white/10 text-white px-3 py-2.5 pr-10 rounded-lg text-sm focus:outline-none focus:border-pokemon-red transition-colors appearance-none cursor-pointer"
+                    >
+                      {PAYS_OPTIONS.map(p => (
+                        <option key={p.value} value={p.value} className="bg-[#0A0A14] text-white">{p.label}</option>
+                      ))}
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mode de livraison */}
+            <div className="bg-pokemon-card rounded-xl p-6 border border-white/5">
+              <div className="flex items-center gap-2 mb-5">
+                <Truck size={18} className="text-pokemon-red" />
+                <h2 className="text-white font-bold">Mode de livraison</h2>
+              </div>
+              {subtotal >= FREE_SHIPPING_THRESHOLD && (
+                <div className="mb-3 flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-lg px-4 py-2.5">
+                  <span className="text-green-400 text-sm font-semibold">🎉 Livraison offerte en France à partir de 50 € — non applicable à l'international</span>
+                </div>
+              )}
+              <div className="space-y-3">
+                {(Object.entries(SHIPPING_OPTIONS) as [ShippingMethod, typeof SHIPPING_OPTIONS[ShippingMethod]][]).map(([key, opt]) => {
+                  // Masquer relay et home si pays ≠ France
+                  if (info.pays !== 'France' && (key === 'relay' || key === 'home')) return null
+                  // Masquer international si pays = France
+                  if (info.pays === 'France' && key === 'international') return null
+                  return (
+                  <label
+                    key={key}
+                    className={`flex items-center justify-between gap-4 p-4 rounded-lg border cursor-pointer transition-all ${
+                      shippingMethod === key
+                        ? 'border-pokemon-red bg-pokemon-red/10'
+                        : 'border-white/10 bg-white/5 hover:border-white/20'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <input
+                        type="radio"
+                        name="shippingMethod"
+                        value={key}
+                        checked={shippingMethod === key}
+                        onChange={() => setShippingMethod(key)}
+                        className="accent-pokemon-red w-4 h-4"
+                      />
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-white text-sm font-semibold">{opt.label}</span>
+                          {opt.badge && (
+                            <span className="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full font-medium">
+                              {opt.badge}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-gray-500 text-xs mt-0.5">{opt.desc}</p>
+                      </div>
+                    </div>
+                    {(key === 'relay' || key === 'home') && subtotal >= FREE_SHIPPING_THRESHOLD
+                      ? <span className="text-green-400 font-bold text-sm shrink-0">Gratuite</span>
+                      : <span className="text-pokemon-yellow font-bold text-sm shrink-0">{opt.price.toFixed(2)} €</span>
+                    }
+                  </label>
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -225,10 +352,18 @@ export default function CheckoutPage() {
                   <span className="text-white">{subtotal.toFixed(2)} €</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Livraison Mondial Relay</span>
-                  <span className="text-white">{shipping.toFixed(2)} €</span>
+                  <span className="text-gray-400">Livraison</span>
+                  {shippingFree
+                    ? <span className="text-green-400 font-bold">Gratuite 🎉</span>
+                    : <span className="text-white">{shipping.toFixed(2)} €</span>
+                  }
                 </div>
-                <p className="text-gray-600 text-xs">Livraison en point relais 3–5 jours ouvrés</p>
+                <p className="text-gray-600 text-xs">
+                  {shippingFree
+                    ? 'Livraison offerte en France à partir de 50 €'
+                    : SHIPPING_OPTIONS[shippingMethod].desc
+                  }
+                </p>
                 <div className="flex justify-between font-bold pt-2 border-t border-white/10">
                   <span className="text-white">Total</span>
                   <span className="text-pokemon-yellow text-xl">{total.toFixed(2)} €</span>
@@ -243,7 +378,7 @@ export default function CheckoutPage() {
                     type="text"
                     value={couponCode}
                     onChange={e => setCouponCode(e.target.value.toUpperCase())}
-                    placeholder="Ex: BIENVENUE10"
+                    placeholder="Code de réduction"
                     className="flex-1 bg-white/5 border border-white/10 text-white placeholder-gray-600 px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-pokemon-red transition-colors"
                   />
                 </div>

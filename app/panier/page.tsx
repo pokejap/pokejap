@@ -17,8 +17,10 @@ export default function PanierPage() {
       </div>
     )
   }
+  const FREE_SHIPPING_THRESHOLD = 50
   const subtotal = getTotalPrice()
-  const shipping = 5.99
+  const shippingFree = subtotal >= FREE_SHIPPING_THRESHOLD
+  const shipping = shippingFree ? 0 : 4.99
   const total = subtotal + shipping
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -61,10 +63,18 @@ export default function PanierPage() {
                 <span className="text-white">{subtotal.toFixed(2)} €</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-400">Livraison Mondial Relay</span>
-                <span className="text-white">{shipping.toFixed(2)} €</span>
+                <span className="text-gray-400">Livraison (France)</span>
+                {shippingFree
+                  ? <span className="text-green-400 font-bold">Gratuite 🎉</span>
+                  : <span className="text-white">dès {shipping.toFixed(2)} €</span>
+                }
               </div>
-              <p className="text-gray-500 text-xs">Livraison en point relais 3–5 jours ouvrés</p>
+              <p className="text-gray-500 text-xs">
+                {shippingFree
+                  ? 'Livraison offerte en France — France uniquement'
+                  : 'Livraison gratuite en France à partir de 50 € · International en supplément'
+                }
+              </p>
               <div className="border-t border-white/10 pt-3 flex justify-between">
                 <span className="text-white font-bold">Total</span>
                 <span className="text-pokemon-yellow font-black text-xl">{total.toFixed(2)} €</span>
