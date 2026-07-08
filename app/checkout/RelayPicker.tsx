@@ -27,10 +27,11 @@ export default function RelayPicker({
   selected: RelayPoint | null
   onSelect: (r: RelayPoint | null) => void
 }) {
-  const [points,   setPoints]   = useState<RelayPointData[]>([])
-  const [loading,  setLoading]  = useState(false)
-  const [error,    setError]    = useState('')
-  const [hovered,  setHovered]  = useState<string | null>(null)
+  const [points,        setPoints]        = useState<RelayPointData[]>([])
+  const [loading,       setLoading]       = useState(false)
+  const [error,         setError]         = useState('')
+  const [noCreds,       setNoCreds]       = useState(false)
+  const [hovered,       setHovered]       = useState<string | null>(null)
   const mapRef    = useRef<HTMLDivElement>(null)
   const leafletRef = useRef<any>(null)
   const markersRef = useRef<Map<string, any>>(new Map())
@@ -48,8 +49,12 @@ export default function RelayPicker({
     try {
       const res = await fetch(`/api/relay-points?cp=${encodeURIComponent(cp)}`)
       const data = await res.json()
-      if (!res.ok || data.error) throw new Error(data.error ?? 'Erreur API')
+      if (!res.ok || data.error) {
+        setNoCreds(!!data.noCredentials)
+        throw new Error(data.error ?? 'Erreur API')
+      }
       if (!data.points?.length) throw new Error('Aucun point relais trouvé dans ce secteur')
+      setNoCreds(false)
       setPoints(data.points)
     } catch (e: any) {
       setError(e.message)
@@ -162,8 +167,20 @@ export default function RelayPicker({
         </div>
       )}
 
-      {/* État : erreur */}
-      {isComplete && !loading && error && (
+      {/* État : erreur credentials */}
+      {isComplete && !loading && error && noCreds && (
+        <div className="px-3 py-4 text-center">
+          <p className="text-yellow-400/80 text-xs font-semibold mb-1">Configuration requise</p>
+          <p className="text-white/30 text-[11px]">
+            Ajoutez <span className="font-mono text-white/50">MONDIAL_RELAY_ENSEIGNE</span> et{' '}
+            <span className="font-mono text-white/50">MONDIAL_RELAY_SECRET</span> dans les variables
+            Vercel pour activer la sélection de point relais.
+          </p>
+        </div>
+      )}
+
+      {/* État : erreur générique */}
+      {isComplete && !loading && error && !noCreds && (
         <div className="px-3 py-3 text-center text-red-400/80 text-xs">{error}</div>
       )}
 

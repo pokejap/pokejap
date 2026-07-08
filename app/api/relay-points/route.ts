@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createHash } from 'crypto'
 
 export interface RelayPointData {
   id: string
@@ -11,97 +12,55 @@ export interface RelayPointData {
   distance?: number
 }
 
-const BASE_URL = 'https://www.mondialrelay.fr'
-const RELAY_PAGE = `${BASE_URL}/trouver-le-point-relais-le-plus-proche-de-chez-moi/`
-const USER_AGENT =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-
-/** Récupère les cookies de session + le token CSRF depuis la page de recherche MR */
-async function getSessionAndToken(): Promise<{ cookieStr: string; token: string }> {
-  const res = await fetch(RELAY_PAGE, {
-    headers: {
-      Accept: 'text/html,application/xhtml+xml',
-      'Accept-Language': 'fr-FR,fr;q=0.9',
-      'User-Agent': USER_AGENT,
-    },
-    signal: AbortSignal.timeout(10_000),
-  })
-
-  if (!res.ok) throw new Error(`Page MR ${res.status}`)
-
-  const html = await res.text()
-
-  // Extraire token CSRF ASP.NET
-  const token =
-    html.match(/name="__RequestVerificationToken"[^>]*value="([^"]+)"/)?.[1] ??
-    html.match(/value="([^"]+)"[^>]*name="__RequestVerificationToken"/)?.[1] ??
-    ''
-
-  if (!token) throw new Error('Token CSRF introuvable')
-
-  // Combiner tous les Set-Cookie en une chaîne cookie: name=value; name=value
-  const cookieHeaders: string[] =
-    typeof (res.headers as any).getSetCookie === 'function'
-      ? (res.headers as any).getSetCookie()
-      : [res.headers.get('set-cookie') ?? '']
-
-  const cookieStr = cookieHeaders
-    .map(c => c.split(';')[0].trim())
-    .filter(Boolean)
-    .join('; ')
-
-  return { cookieStr, token }
+function md5upper(str: string): string {
+  return createHash('md5').update(str, 'utf8').digest('hex').toUpperCase()
 }
 
-/** Appelle l'API parcelshop de mondialrelay.fr et retourne les points relais */
-async function fetchParcelshops(cp: string): Promise<RelayPointData[]> {
-  const { cookieStr, token } = await getSessionAndToken()
+// MD5(Enseigne+Pays+Ville+CP+Lat+Lon+Taille+Poids+Action+DelaiEnvoi+Rayon+TypeAct+NACE+NbRes+Secret)
+function computeSecurity(
+  enseigne: string,
+  pays: string,
+  cp: string,
+  rayon: string,
+  nb: string,
+  secret: string
+): string {
+  const str = enseigne + pays + '' + cp + '' + '' + '' + '' + '' + '0' + rayon + '' + '' + nb + secret
+  return md5upper(str)
+}
 
-  const params = new URLSearchParams({
-    country: 'FR',
-    postcode: cp,
-    city: '',
-    services: '',
-    excludeSat: 'false',
-    naturesAllowed: '1,A,E,F,D,J,T,S,C',
-  })
+function parseSOAP(xml: string): { stat: string; points: RelayPointData[] } {
+  const stat = xml.match(/<STAT>(.*?)<\/STAT>/)?.[1] ?? '-1'
+  if (stat !== '0') return { stat, points: [] }
 
-  const apiRes = await fetch(`${BASE_URL}/api/parcelshop?${params}`, {
-    headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Accept-Language': 'fr-FR',
-      Cookie: cookieStr,
-      RequestVerificationToken: token,
-      Referer: RELAY_PAGE,
-      'User-Agent': USER_AGENT,
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-    signal: AbortSignal.timeout(12_000),
-  })
+  const points: RelayPointData[] = []
+  const regex = /<PointRelais>([\s\S]*?)<\/PointRelais>/g
+  let m: RegExpExecArray | null
 
-  if (!apiRes.ok) {
-    const body = await apiRes.text().catch(() => '')
-    throw new Error(`Mondial Relay API ${apiRes.status}: ${body.slice(0, 100)}`)
+  while ((m = regex.exec(xml)) !== null) {
+    const b = m[1]
+    const g = (tag: string) =>
+      b.match(new RegExp(`<${tag}>(.*?)<\\/${tag}>`))?.[1]?.trim() ?? ''
+
+    const lat = parseFloat(g('Latitude').replace(',', '.'))
+    const lon = parseFloat(g('Longitude').replace(',', '.'))
+    if (!lat || !lon) continue
+
+    const distRaw = parseFloat(g('Distance')) || 0
+
+    points.push({
+      id: g('Num'),
+      name: g('LgAdr1'),
+      address: g('LgAdr3') || g('LgAdr2'),
+      city: g('Ville'),
+      cp: g('CP'),
+      lat,
+      lon,
+      distance: distRaw ? Math.round(distRaw / 100) / 10 : undefined,
+    })
   }
 
-  const data = await apiRes.json()
-
-  if (!Array.isArray(data)) {
-    throw new Error(`Réponse inattendue: ${JSON.stringify(data).slice(0, 100)}`)
-  }
-
-  return data
-    .filter((p: any) => p?.Adresse?.Latitude && p?.Adresse?.Longitude)
-    .slice(0, 15)
-    .map((p: any) => ({
-      id: String(p.Numero ?? ''),
-      name: p.Adresse.Libelle ?? '',
-      address: p.Adresse.AdresseLigne1 ?? '',
-      city: p.Adresse.Ville ?? '',
-      cp: p.Adresse.CodePostal ?? cp,
-      lat: p.Adresse.Latitude,
-      lon: p.Adresse.Longitude,
-    }))
+  return { stat, points }
 }
 
 export async function GET(request: NextRequest) {
@@ -112,21 +71,96 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Code postal invalide' }, { status: 400 })
   }
 
-  try {
-    const points = await fetchParcelshops(cp)
+  const ENSEIGNE = (process.env.MONDIAL_RELAY_ENSEIGNE ?? 'BDTEST13').trim()
+  const SECRET   = (process.env.MONDIAL_RELAY_SECRET   ?? 'PrivateK').trim()
+  const PAYS     = 'FR'
+  const RAYON    = '25'
+  const NB       = '15'
 
-    if (!points.length) {
+  const security = computeSecurity(ENSEIGNE, PAYS, cp, RAYON, NB, SECRET)
+
+  const soapBody = `<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <WSI_SearchDeliveryPoint xmlns="http://www.mondialrelay.fr/">
+      <Enseigne>${ENSEIGNE}</Enseigne>
+      <Pays>${PAYS}</Pays>
+      <NumPointRelais></NumPointRelais>
+      <Ville></Ville>
+      <CP>${cp}</CP>
+      <Latitude></Latitude>
+      <Longitude></Longitude>
+      <Taille></Taille>
+      <Poids></Poids>
+      <Action></Action>
+      <DelaiEnvoi>0</DelaiEnvoi>
+      <RayonRecherche>${RAYON}</RayonRecherche>
+      <TypeActivite></TypeActivite>
+      <NACE></NACE>
+      <NombreResultats>${NB}</NombreResultats>
+      <Security>${security}</Security>
+    </WSI_SearchDeliveryPoint>
+  </soap:Body>
+</soap:Envelope>`
+
+  const ENDPOINTS = [
+    'https://api.mondialrelay.com/Web_Services.asmx',
+    'http://api.mondialrelay.com/Web_Services.asmx',
+  ]
+
+  for (const endpoint of ENDPOINTS) {
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/xml; charset=utf-8',
+          SOAPAction: 'http://www.mondialrelay.fr/WSI_SearchDeliveryPoint',
+          'User-Agent': 'PokeJap/1.0',
+        },
+        body: soapBody,
+        signal: AbortSignal.timeout(12_000),
+      })
+
+      const xml = await res.text()
+      const { stat, points } = parseSOAP(xml)
+
+      if (stat !== '0') {
+        return NextResponse.json(
+          { error: `Mondial Relay erreur STAT ${stat}`, stat },
+          { status: 502 }
+        )
+      }
+
+      if (!points.length) {
+        // Credentials de test (BDTEST13) ont une couverture limitée.
+        // Avec de vraies credentials merchant, tous les CP fonctionnent.
+        const isTestCreds = ENSEIGNE === 'BDTEST13'
+        return NextResponse.json(
+          {
+            error: isTestCreds
+              ? 'Credentials de test : ajoutez MONDIAL_RELAY_ENSEIGNE et MONDIAL_RELAY_SECRET dans Vercel pour activer tous les points relais'
+              : 'Aucun point relais trouvé dans ce secteur',
+            noCredentials: isTestCreds,
+          },
+          { status: isTestCreds ? 503 : 404 }
+        )
+      }
+
       return NextResponse.json(
-        { error: 'Aucun point relais trouvé dans ce secteur' },
-        { status: 404 }
+        { points },
+        { headers: { 'Cache-Control': 'public, s-maxage=1800' } }
       )
+    } catch (e: any) {
+      console.error('[relay] endpoint', endpoint, e.message)
+      continue
     }
-
-    return NextResponse.json({ points }, {
-      headers: { 'Cache-Control': 'public, s-maxage=1800' },
-    })
-  } catch (e: any) {
-    console.error('[relay-points]', e.message)
-    return NextResponse.json({ error: e.message }, { status: 502 })
   }
+
+  return NextResponse.json(
+    { error: 'Impossible de contacter Mondial Relay' },
+    { status: 502 }
+  )
 }
