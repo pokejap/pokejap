@@ -49,11 +49,12 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json()
-    const { items, customer, couponCode, shippingMethod }: {
+    const { items, customer, couponCode, shippingMethod, relayPoint }: {
       items: { productId: string; quantity: number }[]
       customer?: CustomerInfo
       couponCode?: string
       shippingMethod?: 'relay' | 'home' | 'europe' | 'international'
+      relayPoint?: { id: number; name: string; address: string; city: string }
     } = body
 
     if (!items || items.length === 0) {
@@ -177,6 +178,11 @@ export async function POST(request: NextRequest) {
           codePostal: customer.codePostal,
           ville:      customer.ville,
           pays:       customer.pays,
+        } : {}),
+        // Point relais choisi (Mondial Relay)
+        ...(relayPoint ? {
+          relayName:    relayPoint.name.slice(0, 500),
+          relayAddress: `${relayPoint.address}, ${relayPoint.city}`.slice(0, 500),
         } : {}),
       },
     })

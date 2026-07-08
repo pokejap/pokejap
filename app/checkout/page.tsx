@@ -2,10 +2,14 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Lock, Loader2, ChevronDown, Check, Shield, RotateCcw, Package } from 'lucide-react'
+import { ArrowLeft, Lock, Loader2, ChevronDown, Shield, RotateCcw, Package } from 'lucide-react'
 import { useCartStore } from '@/lib/cart-store'
 import { useAuthStore } from '@/lib/auth-store'
 import { loadStripe } from '@stripe/stripe-js'
+import dynamic from 'next/dynamic'
+import type { RelayPoint } from './RelayPicker'
+
+const RelayPicker = dynamic(() => import('./RelayPicker'), { ssr: false })
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
@@ -82,6 +86,7 @@ export default function CheckoutPage() {
   const [couponCode, setCouponCode] = useState('')
   const [couponOpen, setCouponOpen] = useState(false)
   const [shippingMethod, setShippingMethod] = useState<ShippingMethod>('relay')
+  const [relayPoint, setRelayPoint] = useState<RelayPoint | null>(null)
   const [summaryOpen, setSummaryOpen] = useState(false)
 
   useEffect(() => {
@@ -127,7 +132,13 @@ export default function CheckoutPage() {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: safeItems, customer: info, couponCode: couponCode.trim() || undefined, shippingMethod }),
+        body: JSON.stringify({
+          items: safeItems,
+          customer: info,
+          couponCode: couponCode.trim() || undefined,
+          shippingMethod,
+          relayPoint: shippingMethod === 'relay' ? relayPoint : undefined,
+        }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Une erreur est survenue')
@@ -394,19 +405,14 @@ export default function CheckoutPage() {
                   </div>
                 </div>
 
-                {/* Encart point relais */}
+                {/* Carte point relais */}
                 {shippingMethod === 'relay' && (
-                  <div className="mt-3 bg-blue-500/10 border border-blue-500/20 rounded-xl px-3 py-3">
-                    <div className="flex items-start gap-2">
-                      <span className="text-base leading-none mt-0.5">📍</span>
-                      <div>
-                        <p className="text-white/80 text-xs font-semibold">Choix du point relais</p>
-                        <p className="text-white/45 text-[11px] mt-0.5 leading-relaxed">
-                          Après votre paiement, vous recevrez un e-mail avec un lien pour choisir le point relais Mondial Relay le plus proche de chez vous.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <RelayPicker
+                    codePostal={info.codePostal}
+                    ville={info.ville}
+                    selected={relayPoint}
+                    onSelect={setRelayPoint}
+                  />
                 )}
 
                 {/* Code promo */}
