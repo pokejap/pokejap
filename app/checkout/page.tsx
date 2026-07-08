@@ -6,10 +6,8 @@ import { ArrowLeft, Lock, Loader2, ChevronDown, Shield, RotateCcw, Package } fro
 import { useCartStore } from '@/lib/cart-store'
 import { useAuthStore } from '@/lib/auth-store'
 import { loadStripe } from '@stripe/stripe-js'
-import dynamic from 'next/dynamic'
 import type { RelayPoint } from './RelayPicker'
-
-const RelayPicker = dynamic(() => import('./RelayPicker'), { ssr: false })
+import RelayPicker from './RelayPicker'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
