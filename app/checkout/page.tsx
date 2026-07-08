@@ -305,58 +305,6 @@ export default function CheckoutPage() {
               </div>
             </section>
 
-            {/* Section Livraison */}
-            <section>
-              <h2 className="text-white font-bold text-base mb-4 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-pokemon-red text-white text-xs flex items-center justify-center font-black">3</span>
-                Mode de livraison
-              </h2>
-
-              {shippingFree && (
-                <div className="mb-3 flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-xl px-4 py-3 text-green-400 text-sm font-medium">
-                  🎉 Livraison offerte en France à partir de 50 € — non applicable à l'international
-                </div>
-              )}
-
-              <div className="space-y-2">
-                {(Object.entries(SHIPPING_OPTIONS) as [ShippingMethod, typeof SHIPPING_OPTIONS[ShippingMethod]][]).map(([key, opt]) => {
-                  const zone = getZone(info.pays)
-                  if (zone !== 'france' && (key === 'relay' || key === 'home')) return null
-                  if (zone === 'france' && (key === 'europe' || key === 'international')) return null
-                  if (zone === 'europe' && (key === 'relay' || key === 'home' || key === 'international')) return null
-                  if (zone === 'world' && key !== 'international') return null
-                  const isFreeOption = (key === 'relay' || key === 'home') && subtotal >= FREE_SHIPPING_THRESHOLD
-                  const selected = shippingMethod === key
-                  return (
-                    <label key={key}
-                      className={`flex items-center justify-between gap-4 px-4 py-4 rounded-xl border cursor-pointer transition-all ${
-                        selected ? 'border-white/30 bg-white/[0.07]' : 'border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.04]'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
-                          selected ? 'border-pokemon-red' : 'border-white/30'
-                        }`}>
-                          {selected && <div className="w-2 h-2 rounded-full bg-pokemon-red" />}
-                        </div>
-                        <input type="radio" name="shippingMethod" value={key}
-                          checked={selected} onChange={() => setShippingMethod(key)}
-                          className="sr-only" />
-                        <div>
-                          <p className="text-white text-sm font-semibold">{opt.label}</p>
-                          <p className="text-white/40 text-xs mt-0.5">{opt.eta}</p>
-                        </div>
-                      </div>
-                      {isFreeOption
-                        ? <span className="text-green-400 text-sm font-bold shrink-0">Gratuite</span>
-                        : <span className="text-white text-sm font-bold shrink-0">{opt.price.toFixed(2)} €</span>
-                      }
-                    </label>
-                  )
-                })}
-              </div>
-            </section>
-
             {apiError && (
               <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm px-4 py-3 rounded-xl">
                 {apiError}
@@ -396,6 +344,54 @@ export default function CheckoutPage() {
                       <p className="text-white text-sm font-bold shrink-0">{(item.product.price * item.quantity).toFixed(2)} €</p>
                     </div>
                   ))}
+                </div>
+
+                {/* Livraison */}
+                <div className="mt-5 pt-4 border-t border-white/[0.07]">
+                  <p className="text-white/50 text-xs font-medium mb-3 uppercase tracking-wider">Livraison</p>
+
+                  {shippingFree && (
+                    <div className="mb-3 flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-xl px-3 py-2.5 text-green-400 text-xs font-medium">
+                      🎉 Livraison offerte à partir de 50 € (France uniquement)
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    {(Object.entries(SHIPPING_OPTIONS) as [ShippingMethod, typeof SHIPPING_OPTIONS[ShippingMethod]][]).map(([key, opt]) => {
+                      const zone = getZone(info.pays)
+                      if (zone !== 'france' && (key === 'relay' || key === 'home')) return null
+                      if (zone === 'france' && (key === 'europe' || key === 'international')) return null
+                      if (zone === 'europe' && (key === 'relay' || key === 'home' || key === 'international')) return null
+                      if (zone === 'world' && key !== 'international') return null
+                      const isFreeOption = (key === 'relay' || key === 'home') && subtotal >= FREE_SHIPPING_THRESHOLD
+                      const selected = shippingMethod === key
+                      return (
+                        <label key={key}
+                          className={`flex items-center justify-between gap-3 px-3 py-3 rounded-xl border cursor-pointer transition-all ${
+                            selected ? 'border-pokemon-red/60 bg-pokemon-red/5' : 'border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.04]'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <div className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
+                              selected ? 'border-pokemon-red' : 'border-white/25'
+                            }`}>
+                              {selected && <div className="w-1.5 h-1.5 rounded-full bg-pokemon-red" />}
+                            </div>
+                            <input type="radio" name="shippingMethod" value={key}
+                              checked={selected} onChange={() => setShippingMethod(key)} className="sr-only" />
+                            <div>
+                              <p className="text-white text-xs font-semibold">{opt.label}</p>
+                              <p className="text-white/35 text-[11px]">{opt.eta}</p>
+                            </div>
+                          </div>
+                          {isFreeOption
+                            ? <span className="text-green-400 text-xs font-bold shrink-0">Gratuite</span>
+                            : <span className="text-white text-xs font-bold shrink-0">{opt.price.toFixed(2)} €</span>
+                          }
+                        </label>
+                      )
+                    })}
+                  </div>
                 </div>
 
                 {/* Code promo */}
