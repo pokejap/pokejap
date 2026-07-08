@@ -41,12 +41,87 @@ function Field({
   )
 }
 
+// ── Formulaire Mot de passe oublié ───────────────────────────────────────────
+function ForgotForm({ onBack }: { onBack: () => void }) {
+  const [email, setEmail]   = useState('')
+  const [sent, setSent]     = useState(false)
+  const [error, setError]   = useState('')
+  const [loading, setLoading] = useState(false)
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault()
+    setError('')
+    setLoading(true)
+
+    // Vérifier si l'email existe dans localStorage
+    try {
+      const users: { email: string }[] = JSON.parse(localStorage.getItem('pokejap-users') || '[]')
+      const exists = users.some(u => u.email.toLowerCase() === email.toLowerCase())
+      if (!exists) {
+        // On renvoie quand même "envoyé" pour ne pas révéler les emails existants
+        setSent(true)
+        setLoading(false)
+        return
+      }
+
+      // Générer un token valable 1h
+      const token = crypto.randomUUID()
+      const expiry = Date.now() + 60 * 60 * 1000
+      const tokens: object[] = JSON.parse(localStorage.getItem('pokejap-reset-tokens') || '[]')
+      // Supprimer les anciens tokens pour cet email
+      const filtered = (tokens as { email: string }[]).filter(t => t.email.toLowerCase() !== email.toLowerCase())
+      localStorage.setItem('pokejap-reset-tokens', JSON.stringify([...filtered, { token, email: email.toLowerCase(), expiry }]))
+
+      // Envoyer l'email via notre API
+      const res = await fetch('/api/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, token }),
+      })
+      if (!res.ok) throw new Error('Erreur envoi')
+      setSent(true)
+    } catch {
+      setError('Erreur lors de l\'envoi. Réessaie dans quelques instants.')
+    }
+    setLoading(false)
+  }
+
+  if (sent) {
+    return (
+      <div className="text-center space-y-4 py-2">
+        <div className="w-14 h-14 rounded-full bg-green-500/20 border-2 border-green-500/40 flex items-center justify-center mx-auto">
+          <Check size={24} className="text-green-400" />
+        </div>
+        <p className="text-white font-bold">Email envoyé !</p>
+        <p className="text-white/40 text-sm">Si un compte existe pour <strong className="text-white/60">{email}</strong>, tu recevras un lien de réinitialisation dans quelques secondes.</p>
+        <button onClick={onBack} className="text-pokemon-red text-sm hover:underline">← Retour à la connexion</button>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={submit} className="space-y-4">
+      <p className="text-white/50 text-sm">Saisis ton email — on t'envoie un lien pour choisir un nouveau mot de passe.</p>
+      <Field label="Email" name="email" value={email} onChange={e => { setEmail(e.target.value); setError('') }} type="email" required placeholder="jean@exemple.com" />
+      {error && <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">{error}</p>}
+      <button type="submit" disabled={loading}
+        className="w-full bg-pokemon-red hover:bg-red-600 text-white font-bold py-3 rounded-xl transition-all hover:scale-[1.01] disabled:opacity-60">
+        {loading ? 'Envoi...' : 'Envoyer le lien'}
+      </button>
+      <button type="button" onClick={onBack} className="w-full text-white/40 hover:text-white/60 text-sm transition-colors">
+        ← Retour à la connexion
+      </button>
+    </form>
+  )
+}
+
 // ── Formulaire Connexion ──────────────────────────────────────────────────────
 function LoginForm({ onSuccess }: { onSuccess: () => void }) {
   const { login } = useAuthStore()
   const [form, setForm] = useState({ email: '', password: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [forgot, setForgot] = useState(false)
 
   function handle(e: React.ChangeEvent<HTMLInputElement>) {
     setForm(p => ({ ...p, [e.target.name]: e.target.value }))
@@ -62,6 +137,8 @@ function LoginForm({ onSuccess }: { onSuccess: () => void }) {
     else setError(res.error || 'Erreur')
   }
 
+  if (forgot) return <ForgotForm onBack={() => setForgot(false)} />
+
   return (
     <form onSubmit={submit} className="space-y-4">
       <Field label="Email" name="email" value={form.email} onChange={handle} type="email" required placeholder="jean@exemple.com" />
@@ -71,6 +148,11 @@ function LoginForm({ onSuccess }: { onSuccess: () => void }) {
         className="w-full bg-pokemon-red hover:bg-red-600 text-white font-bold py-3 rounded-xl transition-all hover:scale-[1.01] disabled:opacity-60">
         {loading ? 'Connexion...' : 'Se connecter'}
       </button>
+      <div className="text-center">
+        <button type="button" onClick={() => setForgot(true)} className="text-white/30 hover:text-white/60 text-xs transition-colors">
+          Mot de passe oublié ?
+        </button>
+      </div>
     </form>
   )
 }
