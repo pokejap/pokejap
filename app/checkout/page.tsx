@@ -9,42 +9,48 @@ import { loadStripe } from '@stripe/stripe-js'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
-const PAYS_OPTIONS = [
-  { value: 'France',             label: '🇫🇷 France' },
-  { value: 'Belgique',           label: '🇧🇪 Belgique' },
-  { value: 'Luxembourg',         label: '🇱🇺 Luxembourg' },
-  { value: 'Suisse',             label: '🇨🇭 Suisse' },
-  { value: 'Monaco',             label: '🇲🇨 Monaco' },
-  { value: 'Allemagne',          label: '🇩🇪 Allemagne' },
-  { value: 'Espagne',            label: '🇪🇸 Espagne' },
-  { value: 'Italie',             label: '🇮🇹 Italie' },
-  { value: 'Pays-Bas',           label: '🇳🇱 Pays-Bas' },
-  { value: 'Portugal',           label: '🇵🇹 Portugal' },
-  { value: 'Autriche',           label: '🇦🇹 Autriche' },
-  { value: 'Suède',              label: '🇸🇪 Suède' },
-  { value: 'Danemark',           label: '🇩🇰 Danemark' },
-  { value: 'Finlande',           label: '🇫🇮 Finlande' },
-  { value: 'Norvège',            label: '🇳🇴 Norvège' },
-  { value: 'Pologne',            label: '🇵🇱 Pologne' },
-  { value: 'République Tchèque', label: '🇨🇿 République Tchèque' },
-  { value: 'Hongrie',            label: '🇭🇺 Hongrie' },
-  { value: 'Roumanie',           label: '🇷🇴 Roumanie' },
-  { value: 'Grèce',              label: '🇬🇷 Grèce' },
-  { value: 'Irlande',            label: '🇮🇪 Irlande' },
-  { value: 'Royaume-Uni',        label: '🇬🇧 Royaume-Uni' },
-  { value: 'États-Unis',         label: '🇺🇸 États-Unis' },
-  { value: 'Canada',             label: '🇨🇦 Canada' },
-  { value: 'Australie',          label: '🇦🇺 Australie' },
-  { value: 'Japon',              label: '🇯🇵 Japon' },
-  { value: 'Autre',              label: '🌍 Autre pays' },
+// 'europe' = pays européens hors France, 'world' = reste du monde
+const PAYS_OPTIONS: { value: string; label: string; zone: 'france' | 'europe' | 'world' }[] = [
+  { value: 'France',             label: '🇫🇷 France',             zone: 'france'  },
+  { value: 'Belgique',           label: '🇧🇪 Belgique',           zone: 'europe'  },
+  { value: 'Luxembourg',         label: '🇱🇺 Luxembourg',         zone: 'europe'  },
+  { value: 'Suisse',             label: '🇨🇭 Suisse',             zone: 'europe'  },
+  { value: 'Monaco',             label: '🇲🇨 Monaco',             zone: 'europe'  },
+  { value: 'Allemagne',          label: '🇩🇪 Allemagne',          zone: 'europe'  },
+  { value: 'Espagne',            label: '🇪🇸 Espagne',            zone: 'europe'  },
+  { value: 'Italie',             label: '🇮🇹 Italie',             zone: 'europe'  },
+  { value: 'Pays-Bas',           label: '🇳🇱 Pays-Bas',           zone: 'europe'  },
+  { value: 'Portugal',           label: '🇵🇹 Portugal',           zone: 'europe'  },
+  { value: 'Autriche',           label: '🇦🇹 Autriche',           zone: 'europe'  },
+  { value: 'Suède',              label: '🇸🇪 Suède',              zone: 'europe'  },
+  { value: 'Danemark',           label: '🇩🇰 Danemark',           zone: 'europe'  },
+  { value: 'Finlande',           label: '🇫🇮 Finlande',           zone: 'europe'  },
+  { value: 'Norvège',            label: '🇳🇴 Norvège',            zone: 'europe'  },
+  { value: 'Pologne',            label: '🇵🇱 Pologne',            zone: 'europe'  },
+  { value: 'République Tchèque', label: '🇨🇿 République Tchèque', zone: 'europe'  },
+  { value: 'Hongrie',            label: '🇭🇺 Hongrie',            zone: 'europe'  },
+  { value: 'Roumanie',           label: '🇷🇴 Roumanie',           zone: 'europe'  },
+  { value: 'Grèce',              label: '🇬🇷 Grèce',              zone: 'europe'  },
+  { value: 'Irlande',            label: '🇮🇪 Irlande',            zone: 'europe'  },
+  { value: 'Royaume-Uni',        label: '🇬🇧 Royaume-Uni',        zone: 'europe'  },
+  { value: 'États-Unis',         label: '🇺🇸 États-Unis',         zone: 'world'   },
+  { value: 'Canada',             label: '🇨🇦 Canada',             zone: 'world'   },
+  { value: 'Australie',          label: '🇦🇺 Australie',          zone: 'world'   },
+  { value: 'Japon',              label: '🇯🇵 Japon',              zone: 'world'   },
+  { value: 'Autre',              label: '🌍 Autre pays',           zone: 'world'   },
 ]
 
-type ShippingMethod = 'relay' | 'home' | 'international'
+function getZone(pays: string): 'france' | 'europe' | 'world' {
+  return PAYS_OPTIONS.find(p => p.value === pays)?.zone ?? 'world'
+}
 
-const SHIPPING_OPTIONS: Record<ShippingMethod, { label: string; sub: string; price: number; eta: string }> = {
-  relay:         { label: 'Point Relais — Mondial Relay', sub: 'France',       price: 4.99,  eta: '3–5 jours ouvrés' },
-  home:          { label: 'Livraison à domicile — Colissimo', sub: 'France',   price: 7.99,  eta: '2–3 jours ouvrés' },
-  international: { label: 'Livraison Internationale',    sub: 'Hors France',   price: 24.99, eta: '7–14 jours ouvrés' },
+type ShippingMethod = 'relay' | 'home' | 'europe' | 'international'
+
+const SHIPPING_OPTIONS: Record<ShippingMethod, { label: string; price: number; eta: string }> = {
+  relay:         { label: 'Point Relais — Mondial Relay',      price: 4.99,  eta: 'France · 3–5 jours ouvrés'       },
+  home:          { label: 'Livraison à domicile — Colissimo',  price: 7.99,  eta: 'France · 2–3 jours ouvrés'       },
+  europe:        { label: 'Colissimo Europe',                  price: 12.99, eta: 'Europe · 5–8 jours ouvrés'       },
+  international: { label: 'Livraison Mondiale',                price: 24.99, eta: 'Hors Europe · 7–14 jours ouvrés' },
 }
 
 interface CustomerInfo {
@@ -79,8 +85,10 @@ export default function CheckoutPage() {
   const [summaryOpen, setSummaryOpen] = useState(false)
 
   useEffect(() => {
-    if (info.pays !== 'France') setShippingMethod('international')
-    else setShippingMethod(prev => prev === 'international' ? 'relay' : prev)
+    const zone = getZone(info.pays)
+    if (zone === 'france') setShippingMethod(prev => (prev === 'europe' || prev === 'international') ? 'relay' : prev)
+    else if (zone === 'europe') setShippingMethod('europe')
+    else setShippingMethod('international')
   }, [info.pays])
 
   const FREE_SHIPPING_THRESHOLD = 50
@@ -312,8 +320,11 @@ export default function CheckoutPage() {
 
               <div className="space-y-2">
                 {(Object.entries(SHIPPING_OPTIONS) as [ShippingMethod, typeof SHIPPING_OPTIONS[ShippingMethod]][]).map(([key, opt]) => {
-                  if (info.pays !== 'France' && (key === 'relay' || key === 'home')) return null
-                  if (info.pays === 'France' && key === 'international') return null
+                  const zone = getZone(info.pays)
+                  if (zone !== 'france' && (key === 'relay' || key === 'home')) return null
+                  if (zone === 'france' && (key === 'europe' || key === 'international')) return null
+                  if (zone === 'europe' && (key === 'relay' || key === 'home' || key === 'international')) return null
+                  if (zone === 'world' && key !== 'international') return null
                   const isFreeOption = (key === 'relay' || key === 'home') && subtotal >= FREE_SHIPPING_THRESHOLD
                   const selected = shippingMethod === key
                   return (

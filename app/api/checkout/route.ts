@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       items: { productId: string; quantity: number }[]
       customer?: CustomerInfo
       couponCode?: string
-      shippingMethod?: 'relay' | 'home' | 'international'
+      shippingMethod?: 'relay' | 'home' | 'europe' | 'international'
     } = body
 
     if (!items || items.length === 0) {
@@ -90,12 +90,13 @@ export async function POST(request: NextRequest) {
 
     // ── Calcul du total et de la livraison (serveur) ─────────────────────────
     const SHIPPING_COSTS = {
-      relay:         { price: 4.99,  label: 'Mondial Relay — Point Relais',      desc: 'France · 3–5 jours ouvrés' },
-      home:          { price: 7.99,  label: 'Colissimo — Livraison à domicile',   desc: 'France · 2–3 jours ouvrés' },
-      international: { price: 24.99, label: 'Livraison Internationale',           desc: 'Europe, USA · 7–14 jours ouvrés' },
+      relay:         { price: 4.99,  label: 'Mondial Relay — Point Relais',     desc: 'France · 3–5 jours ouvrés'       },
+      home:          { price: 7.99,  label: 'Colissimo — Livraison à domicile', desc: 'France · 2–3 jours ouvrés'       },
+      europe:        { price: 12.99, label: 'Colissimo Europe',                 desc: 'Europe · 5–8 jours ouvrés'       },
+      international: { price: 24.99, label: 'Livraison Mondiale',               desc: 'Hors Europe · 7–14 jours ouvrés' },
     } as const
-    // Validation runtime — rejette toute valeur non autorisée (ex: injection "gratuit")
-    const VALID_METHODS = ['relay', 'home', 'international'] as const
+    // Validation runtime — rejette toute valeur non autorisée
+    const VALID_METHODS = ['relay', 'home', 'europe', 'international'] as const
     type ValidMethod = typeof VALID_METHODS[number]
     const resolvedMethod: ValidMethod = VALID_METHODS.includes(shippingMethod as ValidMethod)
       ? (shippingMethod as ValidMethod)
