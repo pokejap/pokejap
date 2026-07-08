@@ -108,31 +108,45 @@ export async function GET(request: NextRequest) {
   </soap:Body>
 </soap:Envelope>`
 
-  try {
-    const res = await fetch('https://api.mondialrelay.com/Web_Services.asmx', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'text/xml; charset=utf-8',
-        'SOAPAction':   '"http://www.mondialrelay.fr/WSI_SearchDeliveryPoint"',
-        'User-Agent':   'PokeJap/1.0',
-      },
-      body: soapBody,
-      signal: AbortSignal.timeout(12_000),
-    })
+  // Essayer HTTPS puis HTTP en fallback
+  const ENDPOINTS = [
+    'https://api.mondialrelay.com/Web_Services.asmx',
+    'http://api.mondialrelay.com/Web_Services.asmx',
+  ]
 
-    if (!res.ok) {
-      console.error('[relay] SOAP HTTP', res.status)
-      return NextResponse.json({ error: `Mondial Relay API ${res.status}` }, { status: 502 })
+  for (const endpoint of ENDPOINTS) {
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/xml; charset=utf-8',
+          'SOAPAction':   'http://www.mondialrelay.fr/WSI_SearchDeliveryPoint',
+          'User-Agent':   'PokeJap/1.0',
+        },
+        body: soapBody,
+        signal: AbortSignal.timeout(12_000),
+      })
+
+      const xml = await res.text()
+      console.error('[relay] SOAP status', res.status, xml.slice(0, 300))
+
+      // HTTP 500 = SOAP Fault ou erreur auth → parser quand même pour le STAT
+      const points = parseSOAP(xml)
+
+      // Récupérer le code STAT pour le debug
+      const stat = xml.match(/<STAT>(.*?)<\/STAT>/)?.[1]
+      if (stat && stat !== '0') {
+        return NextResponse.json({ error: `Mondial Relay STAT ${stat}`, stat }, { status: 502 })
+      }
+
+      return NextResponse.json({ points }, {
+        headers: { 'Cache-Control': 'public, s-maxage=1800' },
+      })
+    } catch (e: any) {
+      console.error('[relay] endpoint', endpoint, e.message)
+      continue
     }
-
-    const xml = await res.text()
-    const points = parseSOAP(xml)
-
-    return NextResponse.json({ points }, {
-      headers: { 'Cache-Control': 'public, s-maxage=1800' },
-    })
-  } catch (e: any) {
-    console.error('[relay]', e)
-    return NextResponse.json({ error: e.message }, { status: 502 })
   }
+
+  return NextResponse.json({ error: 'Impossible de contacter Mondial Relay' }, { status: 502 })
 }
