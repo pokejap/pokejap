@@ -158,17 +158,11 @@ export default function RelayPicker({
 
       if (mapRef.current) mapRef.current.setView([lat, lon], 13)
 
-      // 2 — Requête Overpass API pour les points Mondial Relay
-      const q = `[out:json][timeout:20];
-(
-  node["brand"="Mondial Relay"](around:12000,${lat},${lon});
-  node["operator"="Mondial Relay"](around:12000,${lat},${lon});
-  node["name"~"Mondial Relay",i](around:12000,${lat},${lon});
-  node["name"~"Point Relais",i](around:12000,${lat},${lon});
-);
-out body;`
-      const res  = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(q)}`)
+      // 2 — Requête via notre proxy Next.js (évite CORS + rate limit Overpass)
+      const res  = await fetch(`/api/relay-points?lat=${lat}&lon=${lon}`)
+      if (!res.ok) throw new Error(`Proxy error ${res.status}`)
       const data = await res.json()
+      if (data.error) throw new Error(data.error)
 
       // Déduplique par id
       const seen = new Set<number>()
