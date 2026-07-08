@@ -394,6 +394,21 @@ export default function CheckoutPage() {
                   </div>
                 </div>
 
+                {/* Encart point relais */}
+                {shippingMethod === 'relay' && (
+                  <div className="mt-3 bg-blue-500/10 border border-blue-500/20 rounded-xl px-3 py-3">
+                    <div className="flex items-start gap-2">
+                      <span className="text-base leading-none mt-0.5">📍</span>
+                      <div>
+                        <p className="text-white/80 text-xs font-semibold">Choix du point relais</p>
+                        <p className="text-white/45 text-[11px] mt-0.5 leading-relaxed">
+                          Après votre paiement, vous recevrez un e-mail avec un lien pour choisir le point relais Mondial Relay le plus proche de chez vous.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Code promo */}
                 <div className="mt-5 pt-4 border-t border-white/[0.07]">
                   <button type="button" onClick={() => setCouponOpen(!couponOpen)}
