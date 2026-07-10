@@ -1,7 +1,6 @@
 'use client'
-import { useState, useEffect, useRef, useCallback } from 'react'
-import { MapPin, Loader2, CheckCircle2 } from 'lucide-react'
-import type { RelayPointData } from '../api/relay-points/route'
+import { useState, useEffect } from 'react'
+import { MapPin, ExternalLink, CheckCircle2 } from 'lucide-react'
 
 export interface RelayPoint {
   id: number
@@ -10,11 +9,6 @@ export interface RelayPoint {
   name: string
   address: string
   city: string
-}
-
-// Convertit RelayPointData (API) → RelayPoint (état du checkout)
-function toRelayPoint(r: RelayPointData): RelayPoint {
-  return { id: parseInt(r.id) || 0, lat: r.lat, lon: r.lon, name: r.name, address: r.address, city: r.city }
 }
 
 export default function RelayPicker({
@@ -27,121 +21,30 @@ export default function RelayPicker({
   selected: RelayPoint | null
   onSelect: (r: RelayPoint | null) => void
 }) {
-  const [points,        setPoints]        = useState<RelayPointData[]>([])
-  const [loading,       setLoading]       = useState(false)
-  const [error,         setError]         = useState('')
-  const [noCreds,       setNoCreds]       = useState(false)
-  const [hovered,       setHovered]       = useState<string | null>(null)
-  const mapRef    = useRef<HTMLDivElement>(null)
-  const leafletRef = useRef<any>(null)
-  const markersRef = useRef<Map<string, any>>(new Map())
-  const lastCp    = useRef('')
+  const [numero, setNumero] = useState('')
+  const [nom, setNom]       = useState('')
 
-  // ── Chargement des points depuis l'API ───────────────────────────────────
-  const fetchPoints = useCallback(async (cp: string) => {
-    if (cp === lastCp.current) return
-    lastCp.current = cp
-    setLoading(true)
-    setError('')
-    setPoints([])
+  // Réinitialiser si le CP change
+  useEffect(() => {
+    setNumero('')
+    setNom('')
     onSelect(null)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [codePostal])
 
-    try {
-      const res = await fetch(`/api/relay-points?cp=${encodeURIComponent(cp)}`)
-      const data = await res.json()
-      if (!res.ok || data.error) {
-        setNoCreds(!!data.noCredentials)
-        throw new Error(data.error ?? 'Erreur API')
-      }
-      if (!data.points?.length) throw new Error('Aucun point relais trouvé dans ce secteur')
-      setNoCreds(false)
-      setPoints(data.points)
-    } catch (e: any) {
-      setError(e.message)
-    } finally {
-      setLoading(false)
+  function handleChange(n: string, nm: string) {
+    const num = n.trim()
+    const name = nm.trim()
+    if (num && name) {
+      onSelect({ id: parseInt(num) || 0, lat: 0, lon: 0, name, address: '', city: '' })
+    } else {
+      onSelect(null)
     }
-  }, [onSelect])
+  }
 
-  // Déclencher la recherche quand le code postal est complet
-  useEffect(() => {
-    if (/^\d{5}$/.test(codePostal)) fetchPoints(codePostal)
-  }, [codePostal, fetchPoints])
-
-  // ── Initialisation Leaflet ────────────────────────────────────────────────
-  useEffect(() => {
-    if (!mapRef.current || leafletRef.current) return
-
-    // Charger Leaflet CSS
-    if (!document.getElementById('leaflet-css')) {
-      const link = document.createElement('link')
-      link.id = 'leaflet-css'
-      link.rel = 'stylesheet'
-      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
-      document.head.appendChild(link)
-    }
-
-    // Charger Leaflet JS
-    const script = document.createElement('script')
-    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
-    script.onload = () => {
-      const L = (window as any).L
-      const map = L.map(mapRef.current!, { zoomControl: true, attributionControl: false })
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
-      leafletRef.current = map
-    }
-    document.head.appendChild(script)
-  }, [])
-
-  // ── Mise à jour des marqueurs quand les points changent ───────────────────
-  useEffect(() => {
-    const L = (window as any).L
-    if (!leafletRef.current || !L || !points.length) return
-
-    const map = leafletRef.current
-
-    // Supprimer anciens marqueurs
-    markersRef.current.forEach(m => m.remove())
-    markersRef.current.clear()
-
-    const bounds: [number, number][] = []
-
-    points.forEach(p => {
-      const isSelected = selected?.id === parseInt(p.id)
-
-      const icon = L.divIcon({
-        className: '',
-        html: `<div style="
-          width:28px;height:28px;border-radius:50% 50% 50% 0;
-          background:${isSelected ? '#22c55e' : '#ef4444'};
-          border:2px solid ${isSelected ? '#15803d' : '#b91c1c'};
-          transform:rotate(-45deg);
-          box-shadow:0 2px 6px rgba(0,0,0,.4);
-          transition:all .2s;
-        "></div>`,
-        iconSize:   [28, 28],
-        iconAnchor: [14, 28],
-      })
-
-      const marker = L.marker([p.lat, p.lon], { icon })
-        .addTo(map)
-        .on('click', () => {
-          onSelect(toRelayPoint(p))
-        })
-
-      markersRef.current.set(p.id, marker)
-      bounds.push([p.lat, p.lon])
-    })
-
-    if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] })
-  }, [points, selected, onSelect])
-
-  // ── Highlight du marqueur survolé ─────────────────────────────────────────
-  useEffect(() => {
-    // rien d'interactif côté Leaflet pour le hover (marqueurs recréés sur select)
-  }, [hovered])
-
-  const isComplete = /^\d{5}$/.test(codePostal)
+  const mrUrl = codePostal
+    ? `https://www.mondialrelay.fr/trouver-le-point-relais-le-plus-proche/?cp=${codePostal}`
+    : 'https://www.mondialrelay.fr/trouver-le-point-relais-le-plus-proche/'
 
   return (
     <div className="mt-3 rounded-xl overflow-hidden border border-white/10 bg-black/20">
@@ -152,95 +55,51 @@ export default function RelayPicker({
         <span className="text-white/70 text-xs font-semibold">Choisissez votre point relais</span>
       </div>
 
-      {/* État : pas de CP */}
-      {!isComplete && (
-        <div className="px-3 py-4 text-center text-white/30 text-xs">
-          Entrez votre code postal pour voir les points relais
+      <div className="px-3 py-3 space-y-3">
+
+        {/* Lien Mondial Relay */}
+        <a
+          href={mrUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between gap-2 w-full bg-pokemon-red/10 hover:bg-pokemon-red/20 border border-pokemon-red/30 text-pokemon-red text-xs font-semibold px-3 py-2.5 rounded-lg transition-colors"
+        >
+          <span>Trouver un point relais près de chez moi</span>
+          <ExternalLink size={12} className="shrink-0" />
+        </a>
+
+        <p className="text-white/30 text-[11px] text-center">
+          Notez le numéro et le nom du point relais, puis renseignez-les ci-dessous.
+        </p>
+
+        {/* Champs de saisie */}
+        <div className="space-y-2">
+          <input
+            type="text"
+            placeholder="Numéro du point relais (ex: 123456)"
+            value={numero}
+            onChange={e => { setNumero(e.target.value); handleChange(e.target.value, nom) }}
+            className="w-full bg-white/[0.04] border border-white/10 text-white placeholder-white/20 px-3 py-2.5 rounded-lg text-xs focus:outline-none focus:border-white/40 transition-colors"
+          />
+          <input
+            type="text"
+            placeholder="Nom du point relais (ex: TABAC DU CENTRE)"
+            value={nom}
+            onChange={e => { setNom(e.target.value); handleChange(numero, e.target.value) }}
+            className="w-full bg-white/[0.04] border border-white/10 text-white placeholder-white/20 px-3 py-2.5 rounded-lg text-xs focus:outline-none focus:border-white/40 transition-colors"
+          />
         </div>
-      )}
 
-      {/* État : chargement */}
-      {isComplete && loading && (
-        <div className="px-3 py-5 flex items-center justify-center gap-2">
-          <Loader2 size={16} className="text-white/40 animate-spin" />
-          <span className="text-white/40 text-xs">Recherche des points relais…</span>
-        </div>
-      )}
-
-      {/* État : erreur credentials */}
-      {isComplete && !loading && error && noCreds && (
-        <div className="px-3 py-4 text-center">
-          <p className="text-yellow-400/80 text-xs font-semibold mb-1">Configuration requise</p>
-          <p className="text-white/30 text-[11px]">
-            Ajoutez <span className="font-mono text-white/50">MONDIAL_RELAY_ENSEIGNE</span> et{' '}
-            <span className="font-mono text-white/50">MONDIAL_RELAY_SECRET</span> dans les variables
-            Vercel pour activer la sélection de point relais.
-          </p>
-        </div>
-      )}
-
-      {/* État : erreur générique */}
-      {isComplete && !loading && error && !noCreds && (
-        <div className="px-3 py-3 text-center text-red-400/80 text-xs">{error}</div>
-      )}
-
-      {/* Résultats */}
-      {!loading && !error && points.length > 0 && (
-        <div className="flex flex-col">
-
-          {/* Carte Leaflet */}
-          <div ref={mapRef} style={{ height: 200, width: '100%' }} />
-
-          {/* Liste des points */}
-          <div className="divide-y divide-white/5 max-h-52 overflow-y-auto">
-            {points.map(p => {
-              const isSelected = selected && String(selected.id) === p.id
-              return (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => onSelect(toRelayPoint(p))}
-                  onMouseEnter={() => setHovered(p.id)}
-                  onMouseLeave={() => setHovered(null)}
-                  className={`w-full text-left px-3 py-2.5 transition-colors flex items-start gap-2.5 ${
-                    isSelected
-                      ? 'bg-green-500/10'
-                      : 'hover:bg-white/[0.04]'
-                  }`}
-                >
-                  <MapPin
-                    size={13}
-                    className={`shrink-0 mt-0.5 ${isSelected ? 'text-green-400' : 'text-red-400/70'}`}
-                  />
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className={`text-xs font-semibold truncate ${isSelected ? 'text-green-400' : 'text-white/80'}`}>
-                        {p.name}
-                      </p>
-                      {p.distance !== undefined && (
-                        <span className="text-white/25 text-[10px] shrink-0">{p.distance} km</span>
-                      )}
-                    </div>
-                    <p className="text-[11px] text-white/35 truncate">{p.address}, {p.city}</p>
-                  </div>
-                  {isSelected && <CheckCircle2 size={13} className="text-green-400 shrink-0 mt-0.5" />}
-                </button>
-              )
-            })}
+        {/* Confirmation */}
+        {selected && (
+          <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-lg px-3 py-2">
+            <CheckCircle2 size={12} className="text-green-400 shrink-0" />
+            <p className="text-green-400 text-xs font-semibold truncate">
+              Point relais #{selected.id} — {selected.name}
+            </p>
           </div>
-
-          {/* Point sélectionné */}
-          {selected && (
-            <div className="px-3 py-2.5 bg-green-500/10 border-t border-green-500/20 flex items-center gap-2">
-              <CheckCircle2 size={13} className="text-green-400 shrink-0" />
-              <div className="min-w-0">
-                <p className="text-green-400 text-xs font-semibold truncate">{selected.name}</p>
-                <p className="text-white/35 text-[10px] truncate">{selected.address}, {selected.city}</p>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
