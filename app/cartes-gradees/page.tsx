@@ -179,56 +179,84 @@ function PSACardItem({ card }: { card: PSACard }) {
     <div className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-white/25 transition-all duration-300">
 
       {/* ── Dalle PSA ── */}
-      <div className="relative p-2.5 pb-0 bg-gradient-to-b from-[#d0d3d8] via-[#b8bcc4] to-[#9ea3ad]">
-        {/* Boîtier plastique — fenêtre carte */}
-        <div
-          className="relative overflow-hidden rounded-sm"
-          style={{
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(200,210,220,0.08) 100%)',
-            boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.5), inset 0 -1px 3px rgba(0,0,0,0.25)',
-          }}
-        >
-          {/* Carte */}
-          <div className="relative aspect-[63/88] w-full bg-[#1a1a2e] transition-transform duration-500 group-hover:scale-[1.02]">
-            {card.image && !imgError ? (
-              <img
-                src={card.image}
-                alt={card.name}
-                className="w-full h-full object-contain"
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-white/30 gap-2 p-4 text-center">
-                <span className="text-4xl">🃏</span>
-                <span className="text-xs">{card.name}</span>
+      <div
+        className="relative mx-3 mt-3 mb-0 transition-transform duration-500 group-hover:scale-[1.02]"
+        style={{ filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.55))' }}
+      >
+        {/* Coque plastique extérieure argentée */}
+        <div style={{
+          background: 'linear-gradient(160deg,#dde1e6 0%,#b8bfc8 35%,#cdd2d8 65%,#a8b0ba 100%)',
+          padding: '3px',
+          borderRadius: '4px',
+          boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.75), inset 0 -1px 2px rgba(0,0,0,0.2)',
+        }}>
+          {/* Intérieur */}
+          <div style={{ borderRadius: '2px', overflow: 'hidden', background: 'rgba(230,238,245,0.2)' }}>
+
+            {/* ── Étiquette blanche en haut ── */}
+            <div style={{ background: '#fff' }}>
+              {/* Bande rouge */}
+              <div style={{ height: '5px', background: 'linear-gradient(90deg,#b80000,#e30000,#b80000)' }} />
+              {/* Contenu label */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', padding: '3px 5px 4px', gap: '3px' }}>
+                {/* Colonne gauche */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: '6px', fontWeight: 700, color: '#111', letterSpacing: '0.2px', lineHeight: 1.4 }}>
+                    JPN. POKÉMON TCG
+                  </div>
+                  <div style={{ fontSize: '8px', fontWeight: 900, color: '#000', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {card.name.toUpperCase()}
+                  </div>
+                  <div style={{ fontSize: '6px', color: '#444', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {card.set.replace(/\(.*?\)/g, '').trim().toUpperCase()}
+                  </div>
+                  {/* Barre de code + logo PSA */}
+                  <div style={{ marginTop: '3px', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                    <div style={{
+                      height: '9px', flex: 1,
+                      backgroundImage: 'repeating-linear-gradient(90deg,#000 0,#000 1px,transparent 1px,transparent 2.5px)',
+                      opacity: 0.55,
+                    }} />
+                    <span style={{ fontSize: '8px', fontWeight: 900, color: '#0047a0', fontStyle: 'italic', letterSpacing: '1px', fontFamily: 'Georgia,serif', flexShrink: 0 }}>
+                      PSA
+                    </span>
+                  </div>
+                </div>
+                {/* Colonne droite : numéro + MINT + grade */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', flexShrink: 0 }}>
+                  <span style={{ fontSize: '6px', fontWeight: 700, color: '#111', lineHeight: 1.4 }}>{card.numero}</span>
+                  <span style={{ fontSize: '6px', fontWeight: 700, color: '#111', lineHeight: 1.4 }}>MINT</span>
+                  <span style={{ fontSize: '26px', fontWeight: 900, color: '#000', lineHeight: 1, marginTop: '1px' }}>
+                    {card.grade}
+                  </span>
+                </div>
               </div>
-            )}
-            {/* Reflet plastique */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(120deg, rgba(255,255,255,0.12) 0%, transparent 45%, rgba(255,255,255,0.05) 100%)',
-              }}
-            />
+            </div>
+
+            {/* ── Carte dans le plastique ── */}
+            <div className="relative aspect-[63/88]" style={{ background: '#111' }}>
+              {card.image && !imgError ? (
+                <img
+                  src={card.image}
+                  alt={card.name}
+                  className="w-full h-full object-contain"
+                  onError={() => setImgError(true)}
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center gap-2" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                  <span className="text-4xl">🃏</span>
+                  <span className="text-xs">{card.name}</span>
+                </div>
+              )}
+              {/* Reflet plastique */}
+              <div style={{
+                position: 'absolute', inset: 0, pointerEvents: 'none',
+                background: 'linear-gradient(125deg,rgba(255,255,255,0.13) 0%,transparent 35%,rgba(255,255,255,0.04) 60%,transparent 100%)',
+              }} />
+            </div>
+
           </div>
         </div>
-
-        {/* Étiquette PSA jaune */}
-        <div className="mt-2 bg-[#f5c400] px-2 py-1 flex items-center justify-between gap-1">
-          {/* Gauche : logo PSA + set */}
-          <div className="flex flex-col leading-none">
-            <span className="font-black text-black text-[10px] tracking-widest">PSA</span>
-            <span className="text-[7px] text-black/70 font-semibold truncate max-w-[90px]">{card.setCode} · {card.numero}</span>
-          </div>
-          {/* Droite : note */}
-          <div className="flex flex-col items-end leading-none">
-            <span className="text-[7px] text-black/60 font-semibold uppercase">MINT</span>
-            <span className="text-xl font-black text-black leading-none">{card.grade}</span>
-          </div>
-        </div>
-
-        {/* Bande noire bas de dalle */}
-        <div className="h-2 bg-[#1a1a1a] rounded-b-sm" />
       </div>
 
       {/* ── Infos sous la dalle ── */}
