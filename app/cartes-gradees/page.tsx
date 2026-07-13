@@ -13,7 +13,7 @@ const PSA_CARDS = [
     price: 49.90,
     rarity: 'SAR',
     langue: 'Japonaise',
-    image: '/psa/dragonite.jpg',
+    image: 'https://den-cards.pokellector.com/427/Mega-Dragonite-ex.M2A.232.60100.png',
     description: 'Illustration spectaculaire de Dragonite en forme Mega, certifiée PSA 9 (Mint). Super Art Rare parmi les plus recherchées du set japonais MEGA Dream ex, sorti en 2025. L\'illustration pleine page en fait une pièce maîtresse pour tout collectionneur sérieux.',
   },
   {
@@ -26,7 +26,7 @@ const PSA_CARDS = [
     price: 42.90,
     rarity: 'SAR',
     langue: 'Japonaise',
-    image: '/psa/froslass.jpg',
+    image: 'https://den-cards.pokellector.com/427/Mega-Froslass-ex.M2A.224.60094.png',
     description: 'Froslass en version Mega dans une illustration envoûtante aux teintes glacées. Super Art Rare parmi les plus appréciées du set MEGA Dream ex. Certifiée PSA 9 Mint — un incontournable pour les amateurs de Pokémon de la génération IV.',
   },
   {
@@ -39,7 +39,7 @@ const PSA_CARDS = [
     price: 34.90,
     rarity: 'AR',
     langue: 'Japonaise',
-    image: '/psa/flygon.jpg',
+    image: 'https://den-cards.pokellector.com/425/Flygon.M2.88.59575.png',
     description: 'Flygon dans une illustration Alternative Rare dynamique du set Inferno X. Le Pokémon Dragon est représenté dans une pose épique. Certifiée PSA 9 — état quasi-parfait vérifié par les experts PSA, la référence mondiale du grading.',
   },
   {
@@ -52,7 +52,7 @@ const PSA_CARDS = [
     price: 34.90,
     rarity: 'Full Art',
     langue: 'Japonaise',
-    image: '/psa/pikachu.jpg',
+    image: 'https://den-cards.pokellector.com/327/Pikachu.S8A.1.39585.png',
     description: 'Pikachu commémoratif du 25ème anniversaire du Pokémon TCG. Full Art iconique recherchée par les collectionneurs du monde entier pour son illustration dorée et festive. Un symbole fort de l\'histoire Pokémon, certifié PSA 9 Mint.',
   },
   {
@@ -65,7 +65,7 @@ const PSA_CARDS = [
     price: 34.90,
     rarity: 'Holo',
     langue: 'Japonaise',
-    image: '/psa/gengar.jpg',
+    image: 'https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpc/MBG/MBG_3_R_JP_LG.png',
     description: 'Mega Gengar ex issue du MEGA Starter Set exclusif sorti en septembre 2025, contenant seulement 21 cartes au total. Très difficile à trouver hors du Japon. La capacité "Shadow Hiding" en fait aussi une pièce redoutable en jeu. Certifiée PSA 9 Mint.',
   },
   {
@@ -78,7 +78,7 @@ const PSA_CARDS = [
     price: 44.90,
     rarity: 'GX',
     langue: 'Japonaise',
-    image: '/psa/vaporeon.jpg',
+    image: 'https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpc/SMI/SMI_7_R_JP_LG.png',
     description: 'Vaporeon GX issue du Eevee GX Starter Set (Sun & Moon, 2018) — set starter japonais parmi les plus difficiles à dénicher en bon état. L\'évolution aquatique d\'Évoli avec 210 PV. Très rare en PSA 9, idéale pour un collectionneur exigeant.',
   },
   {
@@ -91,7 +91,7 @@ const PSA_CARDS = [
     price: 32.90,
     rarity: 'AR',
     langue: 'Japonaise',
-    image: '/psa/spiritomb.jpg',
+    image: 'https://den-cards.pokellector.com/427/Cynthias-Spiritomb.M2A.208.60082.png',
     description: 'Illustration Alternative Rare de Spiritomb accompagné de Cynthia, la Grande Championne la plus emblématique de la saga. Issue du set MEGA Dream ex, cette carte mêle nostalgie et art saisissant dans un format illustré plein cadre. PSA 9 Mint.',
   },
   {
@@ -104,7 +104,7 @@ const PSA_CARDS = [
     price: 54.90,
     rarity: 'Full Art',
     langue: 'Japonaise',
-    image: '/psa/xerneas.jpg',
+    image: 'https://den-cards.pokellector.com/328/Xerneas-EX.S8A-P.23.40649.png',
     description: 'Xerneas EX Full Art issue du 25th Anniversary Promo Pack — set promo japonais limité à seulement 25 cartes pour le 25ème anniversaire du TCG. Extrêmement rare hors du Japon et quasi impossible à obtenir en état parfait. PSA 9 Mint.',
   },
   {
@@ -117,7 +117,7 @@ const PSA_CARDS = [
     price: 32.90,
     rarity: 'AR',
     langue: 'Japonaise',
-    image: '/psa/kangaskhan.jpg',
+    image: 'https://den-cards.pokellector.com/413/Kangaskhan.SV10.110.57129.png',
     description: 'Kangaskhan dans une illustration Alternative Rare du set Glory of Team Rocket (SV10) — le grand retour de la Team Rocket dans Scarlet & Violet. Illustration chaleureuse pour l\'un des Pokémon les plus nostalgiques de la gen 1, avec son bébé. PSA 9 Mint.',
   },
 ]
@@ -144,18 +144,21 @@ function PSACardItem({ card, onOpen }: { card: PSACard; onOpen: () => void }) {
       onClick={onOpen}
       className="group flex flex-col rounded-xl border border-white/10 bg-[#111] overflow-hidden hover:border-white/25 transition-all duration-200 cursor-pointer hover:shadow-xl"
     >
-      {/* Photo PSA */}
-      <div className="relative bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: '3/4' }}>
+      {/* Image carte */}
+      <div className="relative bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: '63/88' }}>
         {card.image && !imgError ? (
           <img
             src={card.image}
             alt={card.name}
-            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-white/20 text-4xl">🃏</div>
         )}
+        <div className="absolute top-2 left-2 bg-yellow-400 text-black text-[10px] font-black px-2 py-0.5 rounded-md shadow">
+          PSA {card.grade}
+        </div>
       </div>
 
       {/* Infos */}
