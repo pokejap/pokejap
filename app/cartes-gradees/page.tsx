@@ -192,7 +192,7 @@ function PSADetail({ card, onClose }: { card: PSACard; onClose: () => void }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 bg-black overflow-y-auto">
+    <div className="fixed inset-0 z-[200] bg-black overflow-y-auto">
       {/* Barre retour */}
       <div className="border-b border-white/10 px-6 py-4">
         <button
@@ -274,15 +274,15 @@ function PSADetail({ card, onClose }: { card: PSACard; onClose: () => void }) {
           </button>
 
           {/* Badges confiance */}
-          <div className="flex justify-around pt-4 border-t border-white/10">
+          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/10">
             {[
-              ['🛡️', 'Authentique'],
-              ['📦', 'Emballage soigné'],
-              ['🔒', 'Paiement sécurisé'],
-            ].map(([icon, label]) => (
-              <div key={label} className="flex flex-col items-center gap-1.5 text-center">
-                <span className="text-2xl">{icon}</span>
-                <span className="text-xs text-white/40">{label}</span>
+              { svg: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>, label: 'Authentique' },
+              { svg: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>, label: 'Emballage soigné' },
+              { svg: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>, label: 'Paiement sécurisé' },
+            ].map(({ svg, label }) => (
+              <div key={label} className="flex flex-col items-center gap-2 rounded-xl bg-white/5 py-3 px-2 text-center">
+                <span className="text-white/60">{svg}</span>
+                <span className="text-xs text-white/40 leading-tight">{label}</span>
               </div>
             ))}
           </div>
