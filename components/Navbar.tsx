@@ -27,6 +27,7 @@ export default function Navbar() {
     { href: '/boutique',   label: 'Boutique'    },
     { href: '/scelles',    label: 'Scellés JAP' },
     { href: '/scelles-fr', label: 'Scellés FR'  },
+    { href: '/cartes-gradees', label: 'Cartes Gradées' },
     { href: '/a-propos',   label: 'À propos'    },
   ]
 
