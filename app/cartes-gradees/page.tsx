@@ -176,32 +176,62 @@ function PSACardItem({ card }: { card: PSACard }) {
   }
 
   return (
-    <div className="group relative flex flex-col rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-white/25 transition-all duration-300">
-      {/* PSA badge */}
-      <div className="absolute top-3 left-3 z-10 flex items-center gap-1 bg-yellow-400 text-black text-xs font-black px-2 py-1 rounded-md shadow-lg">
-        <span>PSA</span>
-        <span className="text-base leading-none">{card.grade}</span>
-      </div>
+    <div className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-white/25 transition-all duration-300">
 
-      {/* Image */}
-      <div className="relative aspect-[63/88] w-full bg-black/40 overflow-hidden">
-        {!imgError ? (
-          <img
-            src={card.image}
-            alt={card.name}
-            className="w-full h-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-white/30 gap-2 p-4 text-center">
-            <span className="text-4xl">🃏</span>
-            <span className="text-xs">{card.name}</span>
+      {/* ── Dalle PSA ── */}
+      <div className="relative p-2.5 pb-0 bg-gradient-to-b from-[#d0d3d8] via-[#b8bcc4] to-[#9ea3ad]">
+        {/* Boîtier plastique — fenêtre carte */}
+        <div
+          className="relative overflow-hidden rounded-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(200,210,220,0.08) 100%)',
+            boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.5), inset 0 -1px 3px rgba(0,0,0,0.25)',
+          }}
+        >
+          {/* Carte */}
+          <div className="relative aspect-[63/88] w-full bg-[#1a1a2e] transition-transform duration-500 group-hover:scale-[1.02]">
+            {card.image && !imgError ? (
+              <img
+                src={card.image}
+                alt={card.name}
+                className="w-full h-full object-contain"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center text-white/30 gap-2 p-4 text-center">
+                <span className="text-4xl">🃏</span>
+                <span className="text-xs">{card.name}</span>
+              </div>
+            )}
+            {/* Reflet plastique */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'linear-gradient(120deg, rgba(255,255,255,0.12) 0%, transparent 45%, rgba(255,255,255,0.05) 100%)',
+              }}
+            />
           </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+        </div>
+
+        {/* Étiquette PSA jaune */}
+        <div className="mt-2 bg-[#f5c400] px-2 py-1 flex items-center justify-between gap-1">
+          {/* Gauche : logo PSA + set */}
+          <div className="flex flex-col leading-none">
+            <span className="font-black text-black text-[10px] tracking-widest">PSA</span>
+            <span className="text-[7px] text-black/70 font-semibold truncate max-w-[90px]">{card.setCode} · {card.numero}</span>
+          </div>
+          {/* Droite : note */}
+          <div className="flex flex-col items-end leading-none">
+            <span className="text-[7px] text-black/60 font-semibold uppercase">MINT</span>
+            <span className="text-xl font-black text-black leading-none">{card.grade}</span>
+          </div>
+        </div>
+
+        {/* Bande noire bas de dalle */}
+        <div className="h-2 bg-[#1a1a1a] rounded-b-sm" />
       </div>
 
-      {/* Infos */}
+      {/* ── Infos sous la dalle ── */}
       <div className="flex flex-col gap-2 p-4 flex-1">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-semibold text-white text-sm leading-tight">{card.name}</h3>
@@ -212,15 +242,7 @@ function PSACardItem({ card }: { card: PSACard }) {
 
         <div className="flex flex-col gap-0.5 text-xs text-white/50">
           <span>{card.set}</span>
-          <span>{card.numero} · 🇯🇵 JAP</span>
-        </div>
-
-        {/* Certification */}
-        <div className="mt-1 flex items-center gap-1.5 text-xs text-yellow-400/80 bg-yellow-400/5 border border-yellow-400/20 rounded-lg px-2.5 py-1.5">
-          <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-          </svg>
-          <span>Certifiée PSA {card.grade} • Authentique</span>
+          <span>🇯🇵 Japonaise</span>
         </div>
 
         <div className="mt-auto pt-3 flex items-center justify-between">
