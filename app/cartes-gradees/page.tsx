@@ -10,101 +10,101 @@ const PSA_CARDS = [
     id: 'psa-mega-dragonite-ex-m2a-232',
     name: 'Mega Dragonite ex',
     numero: '#232',
-    set: 'Clay Burst (s10d)',
-    setCode: 'M2a',
+    set: 'MEGA Dream ex (M2A)',
+    setCode: 'M2A',
     grade: 9,
     price: 49.90,
     rarity: 'SAR',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/370/Dragonite-ex.SV2D.Ura.47188.png',
-    description: 'Mega Dragonite ex en illustration Alternative Rare',
+    image: 'https://den-cards.pokellector.com/427/Mega-Dragonite-ex.M2A.232.60100.png',
+    description: 'Mega Dragonite ex Super Art Rare du set MEGA Dream ex',
   },
   {
     id: 'psa-mega-froslass-ex-m2a-224',
     name: 'Mega Froslass ex',
     numero: '#224',
-    set: 'Clay Burst (s10d)',
-    setCode: 'M2a',
+    set: 'MEGA Dream ex (M2A)',
+    setCode: 'M2A',
     grade: 9,
     price: 42.90,
     rarity: 'SAR',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/370/Froslass-ex.SV2D.Ura.47174.png',
-    description: 'Mega Froslass ex en illustration Alternative Rare',
+    image: 'https://den-cards.pokellector.com/427/Mega-Froslass-ex.M2A.224.60094.png',
+    description: 'Mega Froslass ex Super Art Rare du set MEGA Dream ex',
   },
   {
     id: 'psa-flygon-ar-m2-088',
     name: 'Flygon AR',
     numero: '#088',
-    set: 'Clay Burst (s10d)',
+    set: 'Inferno X (M2)',
     setCode: 'M2',
     grade: 9,
     price: 34.90,
     rarity: 'AR',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/370/Flygon.SV2D.88.47066.png',
-    description: 'Flygon en illustration Alternative Rare pleine page',
+    image: 'https://den-cards.pokellector.com/425/Flygon.M2.88.59575.png',
+    description: 'Flygon en illustration Alternative Rare du set Inferno X',
   },
   {
     id: 'psa-pikachu-fa-25th-001',
     name: 'Pikachu Full Art 25th',
     numero: '#001/028',
     set: '25th Anniversary Collection',
-    setCode: '25th',
+    setCode: 'S8A',
     grade: 9,
     price: 34.90,
     rarity: 'Full Art',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/299/Pikachu.S8A.001.39710.png',
+    image: 'https://den-cards.pokellector.com/327/Pikachu.S8A.1.39585.png',
     description: 'Pikachu Full Art commémoratif 25ème anniversaire',
   },
   {
-    id: 'psa-mega-gengar-ex-mbg-003',
+    id: 'psa-mega-gengar-ex-m2a-230',
     name: 'Mega Gengar ex',
-    numero: '#003',
-    set: 'Mega Bigengar Deck',
-    setCode: 'MBG',
+    numero: '#230',
+    set: 'MEGA Dream ex (M2A)',
+    setCode: 'M2A',
     grade: 9,
-    price: 29.90,
-    rarity: 'ex',
+    price: 34.90,
+    rarity: 'SAR',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/368/Gengar-ex.SV3.126.48820.png',
-    description: 'Mega Gengar ex issu du deck exclusif japonais',
+    image: 'https://den-cards.pokellector.com/427/Mega-Gengar-ex.M2A.230.60098.png',
+    description: 'Mega Gengar ex Super Art Rare du set MEGA Dream ex',
   },
   {
-    id: 'psa-vaporeon-gx-007',
-    name: 'Vaporeon GX',
-    numero: '#007',
+    id: 'psa-vaporeon-v-s6a-075',
+    name: 'Vaporeon V',
+    numero: '#075',
     set: 'Eevee Heroes',
-    setCode: 'S6a',
+    setCode: 'S6A',
     grade: 9,
-    price: 29.90,
-    rarity: 'GX',
+    price: 34.90,
+    rarity: 'Full Art',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/316/Vaporeon-GX.S6A.007.41753.png',
-    description: 'Vaporeon GX Full Art issu du set Eevee Heroes',
+    image: 'https://den-cards.pokellector.com/322/Vaporeon-V.S6A.75.38951.png',
+    description: 'Vaporeon V Full Art issu du set Eevee Heroes',
   },
   {
     id: 'psa-cynthia-spiritomb-ar-m2a-208',
-    name: "Spiritomb d'Acerola AR",
+    name: "Spiritomb de Cynthia AR",
     numero: '#208',
-    set: 'Clay Burst (s10d)',
-    setCode: 'M2a',
+    set: 'MEGA Dream ex (M2A)',
+    setCode: 'M2A',
     grade: 9,
-    price: 24.90,
+    price: 32.90,
     rarity: 'AR',
     langue: 'JPN',
-    image: 'https://den-cards.pokellector.com/370/Spiritomb.SV2D.113.47150.png',
-    description: 'Spiritomb en illustration Alternative Rare avec dresseur',
+    image: 'https://den-cards.pokellector.com/427/Cynthias-Spiritomb.M2A.208.60082.png',
+    description: 'Spiritomb de Cynthia en illustration Alternative Rare',
   },
   {
     id: 'psa-xerneas-ex-25th-023',
     name: 'Xerneas EX Full Art 25th',
     numero: '#023/028',
     set: '25th Anniversary Collection',
-    setCode: '25th',
+    setCode: 'S8A',
     grade: 9,
-    price: 22.90,
+    price: 54.90,
     rarity: 'Full Art',
     langue: 'JPN',
     image: 'https://den-cards.pokellector.com/299/Xerneas-EX.S8A.023.39731.png',
@@ -117,7 +117,7 @@ const PSA_CARDS = [
     set: 'Gloire de la Team Rocket (SV10)',
     setCode: 'SV10',
     grade: 9,
-    price: 22.90,
+    price: 32.90,
     rarity: 'AR',
     langue: 'JPN',
     image: 'https://den-cards.pokellector.com/416/Kangaskhan.SV10.110.59000.png',
@@ -152,7 +152,6 @@ function PSACardItem({ card }: { card: PSACard }) {
   const [imgError, setImgError] = useState(false)
 
   const handleAdd = () => {
-    // Intégration panier — même interface que la boutique
     try {
       const stored = localStorage.getItem('pokejap-cart')
       const cart = stored ? JSON.parse(stored) : []
@@ -198,7 +197,6 @@ function PSACardItem({ card }: { card: PSACard }) {
             <span className="text-xs">{card.name}</span>
           </div>
         )}
-        {/* Reflet PSA */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
       </div>
 
@@ -262,11 +260,6 @@ export default function CartesGradeesPage() {
             <div>
               <div className="text-2xl font-bold text-yellow-400">{PSA_CARDS.length}</div>
               <div className="text-xs text-white/40 mt-0.5">Cartes disponibles</div>
-            </div>
-            <div className="w-px bg-white/10" />
-            <div>
-              <div className="text-2xl font-bold text-yellow-400">PSA 9</div>
-              <div className="text-xs text-white/40 mt-0.5">Mint — toutes les cartes</div>
             </div>
             <div className="w-px bg-white/10" />
             <div>
