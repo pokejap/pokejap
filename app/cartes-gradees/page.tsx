@@ -136,34 +136,94 @@ interface PSACard {
   grade: number; price: number; rarity: string; langue: string; image: string; description: string
 }
 
+// ─── Visuel dalle PSA ─────────────────────────────────────────────────────────
+function PSASlab({ card, size = 'sm' }: { card: PSACard; size?: 'sm' | 'lg' }) {
+  const [imgError, setImgError] = useState(false)
+  const isLg = size === 'lg'
+
+  return (
+    <div
+      style={{
+        background: 'linear-gradient(160deg, #d6d6d6 0%, #f0f0f0 40%, #c2c2c2 100%)',
+        padding: isLg ? '10px' : '5px',
+        borderRadius: isLg ? '10px' : '6px',
+        boxShadow: isLg
+          ? '0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.6)'
+          : '0 6px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.5)',
+      }}
+    >
+      <div
+        style={{
+          background: 'linear-gradient(180deg, #e0e0e0 0%, #f5f5f5 100%)',
+          borderRadius: isLg ? '6px' : '3px',
+          padding: isLg ? '6px' : '3px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: isLg ? '6px' : '3px',
+        }}
+      >
+        {/* Card image */}
+        <div
+          style={{
+            background: '#111',
+            borderRadius: isLg ? '4px' : '2px',
+            overflow: 'hidden',
+            aspectRatio: '63/88',
+          }}
+        >
+          {card.image && !imgError ? (
+            <img
+              src={card.image}
+              alt={card.name}
+              style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.2)', fontSize: isLg ? '48px' : '24px' }}>
+              🃏
+            </div>
+          )}
+        </div>
+
+        {/* PSA label */}
+        <div style={{ background: 'white', borderRadius: isLg ? '3px' : '2px', overflow: 'hidden' }}>
+          {/* Red stripe */}
+          <div style={{ background: '#cc0000', height: isLg ? '8px' : '4px' }} />
+          {/* Label body */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'stretch', padding: isLg ? '5px 8px' : '2px 4px', gap: isLg ? '6px' : '2px' }}>
+            {/* Left col */}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontWeight: 900, fontSize: isLg ? '8px' : '4px', color: '#111', letterSpacing: '0.03em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>JPN. POKÉMON TCG</div>
+              <div style={{ fontWeight: 700, fontSize: isLg ? '8px' : '4px', color: '#111', marginTop: isLg ? '2px' : '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{card.name}</div>
+              <div style={{ fontSize: isLg ? '7px' : '3.5px', color: '#444', marginTop: '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{card.set}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: isLg ? '4px' : '2px', marginTop: isLg ? '4px' : '2px' }}>
+                <div style={{ fontFamily: 'monospace', fontSize: isLg ? '7px' : '3.5px', letterSpacing: isLg ? '-0.5px' : '-0.2px', color: '#222' }}>|||||||||||||||||</div>
+                <div style={{ fontWeight: 900, fontSize: isLg ? '9px' : '4.5px', color: '#cc0000', letterSpacing: '0.05em' }}>PSA</div>
+              </div>
+            </div>
+            {/* Right col */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between', flexShrink: 0 }}>
+              <div style={{ fontSize: isLg ? '6px' : '3px', color: '#888' }}>{card.numero}</div>
+              <div style={{ fontSize: isLg ? '7px' : '3.5px', fontWeight: 700, color: '#111', textTransform: 'uppercase' }}>MINT</div>
+              <div style={{ fontSize: isLg ? '28px' : '14px', fontWeight: 900, color: '#111', lineHeight: 1 }}>{card.grade}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ─── Carte dans la grille ─────────────────────────────────────────────────────
 function PSACardItem({ card, onOpen }: { card: PSACard; onOpen: () => void }) {
-  const [imgError, setImgError] = useState(false)
-
   return (
     <div
       onClick={onOpen}
       className="group flex flex-col rounded-xl border border-white/10 bg-[#111] overflow-hidden hover:border-white/25 transition-all duration-200 cursor-pointer hover:shadow-xl"
     >
-      {/* Image */}
-      <div className="relative bg-[#0a0a0a] aspect-[63/88] overflow-hidden">
-        {card.image && !imgError ? (
-          <img
-            src={card.image}
-            alt={card.name}
-            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-white/20 flex-col gap-2">
-            <span className="text-4xl">🃏</span>
-            <span className="text-xs">{card.name}</span>
-          </div>
-        )}
-        {/* Badge PSA */}
-        <div className="absolute top-2 left-2 bg-yellow-400 text-black text-[10px] font-black px-2 py-0.5 rounded-md shadow">
-          PSA {card.grade}
-        </div>
+      {/* Slab */}
+      <div className="bg-[#0a0a0a] p-3 transition-transform duration-300 group-hover:scale-[1.02]">
+        <PSASlab card={card} size="sm" />
       </div>
 
       {/* Infos */}
@@ -184,7 +244,6 @@ function PSACardItem({ card, onOpen }: { card: PSACard; onOpen: () => void }) {
 // ─── Page détail — plein écran style boutique ─────────────────────────────────
 function PSADetail({ card, onClose }: { card: PSACard; onClose: () => void }) {
   const [added, setAdded] = useState(false)
-  const [imgError, setImgError] = useState(false)
 
   const handleAdd = () => {
     try {
@@ -215,21 +274,11 @@ function PSADetail({ card, onClose }: { card: PSACard; onClose: () => void }) {
       {/* Layout deux colonnes */}
       <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-12">
 
-        {/* Colonne gauche — image */}
-        <div className="md:w-[420px] shrink-0 flex items-start justify-center">
-          {card.image && !imgError ? (
-            <img
-              src={card.image}
-              alt={card.name}
-              className="w-full max-w-[380px] object-contain rounded-xl"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <div className="w-72 h-96 flex flex-col items-center justify-center text-white/20 gap-4">
-              <span className="text-6xl">🃏</span>
-              <span className="text-sm">{card.name}</span>
-            </div>
-          )}
+        {/* Colonne gauche — slab PSA */}
+        <div className="md:w-[380px] shrink-0 flex items-start justify-center">
+          <div className="w-full max-w-[340px]">
+            <PSASlab card={card} size="lg" />
+          </div>
         </div>
 
         {/* Colonne droite — infos */}
