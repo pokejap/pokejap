@@ -181,8 +181,8 @@ function PSACardItem({ card, onOpen }: { card: PSACard; onOpen: () => void }) {
   )
 }
 
-// ─── Modal — style page produit ───────────────────────────────────────────────
-function PSAModal({ card, onClose }: { card: PSACard; onClose: () => void }) {
+// ─── Page détail — plein écran style boutique ─────────────────────────────────
+function PSADetail({ card, onClose }: { card: PSACard; onClose: () => void }) {
   const [added, setAdded] = useState(false)
   const [imgError, setImgError] = useState(false)
 
@@ -201,87 +201,86 @@ function PSAModal({ card, onClose }: { card: PSACard; onClose: () => void }) {
   }
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(16px)' }}
-      onClick={onClose}
-    >
-      <div
-        className="relative w-full max-w-3xl rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col sm:flex-row"
-        onClick={e => e.stopPropagation()}
-      >
-        {/* Fermer */}
+    <div className="fixed inset-0 z-50 bg-black overflow-y-auto">
+      {/* Barre retour */}
+      <div className="border-b border-white/10 px-6 py-4">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/60 hover:text-white text-sm transition-all"
-        >✕</button>
+          className="flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors"
+        >
+          ← Retour aux cartes gradées
+        </button>
+      </div>
 
-        {/* Image */}
-        <div className="sm:w-72 shrink-0 bg-[#0a0a0a] flex items-center justify-center p-6">
+      {/* Layout deux colonnes */}
+      <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-12">
+
+        {/* Colonne gauche — image */}
+        <div className="md:w-[420px] shrink-0 flex items-start justify-center">
           {card.image && !imgError ? (
             <img
               src={card.image}
               alt={card.name}
-              className="w-full max-w-[220px] object-contain rounded-lg"
+              className="w-full max-w-[380px] object-contain rounded-xl"
               onError={() => setImgError(true)}
             />
           ) : (
-            <div className="w-48 h-64 flex items-center justify-center text-white/20 flex-col gap-3">
-              <span className="text-5xl">🃏</span>
+            <div className="w-72 h-96 flex flex-col items-center justify-center text-white/20 gap-4">
+              <span className="text-6xl">🃏</span>
               <span className="text-sm">{card.name}</span>
             </div>
           )}
         </div>
 
-        {/* Détails */}
-        <div className="flex flex-col gap-4 p-6 flex-1 overflow-y-auto">
-          {/* Titre + badge */}
-          <div className="flex items-start justify-between gap-3 pr-8">
-            <h2 className="text-2xl font-bold text-white leading-tight">{card.name}</h2>
-            <span className={`shrink-0 text-xs px-3 py-1 rounded-full font-semibold ${RARITY_COLORS[card.rarity] ?? 'bg-white/10 text-white/60'}`}>
+        {/* Colonne droite — infos */}
+        <div className="flex-1 flex flex-col gap-5">
+
+          {/* Nom + badge */}
+          <div className="flex items-start justify-between gap-4">
+            <h1 className="text-3xl font-bold text-white leading-tight">{card.name}</h1>
+            <span className={`shrink-0 text-sm px-3 py-1 rounded-full font-semibold ${RARITY_COLORS[card.rarity] ?? 'bg-white/10 text-white/60'}`}>
               {card.rarity}
             </span>
           </div>
 
-          {/* Grille d'infos */}
-          <div className="grid grid-cols-2 gap-2">
+          {/* Grille infos */}
+          <div className="grid grid-cols-2 gap-3">
             {[
               ['Extension', card.set],
               ['Numéro', card.numero],
-              ['Certification', `PSA ${card.grade}`],
-              ['Langue', `🇯🇵 ${card.langue}`],
+              ['Type', 'N/A'],
+              ['PV', 'N/A'],
             ].map(([label, val]) => (
-              <div key={label} className="rounded-lg bg-white/5 border border-white/8 px-4 py-3">
+              <div key={label} className="rounded-xl bg-white/5 border border-white/8 px-4 py-3">
                 <div className="text-xs text-white/40 mb-1">{label}</div>
-                <div className="text-sm font-semibold text-white">{val}</div>
+                <div className="font-semibold text-white">{val}</div>
               </div>
             ))}
           </div>
 
           {/* État de la carte */}
-          <div className="rounded-lg bg-white/5 border border-white/8 px-4 py-3">
-            <div className="text-xs text-white/40 mb-1">État de la carte</div>
-            <div className="text-sm font-bold text-white mb-1">PSA {card.grade} — Mint</div>
-            <div className="text-xs text-white/50 leading-relaxed">{card.description}</div>
+          <div className="rounded-xl bg-white/5 border border-white/8 px-4 py-4">
+            <div className="text-xs text-white/40 mb-2">Etat de la carte</div>
+            <div className="font-bold text-white mb-1">PSA {card.grade} — Mint</div>
+            <div className="text-sm text-white/50 leading-relaxed">{card.description}</div>
           </div>
 
-          <p className="text-xs text-white/40">Dalle PSA officielle incluse · Authentique et certifiée</p>
+          <p className="text-sm text-white/40">Dalle PSA officielle incluse · Authentique et certifiée</p>
 
-          {/* Prix + stock + bouton */}
-          <div className="flex items-center justify-between gap-2 mt-1">
-            <span className="text-3xl font-bold text-yellow-400">{card.price.toFixed(2)} €</span>
-            <span className="text-sm text-green-400 font-medium">En stock</span>
+          {/* Prix + stock */}
+          <div className="flex items-center justify-between">
+            <span className="text-4xl font-bold text-yellow-400">{card.price.toFixed(2)} €</span>
+            <span className="text-sm text-orange-400 font-medium">Plus que 1 en stock !</span>
           </div>
 
+          {/* Bouton */}
           <button
             onClick={handleAdd}
-            className={`w-full py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] ${
+            className={`w-full py-4 rounded-xl font-bold text-base flex items-center justify-center gap-3 transition-all duration-200 active:scale-[0.98] ${
               added ? 'bg-green-600 text-white' : 'bg-red-600 hover:bg-red-500 text-white'
             }`}
           >
-            {added ? (
-              '✓ Ajouté au panier'
-            ) : (
+            {added ? '✓ Ajouté au panier' : (
               <>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -292,15 +291,15 @@ function PSAModal({ card, onClose }: { card: PSACard; onClose: () => void }) {
           </button>
 
           {/* Badges confiance */}
-          <div className="flex justify-around pt-2 border-t border-white/8">
+          <div className="flex justify-around pt-4 border-t border-white/10">
             {[
               ['🛡️', 'Authentique'],
               ['📦', 'Emballage soigné'],
               ['🔒', 'Paiement sécurisé'],
             ].map(([icon, label]) => (
-              <div key={label} className="flex flex-col items-center gap-1 text-center">
-                <span className="text-lg">{icon}</span>
-                <span className="text-[10px] text-white/40">{label}</span>
+              <div key={label} className="flex flex-col items-center gap-1.5 text-center">
+                <span className="text-2xl">{icon}</span>
+                <span className="text-xs text-white/40">{label}</span>
               </div>
             ))}
           </div>
@@ -354,7 +353,7 @@ export default function CartesGradeesPage() {
 
       {/* Modal */}
       {selectedCard && (
-        <PSAModal card={selectedCard} onClose={() => setSelectedCard(null)} />
+        <PSADetail card={selectedCard} onClose={() => setSelectedCard(null)} />
       )}
 
       {/* PSA info */}
