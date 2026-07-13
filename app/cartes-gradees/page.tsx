@@ -13,7 +13,7 @@ const PSA_CARDS = [
     price: 49.90,
     rarity: 'SAR',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/427/Mega-Dragonite-ex.M2A.232.60100.png',
+    image: '/psa/dragonite.jpg',
     description: 'Illustration spectaculaire de Dragonite en forme Mega, certifiée PSA 9 (Mint). Super Art Rare parmi les plus recherchées du set japonais MEGA Dream ex, sorti en 2025. L\'illustration pleine page en fait une pièce maîtresse pour tout collectionneur sérieux.',
   },
   {
@@ -26,7 +26,7 @@ const PSA_CARDS = [
     price: 42.90,
     rarity: 'SAR',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/427/Mega-Froslass-ex.M2A.224.60094.png',
+    image: '/psa/froslass.jpg',
     description: 'Froslass en version Mega dans une illustration envoûtante aux teintes glacées. Super Art Rare parmi les plus appréciées du set MEGA Dream ex. Certifiée PSA 9 Mint — un incontournable pour les amateurs de Pokémon de la génération IV.',
   },
   {
@@ -39,7 +39,7 @@ const PSA_CARDS = [
     price: 34.90,
     rarity: 'AR',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/425/Flygon.M2.88.59575.png',
+    image: '/psa/flygon.jpg',
     description: 'Flygon dans une illustration Alternative Rare dynamique du set Inferno X. Le Pokémon Dragon est représenté dans une pose épique. Certifiée PSA 9 — état quasi-parfait vérifié par les experts PSA, la référence mondiale du grading.',
   },
   {
@@ -52,7 +52,7 @@ const PSA_CARDS = [
     price: 34.90,
     rarity: 'Full Art',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/327/Pikachu.S8A.1.39585.png',
+    image: '/psa/pikachu.jpg',
     description: 'Pikachu commémoratif du 25ème anniversaire du Pokémon TCG. Full Art iconique recherchée par les collectionneurs du monde entier pour son illustration dorée et festive. Un symbole fort de l\'histoire Pokémon, certifié PSA 9 Mint.',
   },
   {
@@ -65,7 +65,7 @@ const PSA_CARDS = [
     price: 34.90,
     rarity: 'Holo',
     langue: 'Japonaise',
-    image: 'https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpc/MBG/MBG_3_R_JP_LG.png',
+    image: '/psa/gengar.jpg',
     description: 'Mega Gengar ex issue du MEGA Starter Set exclusif sorti en septembre 2025, contenant seulement 21 cartes au total. Très difficile à trouver hors du Japon. La capacité "Shadow Hiding" en fait aussi une pièce redoutable en jeu. Certifiée PSA 9 Mint.',
   },
   {
@@ -78,7 +78,7 @@ const PSA_CARDS = [
     price: 44.90,
     rarity: 'GX',
     langue: 'Japonaise',
-    image: 'https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpc/SMI/SMI_7_R_JP_LG.png',
+    image: '/psa/vaporeon.jpg',
     description: 'Vaporeon GX issue du Eevee GX Starter Set (Sun & Moon, 2018) — set starter japonais parmi les plus difficiles à dénicher en bon état. L\'évolution aquatique d\'Évoli avec 210 PV. Très rare en PSA 9, idéale pour un collectionneur exigeant.',
   },
   {
@@ -91,7 +91,7 @@ const PSA_CARDS = [
     price: 32.90,
     rarity: 'AR',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/427/Cynthias-Spiritomb.M2A.208.60082.png',
+    image: '/psa/spiritomb.jpg',
     description: 'Illustration Alternative Rare de Spiritomb accompagné de Cynthia, la Grande Championne la plus emblématique de la saga. Issue du set MEGA Dream ex, cette carte mêle nostalgie et art saisissant dans un format illustré plein cadre. PSA 9 Mint.',
   },
   {
@@ -104,7 +104,7 @@ const PSA_CARDS = [
     price: 54.90,
     rarity: 'Full Art',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/328/Xerneas-EX.S8A-P.23.40649.png',
+    image: '/psa/xerneas.jpg',
     description: 'Xerneas EX Full Art issue du 25th Anniversary Promo Pack — set promo japonais limité à seulement 25 cartes pour le 25ème anniversaire du TCG. Extrêmement rare hors du Japon et quasi impossible à obtenir en état parfait. PSA 9 Mint.',
   },
   {
@@ -117,7 +117,7 @@ const PSA_CARDS = [
     price: 32.90,
     rarity: 'AR',
     langue: 'Japonaise',
-    image: 'https://den-cards.pokellector.com/413/Kangaskhan.SV10.110.57129.png',
+    image: '/psa/kangaskhan.jpg',
     description: 'Kangaskhan dans une illustration Alternative Rare du set Glory of Team Rocket (SV10) — le grand retour de la Team Rocket dans Scarlet & Violet. Illustration chaleureuse pour l\'un des Pokémon les plus nostalgiques de la gen 1, avec son bébé. PSA 9 Mint.',
   },
 ]
@@ -136,94 +136,26 @@ interface PSACard {
   grade: number; price: number; rarity: string; langue: string; image: string; description: string
 }
 
-// ─── Visuel dalle PSA ─────────────────────────────────────────────────────────
-function PSASlab({ card, size = 'sm' }: { card: PSACard; size?: 'sm' | 'lg' }) {
-  const [imgError, setImgError] = useState(false)
-  const isLg = size === 'lg'
-
-  return (
-    <div
-      style={{
-        background: 'linear-gradient(160deg, #d6d6d6 0%, #f0f0f0 40%, #c2c2c2 100%)',
-        padding: isLg ? '10px' : '5px',
-        borderRadius: isLg ? '10px' : '6px',
-        boxShadow: isLg
-          ? '0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.6)'
-          : '0 6px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.5)',
-      }}
-    >
-      <div
-        style={{
-          background: 'linear-gradient(180deg, #e0e0e0 0%, #f5f5f5 100%)',
-          borderRadius: isLg ? '6px' : '3px',
-          padding: isLg ? '6px' : '3px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: isLg ? '6px' : '3px',
-        }}
-      >
-        {/* Card image */}
-        <div
-          style={{
-            background: '#111',
-            borderRadius: isLg ? '4px' : '2px',
-            overflow: 'hidden',
-            aspectRatio: '63/88',
-          }}
-        >
-          {card.image && !imgError ? (
-            <img
-              src={card.image}
-              alt={card.name}
-              style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.2)', fontSize: isLg ? '48px' : '24px' }}>
-              🃏
-            </div>
-          )}
-        </div>
-
-        {/* PSA label */}
-        <div style={{ background: 'white', borderRadius: isLg ? '3px' : '2px', overflow: 'hidden' }}>
-          {/* Red stripe */}
-          <div style={{ background: '#cc0000', height: isLg ? '8px' : '4px' }} />
-          {/* Label body */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'stretch', padding: isLg ? '5px 8px' : '2px 4px', gap: isLg ? '6px' : '2px' }}>
-            {/* Left col */}
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontWeight: 900, fontSize: isLg ? '8px' : '4px', color: '#111', letterSpacing: '0.03em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>JPN. POKÉMON TCG</div>
-              <div style={{ fontWeight: 700, fontSize: isLg ? '8px' : '4px', color: '#111', marginTop: isLg ? '2px' : '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{card.name}</div>
-              <div style={{ fontSize: isLg ? '7px' : '3.5px', color: '#444', marginTop: '1px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{card.set}</div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: isLg ? '4px' : '2px', marginTop: isLg ? '4px' : '2px' }}>
-                <div style={{ fontFamily: 'monospace', fontSize: isLg ? '7px' : '3.5px', letterSpacing: isLg ? '-0.5px' : '-0.2px', color: '#222' }}>|||||||||||||||||</div>
-                <div style={{ fontWeight: 900, fontSize: isLg ? '9px' : '4.5px', color: '#cc0000', letterSpacing: '0.05em' }}>PSA</div>
-              </div>
-            </div>
-            {/* Right col */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between', flexShrink: 0 }}>
-              <div style={{ fontSize: isLg ? '6px' : '3px', color: '#888' }}>{card.numero}</div>
-              <div style={{ fontSize: isLg ? '7px' : '3.5px', fontWeight: 700, color: '#111', textTransform: 'uppercase' }}>MINT</div>
-              <div style={{ fontSize: isLg ? '28px' : '14px', fontWeight: 900, color: '#111', lineHeight: 1 }}>{card.grade}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // ─── Carte dans la grille ─────────────────────────────────────────────────────
 function PSACardItem({ card, onOpen }: { card: PSACard; onOpen: () => void }) {
+  const [imgError, setImgError] = useState(false)
   return (
     <div
       onClick={onOpen}
       className="group flex flex-col rounded-xl border border-white/10 bg-[#111] overflow-hidden hover:border-white/25 transition-all duration-200 cursor-pointer hover:shadow-xl"
     >
-      {/* Slab */}
-      <div className="bg-[#0a0a0a] p-3 transition-transform duration-300 group-hover:scale-[1.02]">
-        <PSASlab card={card} size="sm" />
+      {/* Photo PSA */}
+      <div className="relative bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: '3/4' }}>
+        {card.image && !imgError ? (
+          <img
+            src={card.image}
+            alt={card.name}
+            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-white/20 text-4xl">🃏</div>
+        )}
       </div>
 
       {/* Infos */}
@@ -274,11 +206,13 @@ function PSADetail({ card, onClose }: { card: PSACard; onClose: () => void }) {
       {/* Layout deux colonnes */}
       <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-12">
 
-        {/* Colonne gauche — slab PSA */}
+        {/* Colonne gauche — photo PSA réelle */}
         <div className="md:w-[380px] shrink-0 flex items-start justify-center">
-          <div className="w-full max-w-[340px]">
-            <PSASlab card={card} size="lg" />
-          </div>
+          <img
+            src={card.image}
+            alt={card.name}
+            className="w-full max-w-[360px] rounded-xl object-contain shadow-2xl"
+          />
         </div>
 
         {/* Colonne droite — infos */}
