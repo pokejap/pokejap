@@ -1569,7 +1569,7 @@ export const products: Product[] = [
   {
     id: 'meg-fr-036',
     name: 'Méga-Blizzaroi ex',
-    set: 'Méga-Évolutions Ancien',
+    set: 'Méga-Évolutions',
     setCode: 'MEG',
     number: '036/132',
     rarity: 'ex',
@@ -1585,8 +1585,8 @@ export const products: Product[] = [
   {
     id: 'mep-fr-022',
     name: 'Charbambin',
-    set: 'Méga-Évolutions Promos',
-    setCode: 'MEP',
+    set: 'Méga-Évolutions',
+    setCode: 'MEG',
     number: '022',
     rarity: 'Promo',
     condition: 'Neuf',
