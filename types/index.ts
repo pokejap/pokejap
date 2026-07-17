@@ -13,7 +13,9 @@ export type Rarete =
   | 'CHR'
   | 'SAR'
   | 'UR'
-  | 'Super Rare';
+  | 'Super Rare'
+  | 'Promo'
+  | 'Illustration Rare';
 
 export type Condition = 'Neuf' | 'Quasi-Neuf' | 'Excellent' | 'Bon' | 'Moyen';
 export type Langue = 'JAP' | 'FR' | 'EN';
