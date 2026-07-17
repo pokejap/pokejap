@@ -1486,7 +1486,7 @@ export const products: Product[] = [
     price: 7.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/420/Kyurem-ex.BLK.157.58338.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/9/9a/Carte_%C3%89carlate_et_Violet_Foudre_Noire_157.png',
   },
 
   // ── Aventure Ensemble (FR) ────────────────────────────────────────
@@ -1502,7 +1502,7 @@ export const products: Product[] = [
     price: 9.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/409/Lillies-Ribombee.JTG.164.56826.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/8/80/Carte_%C3%89carlate_et_Violet_Aventures_Ensemble_164.png',
   },
 
   // ── Failles Temporelles (FR) — Pikachu tampon Journee Pokemon 2026 ──
@@ -1518,7 +1518,7 @@ export const products: Product[] = [
     price: 4.99,
     stock: 1,
     description: 'Sleeve et top loader inclus • Tampon Journée Pokémon 2026',
-    imageUrl: `${IMG}/383/Pikachu.TEM.51.52462.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/2/25/Carte_%C3%89carlate_et_Violet_Forces_Temporelles_051_%28Logo_de_la_Journ%C3%A9e_Pok%C3%A9mon_2026%29.png',
   },
 
   // ── Flammes Fantomatiques (FR) ──────────────────────────────────────
@@ -1534,7 +1534,7 @@ export const products: Product[] = [
     price: 1.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/424/Mismagius-ex.PFL.36.59641.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/4/49/Carte_M%C3%A9ga-%C3%89volution_Flammes_Fantasmagoriques_036.png',
   },
   {
     id: 'pfl-fr-100',
@@ -1548,7 +1548,7 @@ export const products: Product[] = [
     price: 2.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/424/Zacian.PFL.100.59705.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/a/a5/Carte_M%C3%A9ga-%C3%89volution_Flammes_Fantasmagoriques_100.png',
   },
   {
     id: 'pfl-fr-118',
@@ -1562,7 +1562,7 @@ export const products: Product[] = [
     price: 5.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/424/Dawn.PFL.118.59723.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/8/8a/Carte_M%C3%A9ga-%C3%89volution_Flammes_Fantasmagoriques_118.png',
   },
 
   // ── Méga-Évolutions Ancien (FR) ─────────────────────────────────
@@ -1578,7 +1578,7 @@ export const products: Product[] = [
     price: 2.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/422/Mega-Abomasnow-ex.MEG.36.59300.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/7/7d/Carte_M%C3%A9ga-%C3%89volution_036.png',
   },
 
   // ── Méga-Évolutions Promos (FR) ────────────────────────────────
@@ -1594,7 +1594,7 @@ export const products: Product[] = [
     price: 2.99,
     stock: 1,
     description: 'Sleeve et top loader inclus',
-    imageUrl: `${IMG}/423/Charcadet.MEP.22.59169.png`,
+    imageUrl: 'https://www.pokepedia.fr/images/a/a1/Carte_Promo_ME_022.png',
   },
 ]
 

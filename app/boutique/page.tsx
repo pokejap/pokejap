@@ -37,11 +37,11 @@ const SET_COVER: Record<string, string> = {
   'Foudre Noire__JAP':             `${IMG}/414/Ns-Plot.SV11B.173.57888.png`,        // Plan de N SAR ✨
   'Flamme Blanche__JAP':           `${IMG}/415/Hydreigon-ex.SV11W.171.57965.png`,   // Trioxhydre ex SAR ✨
   'Foudre Noire__FR':              `${IMG}/420/Kyurem-ex.BLK.157.58338.png`,        // Kyurem ex Ultra Rare
-  'Aventure Ensemble__FR':         `${IMG}/409/Lillies-Ribombee.JTG.164.56826.png`, // Ribombelle de Lilie AR
-  'Failles Temporelles__FR':         `${IMG}/383/Pikachu.TEM.51.52462.png`,         // Pikachu Journée Pokémon
-  'Flammes Fantomatiques__FR':       `${IMG}/424/Zacian.PFL.100.59705.png`,           // Zacian Illustration Rare
-  'Méga-Évolutions Ancien__FR':      `${IMG}/422/Mega-Abomasnow-ex.MEG.36.59300.png`,   // Méga-Blizzaroi ex
-  'Méga-Évolutions Promos__FR':      `${IMG}/423/Charcadet.MEP.22.59169.png`,            // Charbambin Promo
+  'Aventure Ensemble__FR':         'https://www.pokepedia.fr/images/8/80/Carte_%C3%89carlate_et_Violet_Aventures_Ensemble_164.png', // Ribombelle de Lilie AR
+  'Failles Temporelles__FR':         'https://www.pokepedia.fr/images/2/25/Carte_%C3%89carlate_et_Violet_Forces_Temporelles_051_%28Logo_de_la_Journ%C3%A9e_Pok%C3%A9mon_2026%29.png',         // Pikachu Journée Pokémon
+  'Flammes Fantomatiques__FR':       'https://www.pokepedia.fr/images/a/a5/Carte_M%C3%A9ga-%C3%89volution_Flammes_Fantasmagoriques_100.png',           // Zacian Illustration Rare
+  'Méga-Évolutions Ancien__FR':      'https://www.pokepedia.fr/images/7/7d/Carte_M%C3%A9ga-%C3%89volution_036.png',   // Méga-Blizzaroi ex
+  'Méga-Évolutions Promos__FR':      'https://www.pokepedia.fr/images/a/a1/Carte_Promo_ME_022.png',            // Charbambin Promo
 }
 
 // ── Logos officiels — clé = "NomSérie__LANGUE" ────────────────────────────────
