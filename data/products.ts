@@ -1596,6 +1596,22 @@ export const products: Product[] = [
     description: 'Sleeve et top loader inclus',
     imageUrl: 'https://www.pokepedia.fr/images/a/a1/Carte_Promo_ME_022.png',
   },
+
+  // ── Méga-Dracaufeu X-ex — Flammes Fantomatiques 013/094 (FR) ──────────
+  {
+    id: 'pfl-fr-013',
+    name: 'Méga-Dracaufeu X-ex',
+    set: 'Flammes Fantomatiques',
+    setCode: 'PFL',
+    number: '013/094',
+    rarity: 'ex',
+    condition: 'Neuf',
+    language: 'FR',
+    price: 4.99,
+    stock: 1,
+    description: 'Sleeve et top loader inclus',
+    imageUrl: 'https://www.pokepedia.fr/images/6/68/Carte_M%C3%A9ga-%C3%89volution_Flammes_Fantasmagoriques_013.png',
+  },
 ]
 
 export function getProductById(id: string): Product | undefined {
