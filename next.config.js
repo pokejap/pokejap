@@ -7,6 +7,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.pokemontcg.io' },
       { protocol: 'https', hostname: 'den-cards.pokellector.com' },
+      { protocol: 'https', hostname: 'www.pokepedia.fr' },
     ],
   },
 }
