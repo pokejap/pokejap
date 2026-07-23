@@ -23,12 +23,10 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { href: '/',           label: 'Accueil'     },
-    { href: '/boutique',   label: 'Boutique'    },
-    { href: '/scelles',    label: 'Scellés JAP' },
-    { href: '/scelles-fr', label: 'Scellés FR'  },
-    { href: '/cartes-gradees', label: 'Cartes Gradées' },
-    { href: '/a-propos',   label: 'À propos'    },
+    { href: '/',               label: 'Accueil'          },
+    { href: '/boutique',       label: "Cartes à l'unité" },
+    { href: '/cartes-gradees', label: 'Cartes Gradées'   },
+    { href: '/a-propos',       label: 'À propos'         },
   ]
 
   return (
