@@ -18,6 +18,16 @@ function SuccessContent() {
     }
   }, [cleared, clearCart])
 
+  // Déclenche l'envoi des e-mails de commande (ignoré si déjà envoyés par le webhook)
+  useEffect(() => {
+    if (!sessionId) return
+    fetch('/api/order-confirm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId }),
+    }).catch(() => {})
+  }, [sessionId])
+
   return (
     <div className="max-w-2xl mx-auto px-4 pt-28 pb-20 text-center">
 
@@ -48,7 +58,7 @@ function SuccessContent() {
           </div>
           <div>
             <p className="text-white font-semibold text-sm mb-1">Email de confirmation</p>
-            <p className="text-gray-500 text-xs leading-relaxed">Un récap a été envoyé par Stripe à ton adresse email.</p>
+            <p className="text-gray-500 text-xs leading-relaxed">Un récap de ta commande vient de t'être envoyé par email.</p>
           </div>
         </div>
         <div className="bg-pokemon-card rounded-xl p-5 border border-white/5 flex gap-4">
