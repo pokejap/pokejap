@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { stripe } from '@/lib/stripe'
 import { stockStore } from '@/lib/stock-store'
+import { sendOrderEmails } from '@/lib/order-email'
 import Stripe from 'stripe'
 
 
@@ -43,6 +44,13 @@ export async function POST(request: NextRequest) {
       `| Client: ${session.customer_email ?? 'inconnu'}`,
       `| Total: ${((session.amount_total ?? 0) / 100).toFixed(2)} €`
     )
+
+    // E-mails de commande (toi + client)
+    try {
+      await sendOrderEmails(session.id)
+    } catch (err: any) {
+      console.error('[webhook] Échec envoi e-mails commande:', err?.message ?? err)
+    }
   }
 
   return NextResponse.json({ received: true })
